@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Jean-Mathieu Nocquet / Site Title"
+title                    : "Jean-Mathieu Nocquet / Web Site"
 title_separator          : "-"
 name                     : &name "Jean-Mathieu Nocquet"
 description              : &description "I am a geodesist interested in Tectonics"
@@ -80,8 +80,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
-  avatar           : "profile.png"
+  name             : "Jean-Mathieu Nocquet"
+  avatar           : "photo_identite_nocquet.png"
   bio              : "Your biography for the left-hand sidebar"
   location         : "Location"
   employer         :
