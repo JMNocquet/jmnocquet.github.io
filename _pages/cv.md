@@ -11,13 +11,14 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Survey Engineer, [ENSG] (http://www.ensg.eu), IGN, 1994
+* M.S. in Geophysics, Université Paris Diderot, Institut de Physique du Globe de Paris, 1994
+* Ph.D in GPS and Tectonics, Université Nice Sophia-Antipolis, 2002
+* HDR, Université Nice Sophia-Antipolis, 2011
 
-Work experience
+Positions held
 ======
-* Summer 2015: Research Assistant
+* Senior researcher (Directeur de Recherche) at [IRD] (http://www.ird.fr) 
   * Github University
   * Duties included: Tagging issues
   * Supervisor: Professor Git
