@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Jean-Mathieu Nocquet"
 title_separator          : "-"
 name                     : &name "Jean-Mathieu Nocquet"
-description              : &description "I am a geodesist interested in Tectonics"
+description              : &description "I am a geodesist interested in Tectonics and Earthquakes"
 url                      : https://jmnocquet.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "github.com/jmnocquet"
@@ -83,9 +83,9 @@ author:
   name             : "Jean-Mathieu Nocquet"
   avatar           : "photo_identite_nocquet.png"
   bio              : "Earthquake Geodesy"
-  location         : "https://geoazur.oca.eu/fr/acces-geoazur"
-  employer         : "https://www.ird.fr/"
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  location         : https://geoazur.oca.eu/fr/acces-geoazur
+  employer         : https://www.ird.fr
+  pubmed           : 
   googlescholar    : "https://scholar.google.fr/citations?hl=fr&user=vJUZxisAAAAJ"
   email            : nocquet@geoazur.unice.fr
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
