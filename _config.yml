@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Jean-Mathieu Nocquet / Web Site"
+title                    : "Jean-Mathieu Nocquet"
 title_separator          : "-"
 name                     : &name "Jean-Mathieu Nocquet"
 description              : &description "I am a geodesist interested in Tectonics"
@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Jean-Mathieu Nocquet"
   avatar           : "photo_identite_nocquet.png"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : "Earthquake Geodesy"
   location         : "Location"
-  employer         :
+  employer         : IRD
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    : "https://scholar.google.fr/citations?hl=fr&user=vJUZxisAAAAJ"
   email            : nocquet@geoazur.unice.fr
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "jmnocquet"
+  github           : "https://github.com/jmnocquet"
   google_plus      :
   keybase          :
   instagram        :
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : #"replacethistwitterhandle"
   vine             :
   weibo            :
   xing             :
