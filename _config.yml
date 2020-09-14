@@ -83,8 +83,8 @@ author:
   name             : "Jean-Mathieu Nocquet"
   avatar           : "photo_identite_nocquet.png"
   bio              : "Earthquake Geodesy"
-  location         : https://geoazur.oca.eu/fr/acces-geoazur
-  employer         : https://www.ird.fr
+  location         : "https://geoazur.oca.eu/fr/acces-geoazur"
+  employer         : "https://www.ird.fr"
   pubmed           : 
   googlescholar    : "https://scholar.google.fr/citations?hl=fr&user=vJUZxisAAAAJ"
   email            : nocquet@geoazur.unice.fr
