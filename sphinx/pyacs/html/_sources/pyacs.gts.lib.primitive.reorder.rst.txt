@@ -1,0 +1,7 @@
+pyacs.gts.lib.primitive.reorder module
+======================================
+
+.. automodule:: pyacs.gts.lib.primitive.reorder
+   :members:
+   :undoc-members:
+   :show-inheritance:

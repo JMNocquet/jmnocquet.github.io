@@ -1,0 +1,7 @@
+pyacs.gts.lib.trajectory module
+===============================
+
+.. automodule:: pyacs.gts.lib.trajectory
+   :members:
+   :undoc-members:
+   :show-inheritance:

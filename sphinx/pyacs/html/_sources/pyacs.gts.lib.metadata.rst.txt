@@ -1,0 +1,7 @@
+pyacs.gts.lib.metadata module
+=============================
+
+.. automodule:: pyacs.gts.lib.metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:

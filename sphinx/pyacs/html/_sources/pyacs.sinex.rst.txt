@@ -1,0 +1,22 @@
+pyacs.sinex package
+===================
+
+Submodules
+----------
+
+.. toctree::
+
+   pyacs.sinex.constants
+   pyacs.sinex.date
+   pyacs.sinex.mathutils
+   pyacs.sinex.sinex
+   pyacs.sinex.snxutils
+   pyacs.sinex.utils
+
+Module contents
+---------------
+
+.. automodule:: pyacs.sinex
+   :members:
+   :undoc-members:
+   :show-inheritance:

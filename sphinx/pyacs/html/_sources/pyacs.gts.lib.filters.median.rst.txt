@@ -1,0 +1,7 @@
+pyacs.gts.lib.filters.median module
+===================================
+
+.. automodule:: pyacs.gts.lib.filters.median
+   :members:
+   :undoc-members:
+   :show-inheritance:

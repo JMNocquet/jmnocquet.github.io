@@ -1,0 +1,7 @@
+pyacs.sinex.constants module
+============================
+
+.. automodule:: pyacs.sinex.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:

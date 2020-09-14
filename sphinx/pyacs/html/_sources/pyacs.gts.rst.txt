@@ -1,0 +1,27 @@
+pyacs.gts package
+=================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   pyacs.gts.Sgts_methods
+   pyacs.gts.lib
+
+Submodules
+----------
+
+.. toctree::
+
+   pyacs.gts.Gts
+   pyacs.gts.Sgts
+   pyacs.gts.tsr
+
+Module contents
+---------------
+
+.. automodule:: pyacs.gts
+   :members:
+   :undoc-members:
+   :show-inheritance:

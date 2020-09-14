@@ -1,0 +1,7 @@
+pyacs.sol.gpoint module
+=======================
+
+.. automodule:: pyacs.sol.gpoint
+   :members:
+   :undoc-members:
+   :show-inheritance:

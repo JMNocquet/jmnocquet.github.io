@@ -1,0 +1,7 @@
+pyacs.gts.lib.outliers module
+=============================
+
+.. automodule:: pyacs.gts.lib.outliers
+   :members:
+   :undoc-members:
+   :show-inheritance:

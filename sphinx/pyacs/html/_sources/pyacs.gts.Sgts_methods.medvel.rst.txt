@@ -1,0 +1,7 @@
+pyacs.gts.Sgts\_methods.medvel module
+=====================================
+
+.. automodule:: pyacs.gts.Sgts_methods.medvel
+   :members:
+   :undoc-members:
+   :show-inheritance:
