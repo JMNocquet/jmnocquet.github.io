@@ -54,8 +54,5 @@ Languages
 *	English, Spanish: fluent
 *	Portuguese, German: intermediate
 
-Publications
+[Publications]"https://scholar.google.fr/citations?hl=fr&user=vJUZxisAAAAJ"
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
