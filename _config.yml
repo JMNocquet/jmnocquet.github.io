@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : 
+  username               :
 facebook:
   username               :
   app_id                 :
@@ -83,8 +83,7 @@ author:
   name             : "Jean-Mathieu Nocquet"
   avatar           : "photo_identite_nocquet.png"
   bio              : "Earthquake Geodesy"
-  location         : "https://geoazur.oca.eu"
-  employer         : IRD
+  location         :
   pubmed           : 
   googlescholar    : "https://scholar.google.fr/citations?hl=fr&user=vJUZxisAAAAJ"
   email            : nocquet@geoazur.unice.fr
