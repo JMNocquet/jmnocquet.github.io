@@ -54,5 +54,7 @@ Languages
 *	English, Spanish: fluent
 *	Portuguese, German: intermediate
 
-[Publications]"https://scholar.google.fr/citations?hl=fr&user=vJUZxisAAAAJ"
+Publications
 ======
+* [Google scholar]"https://scholar.google.fr/citations?hl=fr&user=vJUZxisAAAAJ"
+* [ORCID]"http://orcid.org/0000-0002-3436-9354"
