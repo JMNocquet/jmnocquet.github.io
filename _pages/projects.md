@@ -9,5 +9,5 @@ author_profile: true
 
 
 {% for post in site.projects %}
-  {% include post %}
+  {% include include archive-single.html %}
 {% endfor %}
