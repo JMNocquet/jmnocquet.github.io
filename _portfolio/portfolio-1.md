@@ -1,7 +1,7 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Coalescence of Slow Slip Events"
+excerpt: "Slip burst during Slow Slip Event coalescence imaged from GPS time series at the Cascadia megathrust<br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+GPS images the slip acceleration at the Cascadia megathrust as two Slow Slip Events are merging. See [Bletery and Nocquet, Nature Communication, 2020](https://www.nature.com/articles/s41467-020-15494-4)

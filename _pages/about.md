@@ -1,19 +1,24 @@
 ---
 permalink: /
-title: "Research interests"
+title: "About me"
 excerpt: "About me"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
-I use spatial geodesy to understand the short term behaviour of faults.
+I am a researcher from the French National Institute for Sustainable Development ([IRD](https://en.ird.fr/)). I work at [Geoazur]([Geoazur](https://geoazur.oca.eu)
+and [IPGP](http://www.ipgp.fr).
 
-Projects
+Research interests
 ======
-* ANR funded S5: Slow Slip Events and Seismic Swarms
+
+I use spatial geodesy, mostly high precision GNSS to understand the short term behaviour of faults.
+
+Current Projects
+======
+* ANR funded S5 project: Slow Slip Events and Seismic Swarms in South America
 * ANR funded REMAKE project
-* Photo-geodesy: to come soon
 
 
 Software
