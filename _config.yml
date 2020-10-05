@@ -84,7 +84,7 @@ author:
   avatar           : "photo_identite_nocquet.png"
   bio              : "Earthquake Geodesy"
   location         :
-  pubmed           : 
+  pubmed           :
   googlescholar    : "https://scholar.google.fr/citations?hl=fr&user=vJUZxisAAAAJ"
   email            : nocquet@geoazur.unice.fr
   researchgate     :  "https://www.researchgate.net/profile/J-M_Nocquet"
@@ -184,6 +184,9 @@ collections:
     output: true
     permalink: /:collection/:path/
   talks:
+    output: true
+    permalink: /:collection/:path/
+  projects:
     output: true
     permalink: /:collection/:path/
 
