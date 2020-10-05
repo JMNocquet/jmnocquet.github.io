@@ -1,7 +1,0 @@
-pyacs.lib.errors module
-=======================
-
-.. automodule:: pyacs.lib.errors
-   :members:
-   :undoc-members:
-   :show-inheritance:

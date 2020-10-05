@@ -1,7 +1,0 @@
-pyacs.sinex.date module
-=======================
-
-.. automodule:: pyacs.sinex.date
-   :members:
-   :undoc-members:
-   :show-inheritance:

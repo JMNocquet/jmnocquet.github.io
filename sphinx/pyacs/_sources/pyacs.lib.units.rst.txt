@@ -1,7 +1,0 @@
-pyacs.lib.units module
-======================
-
-.. automodule:: pyacs.lib.units
-   :members:
-   :undoc-members:
-   :show-inheritance:

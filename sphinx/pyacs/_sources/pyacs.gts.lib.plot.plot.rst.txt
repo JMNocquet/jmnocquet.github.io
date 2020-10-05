@@ -1,7 +1,0 @@
-pyacs.gts.lib.plot.plot module
-==============================
-
-.. automodule:: pyacs.gts.lib.plot.plot
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-pyacs.gts.lib.format.track module
-=================================
-
-.. automodule:: pyacs.gts.lib.format.track
-   :members:
-   :undoc-members:
-   :show-inheritance:

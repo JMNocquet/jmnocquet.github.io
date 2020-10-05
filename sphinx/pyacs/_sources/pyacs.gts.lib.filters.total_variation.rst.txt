@@ -1,7 +1,0 @@
-pyacs.gts.lib.filters.total\_variation module
-=============================================
-
-.. automodule:: pyacs.gts.lib.filters.total_variation
-   :members:
-   :undoc-members:
-   :show-inheritance:

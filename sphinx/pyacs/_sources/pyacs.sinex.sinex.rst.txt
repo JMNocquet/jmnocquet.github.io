@@ -1,7 +1,0 @@
-pyacs.sinex.sinex module
-========================
-
-.. automodule:: pyacs.sinex.sinex
-   :members:
-   :undoc-members:
-   :show-inheritance:

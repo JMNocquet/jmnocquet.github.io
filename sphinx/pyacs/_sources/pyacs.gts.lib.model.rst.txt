@@ -1,7 +1,0 @@
-pyacs.gts.lib.model module
-==========================
-
-.. automodule:: pyacs.gts.lib.model
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-pyacs.lib.euler module
-======================
-
-.. automodule:: pyacs.lib.euler
-   :members:
-   :undoc-members:
-   :show-inheritance:

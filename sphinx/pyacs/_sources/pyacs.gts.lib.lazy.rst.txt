@@ -1,7 +1,0 @@
-pyacs.gts.lib.lazy module
-=========================
-
-.. automodule:: pyacs.gts.lib.lazy
-    :members:
-    :undoc-members:
-    :show-inheritance:

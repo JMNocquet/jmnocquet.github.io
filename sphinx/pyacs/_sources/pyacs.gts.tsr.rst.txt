@@ -1,7 +1,0 @@
-pyacs.gts.tsr module
-====================
-
-.. automodule:: pyacs.gts.tsr
-   :members:
-   :undoc-members:
-   :show-inheritance:
