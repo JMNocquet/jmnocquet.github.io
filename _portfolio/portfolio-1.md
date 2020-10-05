@@ -1,6 +1,6 @@
 ---
 title: "Coalescence of Slow Slip Events"
-excerpt: "Slip burst during Slow Slip Event coalescence imaged from GPS time series at the Cascadia megathrust<br/><img src='/images/500x300.png'>"
+excerpt: "Slip burst during Slow Slip Event coalescence imaged from GPS time series at the Cascadia megathrust<br/><img src='/images/bletery_natcomm_2020.png'>"
 collection: portfolio
 ---
 
