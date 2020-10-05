@@ -5,4 +5,9 @@ permalink: /projects/
 author_profile: true
 ---
 
-ANR funded S5 project
+{% include base_path %}
+
+
+{% for post in site.projects %}
+  {% include archive-single-projects.html %}
+{% endfor %}
