@@ -7,7 +7,7 @@ author_profile: true
 
 * ANR funded S5 project: Synchronous Slow Slip and Seismic Swarm
 
-<img src='/images/target_areas_s5.png'>
+![toto](/images/target_areas_s5.png)
 
 Slow slip events (SSE) are transient processes releasing stress at faults without significant earthquake. Their discovery about two decades ago in subduction zones demonstrates a complex dynamics of the megathrust controlled by spatially variable friction at the plate interface. While deep SSEs occurring downdip of highly locked areas have been extensively studied, other subduction zones highlight another transient process where slip occurs at the same depths as large earthquakes and is synchronous to intense micro-seismicity. We refer to this type of transient as S5 for Synchronous Slow Slip & Seismic Swarm, which is the focus of our proposal.
 
