@@ -1,0 +1,7 @@
+pyacs.lib.timeperiod module
+===========================
+
+.. automodule:: pyacs.lib.timeperiod
+   :members:
+   :undoc-members:
+   :show-inheritance:

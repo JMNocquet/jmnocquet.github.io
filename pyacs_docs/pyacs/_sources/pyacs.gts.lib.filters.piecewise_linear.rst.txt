@@ -1,0 +1,7 @@
+pyacs.gts.lib.filters.piecewise\_linear module
+==============================================
+
+.. automodule:: pyacs.gts.lib.filters.piecewise_linear
+   :members:
+   :undoc-members:
+   :show-inheritance:

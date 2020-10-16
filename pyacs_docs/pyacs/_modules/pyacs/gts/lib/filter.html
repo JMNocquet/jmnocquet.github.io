@@ -1,0 +1,653 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyacs.gts.lib.filter &mdash; PYACS 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PYACS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html">What is pyacs?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html#the-philosophy-of-pyacs">The philosophy of pyacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html#the-components-of-pyacs">The components of pyacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">How to install pyacs?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial_cluster_processing.html">pygeca: GNSS cluster processing with GAMIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial_gts.html">Getting started GPS time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial_inversion.html">Getting started slip inversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">pyacs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PYACS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyacs.gts.lib.filter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyacs.gts.lib.filter</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Various filters for Gts</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">###############################################################################</span>
+<div class="viewcode-block" id="vondrak"><a class="viewcode-back" href="../../../../pyacs.gts.lib.filter.html#pyacs.gts.lib.filter.vondrak">[docs]</a><span class="k">def</span> <span class="nf">vondrak</span><span class="p">(</span><span class="bp">self</span> <span class="p">,</span> <span class="n">fc</span> <span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="s1">&#39;NEU&#39;</span><span class="p">):</span>
+<span class="c1">###############################################################################</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    returned a filtered Gts using a Vondrak filter</span>
+<span class="sd">    </span>
+<span class="sd">    :param fc: cutoff frequence in cycle per year</span>
+<span class="sd">    :param in_place: if True then replace the current time series</span>
+<span class="sd">    :param verbose: boolean, verbose mode</span>
+<span class="sd">    :return: the filtered time series</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">new_gts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        
+    <span class="k">if</span> <span class="s1">&#39;N&#39;</span> <span class="ow">in</span> <span class="n">component</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- Computing Vondrak filter for component North&#39;</span><span class="p">)</span>
+        <span class="n">new_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">__vondrak</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">fc</span><span class="p">,</span> <span class="n">return_partials</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    
+    <span class="k">if</span> <span class="s1">&#39;E&#39;</span> <span class="ow">in</span> <span class="n">component</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- Computing Vondrak filter for component East&#39;</span><span class="p">)</span>
+        <span class="n">new_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">__vondrak</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">fc</span><span class="p">,</span> <span class="n">return_partials</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s1">&#39;U&#39;</span> <span class="ow">in</span> <span class="n">component</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- Computing Vondrak filter for component Up&#39;</span><span class="p">)</span>
+        <span class="n">new_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">__vondrak</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="n">fc</span><span class="p">,</span> <span class="n">return_partials</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">in_place</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">new_gts</span><span class="o">.</span><span class="n">data</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">new_gts</span><span class="p">)</span></div>
+
+
+<span class="c1">###############################################################################</span>
+<span class="k">def</span> <span class="nf">__vondrak</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">fc</span><span class="p">,</span> <span class="n">return_partials</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="c1">#-------------------------------------------------------------------------------</span>
+    <span class="c1"># Routine : vondrak</span>
+    <span class="c1"># Purpose : Pass a Vondrak filter through a time series</span>
+    <span class="c1"># Author  : P. Rebischung</span>
+    <span class="c1"># Created : 17-Dec-2011</span>
+    <span class="c1">#</span>
+    <span class="c1"># Changes :</span>
+    <span class="c1">#</span>
+    <span class="c1"># Input   : - t               : Dates</span>
+    <span class="c1">#           - x               : Time series</span>
+    <span class="c1">#           - fc              : Cutoff frequency</span>
+    <span class="c1">#           - return_partials : True if the partial derivatives dd/dy should be</span>
+    <span class="c1">#                               returned. Default is False.</span>
+    <span class="c1"># Output  : - xs              : Filtered time series</span>
+    <span class="c1">#-------------------------------------------------------------------------------</span>
+
+    <span class="kn">import</span> <span class="nn">numpy</span>
+    <span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">linalg</span>
+    <span class="kn">import</span> <span class="nn">pyacs.lib.glinalg</span>
+    
+    <span class="n">eps</span> <span class="o">=</span> <span class="p">(</span><span class="mf">7.223147119819503</span><span class="o">*</span><span class="n">fc</span><span class="p">)</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span> <span class="o">/</span> <span class="p">((</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:])),</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span> <span class="o">/</span> <span class="p">((</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:])),</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span> <span class="o">/</span> <span class="p">((</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:])),</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span> <span class="o">/</span> <span class="p">((</span><span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>   <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>   <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>   <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    
+    <span class="n">d0</span> <span class="o">=</span> <span class="n">eps</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">d1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">d2</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">d3</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+    
+    <span class="n">A</span>  <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">d0</span><span class="p">)</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">return_partials</span><span class="p">):</span>
+        <span class="n">A</span>  <span class="o">=</span> <span class="n">eps</span> <span class="o">*</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">glinalg</span><span class="o">.</span><span class="n">syminv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+        <span class="n">xs</span> <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">glinalg</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xs</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">eps</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">xs</span>
+
+<span class="c1">###############################################################################</span>
+<div class="viewcode-block" id="median_filter"><a class="viewcode-back" href="../../../../pyacs.gts.lib.filter.html#pyacs.gts.lib.filter.median_filter">[docs]</a><span class="k">def</span> <span class="nf">median_filter</span><span class="p">(</span><span class="bp">self</span> <span class="p">,</span> <span class="n">n</span> <span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="c1">###############################################################################</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    returns a filtered time series using scipy.signal.medfilt</span>
+<span class="sd">    </span>
+<span class="sd">    :param n: size of the median filter window</span>
+<span class="sd">    :param in_place: if True then replace the current time series</span>
+<span class="sd">    :param verbose: boolean, verbose mode</span>
+<span class="sd">    :return: the filtered time series</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="kn">import</span> <span class="nn">scipy.signal</span>
+    
+    <span class="n">new_gts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="n">new_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">medfilt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">new_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">medfilt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">new_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">medfilt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">in_place</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">new_gts</span><span class="o">.</span><span class="n">data</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">new_gts</span><span class="p">)</span></div>
+
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">optimize</span><span class="p">,</span> <span class="n">fftpack</span><span class="p">,</span> <span class="n">signal</span>
+
+
+<span class="c1"># Note: there is a scipy PR to include an improved SG filter within the</span>
+<span class="c1"># scipy.signal submodule.  It should replace this when it&#39;s finished.</span>
+<span class="c1"># see http://github.com/scipy/scipy/pull/304</span>
+
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">deque</span>
+<span class="kn">from</span> <span class="nn">bisect</span> <span class="k">import</span> <span class="n">insort</span><span class="p">,</span> <span class="n">bisect_left</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">islice</span>
+<div class="viewcode-block" id="running_median_insort"><a class="viewcode-back" href="../../../../pyacs.gts.lib.filter.html#pyacs.gts.lib.filter.running_median_insort">[docs]</a><span class="k">def</span> <span class="nf">running_median_insort</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">window_size</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Contributed by Peter Otten&quot;&quot;&quot;</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">window_size</span><span class="p">):</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">insort</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">window_size</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+        <span class="n">old</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">s</span><span class="p">[</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">old</span><span class="p">)]</span>
+        <span class="n">insort</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+    
+
+<span class="c1">###############################################################################</span>
+<div class="viewcode-block" id="savitzky_golay"><a class="viewcode-back" href="../../../../pyacs.gts.lib.filter.html#pyacs.gts.lib.filter.savitzky_golay">[docs]</a><span class="k">def</span> <span class="nf">savitzky_golay</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">window_size</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">deriv</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">use_fft</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="c1">###############################################################################</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Smooth (and optionally differentiate) data with a Savitzky-Golay filter</span>
+
+<span class="sd">    This implementation is based on [1]_.</span>
+
+<span class="sd">    The Savitzky-Golay filter removes high frequency noise from data.</span>
+<span class="sd">    It has the advantage of preserving the original shape and</span>
+<span class="sd">    features of the signal better than other types of filtering</span>
+<span class="sd">    approaches, such as moving averages techhniques.</span>
+
+<span class="sd">    :param y: array_like, shape (N,)</span>
+<span class="sd">              the values of the time history of the signal.</span>
+<span class="sd">    :param window_size: int</span>
+<span class="sd">                        the length of the window. Must be an odd integer number.</span>
+<span class="sd">    :param order: int</span>
+<span class="sd">                  the order of the polynomial used in the filtering.</span>
+<span class="sd">                  Must be less then `window_size` - 1.</span>
+<span class="sd">    :param deriv: int</span>
+<span class="sd">                  the order of the derivative to compute</span>
+<span class="sd">                  (default = 0 means only smoothing)</span>
+<span class="sd">    :param use_fft: bool</span>
+<span class="sd">                    if True (default) then convolue using FFT for speed</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    :return: my_smooth: ndarray, shape (N)</span>
+<span class="sd">                      the smoothed signal (or it&#39;s n-th derivative).</span>
+
+<span class="sd">    :note:</span>
+<span class="sd">          The Savitzky-Golay is a type of low-pass filter, particularly</span>
+<span class="sd">          suited for smoothing noisy data. The main idea behind this</span>
+<span class="sd">          approach is to make for each point a least-square fit with a</span>
+<span class="sd">          polynomial of high order over a odd-sized window centered at</span>
+<span class="sd">          the point.</span>
+
+<span class="sd">    :Examples:</span>
+<span class="sd">    &gt;&gt;&gt; t = np.linspace(-4, 4, 500)</span>
+<span class="sd">    &gt;&gt;&gt; y = np.exp(-t ** 2)</span>
+<span class="sd">    &gt;&gt;&gt; np.random.seed(0)</span>
+<span class="sd">    &gt;&gt;&gt; y_noisy = y + np.random.normal(0, 0.05, t.shape)</span>
+<span class="sd">    &gt;&gt;&gt; y_smooth = savitzky_golay(y, window_size=31, order=4)</span>
+<span class="sd">    &gt;&gt;&gt; print np.rms(y_noisy - y)</span>
+<span class="sd">    &gt;&gt;&gt; print np.rms(y_smooth - y)</span>
+
+<span class="sd">    :References:</span>
+<span class="sd">    .. [1] http://www.scipy.org/Cookbook/SavitzkyGolay</span>
+<span class="sd">    .. [2] A. Savitzky, M. J. E. Golay, Smoothing and Differentiation of</span>
+<span class="sd">       Data by Simplified Least Squares Procedures. Analytical</span>
+<span class="sd">       Chemistry, 1964, 36 (8), pp 1627-1639.</span>
+<span class="sd">    .. [3] Numerical Recipes 3rd Edition: The Art of Scientific Computing</span>
+<span class="sd">       W.H. Press, S.A. Teukolsky, W.T. Vetterling, B.P. Flannery</span>
+<span class="sd">       Cambridge University Press ISBN-13: 9780521880688</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">window_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">window_size</span><span class="p">))</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">order</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;window_size and order have to be of type int&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">window_size</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">window_size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;window_size size must be a positive odd number&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">window_size</span> <span class="o">&lt;</span> <span class="n">order</span> <span class="o">+</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;window_size is too small for the polynomials order&quot;</span><span class="p">)</span>
+
+    <span class="n">order_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">order</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">half_window</span> <span class="o">=</span> <span class="p">(</span><span class="n">window_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+
+    <span class="c1"># precompute coefficients</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">([[</span><span class="n">k</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">order_range</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">half_window</span><span class="p">,</span> <span class="n">half_window</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">A</span><span class="p">[</span><span class="n">deriv</span><span class="p">]</span>
+
+    <span class="c1"># pad the signal at the extremes with</span>
+    <span class="c1"># values taken from the signal itself</span>
+    <span class="n">firstvals</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">half_window</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">lastvals</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="n">half_window</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">firstvals</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">lastvals</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">use_fft</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">signal</span><span class="o">.</span><span class="n">fftconvolve</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span></div>
+
+<span class="c1">###############################################################################</span>
+<div class="viewcode-block" id="wiener_filter"><a class="viewcode-back" href="../../../../pyacs.gts.lib.filter.html#pyacs.gts.lib.filter.wiener_filter">[docs]</a><span class="k">def</span> <span class="nf">wiener_filter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">signal</span><span class="o">=</span><span class="s1">&#39;gaussian&#39;</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="n">return_PSDs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                  <span class="n">signal_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">noise_params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="c1">###############################################################################</span>
+
+    <span class="sd">&quot;&quot;&quot;Compute a Wiener-filtered time-series</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    t : array_like</span>
+<span class="sd">        evenly-sampled time series, length N</span>
+<span class="sd">    h : array_like</span>
+<span class="sd">        observations at each t</span>
+<span class="sd">    signal : str (optional)</span>
+<span class="sd">        currently only &#39;gaussian&#39; is supported</span>
+<span class="sd">    noise : str (optional)</span>
+<span class="sd">        currently only &#39;flat&#39; is supported</span>
+<span class="sd">    return_PSDs : bool (optional)</span>
+<span class="sd">        if True, then return (PSD, P_S, P_N)</span>
+<span class="sd">    signal_guess : tuple (optional)</span>
+<span class="sd">        A starting guess at the parameters for the signal.  If not specified,</span>
+<span class="sd">        a suitable guess will be estimated from the data itself. (see Notes</span>
+<span class="sd">        below)</span>
+<span class="sd">    noise_guess : tuple (optional)</span>
+<span class="sd">        A starting guess at the parameters for the noise.  If not specified,</span>
+<span class="sd">        a suitable guess will be estimated from the data itself. (see Notes</span>
+<span class="sd">        below)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    h_smooth : ndarray</span>
+<span class="sd">        a smoothed version of h, length N</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    The Wiener filter operates by fitting a functional form to the PSD::</span>
+
+<span class="sd">       PSD = P_S + P_N</span>
+
+<span class="sd">    The resulting frequency-space filter is given by::</span>
+
+<span class="sd">       Phi = P_S / (P_S + P_N)</span>
+
+<span class="sd">    This entire operation is equivalent to a kernel smoothing by a</span>
+<span class="sd">    kernel whose Fourier transform is Phi.</span>
+
+<span class="sd">    Choosing Signal/Noise Parameters</span>
+<span class="sd">    the arguments ``signal_guess`` and ``noise_guess`` specify the initial</span>
+<span class="sd">    guess for the characteristics of signal and noise used in the minimization.</span>
+<span class="sd">    They are generally expected to be tuples, and the meaning varies depending</span>
+<span class="sd">    on the form of signal and noise used.  For ``gaussian``, the params are</span>
+<span class="sd">    (amplitude, width).  For ``flat``, the params are (amplitude,).</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    scipy.signal.wiener : a static (non-adaptive) wiener filter</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Validate signal</span>
+    <span class="k">if</span> <span class="n">signal</span> <span class="o">!=</span> <span class="s1">&#39;gaussian&#39;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;only signal=&#39;gaussian&#39; is supported&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">signal_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">signal_params</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;signal_params should be length 2&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Validate noise</span>
+    <span class="k">if</span> <span class="n">noise</span> <span class="o">!=</span> <span class="s1">&#39;flat&#39;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;only noise=&#39;flat&#39; is supported&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">noise_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">noise_params</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;noise_params should be length 1&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Validate t and hd</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;t and h must be equal-length 1-dimensional arrays&#39;</span><span class="p">)</span>
+
+    <span class="c1"># compute the PSD of the input</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">Df</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">N</span> <span class="o">/</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">fftpack</span><span class="o">.</span><span class="n">ifftshift</span><span class="p">(</span><span class="n">Df</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">-</span> <span class="n">N</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">H</span> <span class="o">=</span> <span class="n">fftpack</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">PSD</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="c1"># fit signal/noise params if necessary</span>
+    <span class="k">if</span> <span class="n">signal_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">amp_guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">PSD</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="n">width_guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">PSD</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">PSD</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]))</span>
+        <span class="n">signal_params</span> <span class="o">=</span> <span class="p">(</span><span class="n">amp_guess</span><span class="p">,</span> <span class="n">width_guess</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">noise_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">noise_params</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">PSD</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),)</span>
+
+    <span class="c1"># Set up the Wiener filter:</span>
+    <span class="c1">#  fit a model to the PSD: sum of signal form and noise form</span>
+
+    <span class="k">def</span> <span class="nf">signal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">width</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1E-99</span>  <span class="c1"># prevent divide-by-zero errors</span>
+        <span class="k">return</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">width</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">noise</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c1"># use [1:] here to remove the zero-frequency term: we don&#39;t want to</span>
+    <span class="c1"># fit to this for data with an offset.</span>
+    <span class="n">min_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">PSD</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">signal</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                                 <span class="o">-</span> <span class="n">noise</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">v0</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">signal_params</span><span class="p">)</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">noise_params</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">fmin</span><span class="p">(</span><span class="n">min_func</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+
+    <span class="n">P_S</span> <span class="o">=</span> <span class="n">signal</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">P_N</span> <span class="o">=</span> <span class="n">noise</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">Phi</span> <span class="o">=</span> <span class="n">P_S</span> <span class="o">/</span> <span class="p">(</span><span class="n">P_S</span> <span class="o">+</span> <span class="n">P_N</span><span class="p">)</span>
+    <span class="n">Phi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># correct for DC offset</span>
+
+    <span class="c1"># Use Phi to filter and smooth the values</span>
+    <span class="n">h_smooth</span> <span class="o">=</span> <span class="n">fftpack</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">Phi</span> <span class="o">*</span> <span class="n">H</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">iscomplexobj</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+        <span class="n">h_smooth</span> <span class="o">=</span> <span class="n">h_smooth</span><span class="o">.</span><span class="n">real</span>
+
+    <span class="k">if</span> <span class="n">return_PSDs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">h_smooth</span><span class="p">,</span> <span class="n">PSD</span><span class="p">,</span> <span class="n">P_S</span><span class="p">,</span> <span class="n">P_N</span><span class="p">,</span> <span class="n">Phi</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">h_smooth</span></div>
+
+
+<span class="c1">###############################################################################</span>
+<div class="viewcode-block" id="min_component_filter"><a class="viewcode-back" href="../../../../pyacs.gts.lib.filter.html#pyacs.gts.lib.filter.min_component_filter">[docs]</a><span class="k">def</span> <span class="nf">min_component_filter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">feature_mask</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fcut</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Q</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="c1">###############################################################################</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Minimum component filtering</span>
+
+<span class="sd">    Minimum component filtering is useful for determining the background</span>
+<span class="sd">    component of a signal in the presence of spikes</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        1D array of evenly spaced x values</span>
+<span class="sd">    y : array_like</span>
+<span class="sd">        1D array of y values corresponding to x</span>
+<span class="sd">    feature_mask : array_like</span>
+<span class="sd">        1D mask array giving the locations of features in the data which</span>
+<span class="sd">        should be ignored for smoothing</span>
+<span class="sd">    p : integer (optional)</span>
+<span class="sd">        polynomial degree to be used for the fit (default = 1)</span>
+<span class="sd">    fcut : float (optional)</span>
+<span class="sd">        the cutoff frequency for the low-pass filter.  Default value is</span>
+<span class="sd">        f_nyq / sqrt(N)</span>
+<span class="sd">    Q : float (optional)</span>
+<span class="sd">        the strength of the low-pass filter.  Larger Q means a steeper cutoff</span>
+<span class="sd">        default value is 0.1 * fcut</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    y_filtered : ndarray</span>
+<span class="sd">        The filtered version of y.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    This code follows the procedure explained in the book</span>
+<span class="sd">    &quot;Practical Statistics for Astronomers&quot; by Wall &amp; Jenkins book, as</span>
+<span class="sd">    well as in Wall, J, A&amp;A 122:371, 1997</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">feature_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">feature_mask</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">((</span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span>
+                                                  <span class="n">feature_mask</span><span class="o">.</span><span class="n">shape</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;x, y, and feature_mask must be 1 dimensional &#39;</span>
+                         <span class="s1">&#39;with matching lengths&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fcut</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">f_nyquist</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">fcut</span> <span class="o">=</span> <span class="n">f_nyquist</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">Q</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Q</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">fcut</span>
+
+    <span class="c1"># compute polynomial features</span>
+    <span class="n">XX</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># compute least-squares fit to non-masked data</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">XX</span><span class="p">[</span><span class="o">~</span><span class="n">feature_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">feature_mask</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># subtract polynomial fit and mask the data</span>
+    <span class="n">y_mask</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">XX</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+    <span class="n">y_mask</span><span class="p">[</span><span class="n">feature_mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># get Fourier transforms of arrays</span>
+    <span class="n">yFT_mask</span> <span class="o">=</span> <span class="n">fftpack</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">y_mask</span><span class="p">)</span>
+
+    <span class="c1"># compute (shifted) frequency array for filter</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">fftpack</span><span class="o">.</span><span class="n">ifftshift</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">-</span> <span class="n">N</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">N</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="c1"># construct low-pass filter</span>
+    <span class="n">filt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">Q</span> <span class="o">*</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">-</span> <span class="n">fcut</span><span class="p">)</span> <span class="o">/</span> <span class="n">fcut</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">filt</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">fcut</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># reconstruct filtered signal</span>
+    <span class="n">y_filtered</span> <span class="o">=</span> <span class="n">fftpack</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">yFT_mask</span> <span class="o">*</span> <span class="n">filt</span><span class="p">)</span><span class="o">.</span><span class="n">real</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">XX</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">y_filtered</span></div>
+
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../../',
+              VERSION:'0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

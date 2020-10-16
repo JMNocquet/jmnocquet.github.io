@@ -1,0 +1,7 @@
+pyacs.lib.euclid module
+=======================
+
+.. automodule:: pyacs.lib.euclid
+   :members:
+   :undoc-members:
+   :show-inheritance:

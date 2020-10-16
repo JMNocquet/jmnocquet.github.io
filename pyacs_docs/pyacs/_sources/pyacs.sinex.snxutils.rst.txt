@@ -1,0 +1,7 @@
+pyacs.sinex.snxutils module
+===========================
+
+.. automodule:: pyacs.sinex.snxutils
+   :members:
+   :undoc-members:
+   :show-inheritance:

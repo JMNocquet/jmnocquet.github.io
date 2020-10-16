@@ -1,0 +1,38 @@
+pyacs.gts.lib package
+=====================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   pyacs.gts.lib.filters
+   pyacs.gts.lib.format
+   pyacs.gts.lib.plot
+   pyacs.gts.lib.primitive
+   pyacs.gts.lib.tensor_ts
+
+Submodules
+----------
+
+.. toctree::
+
+   pyacs.gts.lib.errors
+   pyacs.gts.lib.gts_dates
+   pyacs.gts.lib.gts_estimators
+   pyacs.gts.lib.metadata
+   pyacs.gts.lib.model
+   pyacs.gts.lib.noise
+   pyacs.gts.lib.offset
+   pyacs.gts.lib.outliers
+   pyacs.gts.lib.step_detect
+   pyacs.gts.lib.step_detect_edge_filter
+   pyacs.gts.lib.trajectory
+
+Module contents
+---------------
+
+.. automodule:: pyacs.gts.lib
+   :members:
+   :undoc-members:
+   :show-inheritance:

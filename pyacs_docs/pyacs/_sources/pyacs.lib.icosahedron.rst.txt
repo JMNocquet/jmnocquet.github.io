@@ -1,0 +1,7 @@
+pyacs.lib.icosahedron module
+============================
+
+.. automodule:: pyacs.lib.icosahedron
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+pyacs.lib.glinalg module
+========================
+
+.. automodule:: pyacs.lib.glinalg
+   :members:
+   :undoc-members:
+   :show-inheritance:
