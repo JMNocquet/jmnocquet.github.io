@@ -18,4 +18,4 @@ PYACS is a set of tools that allow:
 - Do time series analysis
 - Do basic horizontal velocity fields analysis (Euler poles, strain rate maps)
 
-See [pyacs documentation](https://jmnocquet.github.io/docs/)
+See [pyacs documentation](https://jmnocquet.github.io/pyacs_docs/pyacs)
