@@ -17,22 +17,22 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/language_data.js"></script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
 
     
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
@@ -267,11 +267,11 @@ This files includes all the information required both calculating regularization
 <h2>Running the inversion<a class="headerlink" href="#running-the-inversion" title="Permalink to this headline">¶</a></h2>
 <p>We simply run a static inversion in the models directory by running:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">models</span>
-<span class="n">pyeq_static_inversion</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">input_npy</span> <span class="o">../</span><span class="n">green</span><span class="o">/</span><span class="n">green_aftershocks_18_may_2016_input</span><span class="o">.</span><span class="n">npy</span> <span class="o">-</span><span class="n">dc</span> <span class="mf">20.0</span> <span class="o">-</span><span class="n">sigma</span> <span class="mf">2000.</span> <span class="o">-</span><span class="n">m0</span> <span class="mf">0.0</span> <span class="o">-</span><span class="n">rake_type</span> <span class="s1">&#39;Euler&#39;</span> <span class="o">-</span><span class="n">rake_value</span> <span class="o">/-</span><span class="mf">179.551</span><span class="o">/</span><span class="mf">82.858</span><span class="o">/</span><span class="mf">0.4265</span><span class="o">/</span><span class="n">inverse</span> <span class="o">-</span><span class="n">rake_constraint</span> <span class="mi">0</span>  <span class="o">--</span><span class="n">verbose</span> <span class="o">--</span><span class="n">debug</span>  <span class="o">-</span><span class="n">e</span> <span class="n">m67</span>
+<span class="n">pyeqstatic_inversion</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">input_npy</span> <span class="o">../</span><span class="n">green</span><span class="o">/</span><span class="n">green_aftershocks_18_may_2016_input</span><span class="o">.</span><span class="n">npy</span> <span class="o">-</span><span class="n">dc</span> <span class="mf">20.0</span> <span class="o">-</span><span class="n">sigma</span> <span class="mf">2000.</span> <span class="o">-</span><span class="n">m0</span> <span class="mf">0.0</span> <span class="o">-</span><span class="n">rake_type</span> <span class="s1">&#39;Euler&#39;</span> <span class="o">-</span><span class="n">rake_value</span> <span class="o">/-</span><span class="mf">179.551</span><span class="o">/</span><span class="mf">82.858</span><span class="o">/</span><span class="mf">0.4265</span><span class="o">/</span><span class="n">inverse</span> <span class="o">-</span><span class="n">rake_constraint</span> <span class="mi">0</span>  <span class="o">--</span><span class="n">verbose</span> <span class="o">--</span><span class="n">debug</span>  <span class="o">-</span><span class="n">e</span> <span class="n">m67</span>
 </pre></div>
 </div>
 <p>Some explanation about the various options are explained in the help</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyeq_static_inversion</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">h</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyeqstatic_inversion</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">h</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Required</span> <span class="n">parameters</span> <span class="n">are</span><span class="p">:</span>
