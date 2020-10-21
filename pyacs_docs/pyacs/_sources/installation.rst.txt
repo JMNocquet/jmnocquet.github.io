@@ -93,3 +93,11 @@ Some additional software are useful to work with PYACS and visualize results
 
 * Qgis
 
+Issues
+------
+Sgts.show_map(tile=True) requires cartopy 0.18.0 which does not import properly. Use:
+
+::
+
+CFLAGS='-stdlib=libc++' pip install cartopy --upgrade
+

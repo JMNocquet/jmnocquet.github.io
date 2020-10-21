@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>How to install pyacs? &mdash; pyacs 0.64.1 documentation</title>
+  <title>How to install pyacs? &mdash; pyacs 0.64.2 documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.64.1
+                0.64.2
               </div>
             
           
@@ -92,6 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-your-environment">Setting your environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#additional-software">Additional software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#issues">Issues</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="libraries.html">List of pyacs core libraries</a></li>
@@ -242,6 +243,11 @@ comes with all required libraries installed.</p>
 <li><p>GMT</p></li>
 <li><p>Qgis</p></li>
 </ul>
+</div>
+<div class="section" id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h2>
+<p>Sgts.show_map(tile=True) requires cartopy 0.18.0 which does not import properly. Use:</p>
+<p>CFLAGS=’-stdlib=libc++’ pip install cartopy –upgrade</p>
 </div>
 </div>
 
