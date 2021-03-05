@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.sinex.mathutils &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.sinex.mathutils &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
@@ -180,12 +189,12 @@
 <span class="c1"># LIBRARIES</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">interpolate</span> <span class="k">as</span> <span class="n">interp</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span> <span class="k">as</span> <span class="n">interp</span>
 
-<span class="kn">from</span> <span class="nn">.constants</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.constants</span> <span class="kn">import</span> <span class="o">*</span>
 
 
 <span class="c1">#-------------------------------------------------------------------------------</span>
@@ -200,7 +209,7 @@
 <span class="c1">#           - B : Matrix or vector</span>
 <span class="c1"># Output  : - C : A*B</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="dot"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.dot">[docs]</a><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+<div class="viewcode-block" id="dot"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.dot">[docs]</a><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
 
   <span class="c1"># Matrix/matrix multiplication</span>
   <span class="k">if</span> <span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)):</span>
@@ -238,7 +247,7 @@
 <span class="c1"># Input   : - M : Matrix</span>
 <span class="c1"># Output  : - Q : Inverse matrix</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="syminv"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.syminv">[docs]</a><span class="k">def</span> <span class="nf">syminv</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<div class="viewcode-block" id="syminv"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.syminv">[docs]</a><span class="k">def</span> <span class="nf">syminv</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
 
   <span class="n">Q</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">lapack</span><span class="o">.</span><span class="n">dpotri</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">lapack</span><span class="o">.</span><span class="n">dpotrf</span><span class="p">(</span><span class="n">M</span><span class="p">)[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
   <span class="n">Q</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">+</span> <span class="n">Q</span><span class="o">.</span><span class="n">T</span>
@@ -259,7 +268,7 @@
 <span class="c1"># Input   : - M : Matrix</span>
 <span class="c1"># Output  : - Q : Pseudo-inverse</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sympinv"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.sympinv">[docs]</a><span class="k">def</span> <span class="nf">sympinv</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<div class="viewcode-block" id="sympinv"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.sympinv">[docs]</a><span class="k">def</span> <span class="nf">sympinv</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
 
   <span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">lapack</span><span class="o">.</span><span class="n">dsyev</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
   <span class="n">t</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
@@ -279,7 +288,7 @@
 <span class="c1"># Input   : - x : Data vector</span>
 <span class="c1"># Output  : - s : RMS</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="rms"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.rms">[docs]</a><span class="k">def</span> <span class="nf">rms</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="rms"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.rms">[docs]</a><span class="k">def</span> <span class="nf">rms</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 
   <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></div>
 
@@ -296,7 +305,7 @@
 <span class="c1">#           - x : Time series</span>
 <span class="c1"># Output  : - a : Coefficients of the linear fit</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="trend"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.trend">[docs]</a><span class="k">def</span> <span class="nf">trend</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="trend"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.trend">[docs]</a><span class="k">def</span> <span class="nf">trend</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 
   <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
   <span class="n">St</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -324,7 +333,7 @@
 <span class="c1">#           - x : Time series</span>
 <span class="c1"># Output  : - d : Detrended time series</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="detrend"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.detrend">[docs]</a><span class="k">def</span> <span class="nf">detrend</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="detrend"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.detrend">[docs]</a><span class="k">def</span> <span class="nf">detrend</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 
   <span class="n">a</span> <span class="o">=</span> <span class="n">trend</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
   <span class="n">d</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">t</span>
@@ -345,7 +354,7 @@
 <span class="c1">#           - lam : Longitudes (rad)</span>
 <span class="c1">#           - h   : Ellipsoidal heights (m)</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="cart2geo"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.cart2geo">[docs]</a><span class="k">def</span> <span class="nf">cart2geo</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<div class="viewcode-block" id="cart2geo"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.cart2geo">[docs]</a><span class="k">def</span> <span class="nf">cart2geo</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
 
   <span class="n">reshape</span> <span class="o">=</span> <span class="kc">False</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)):</span>
@@ -386,7 +395,7 @@
 <span class="c1">#           - h   : Ellipsoidal heights (m)</span>
 <span class="c1"># Output  : - X   : [X, Y, Z] (cartesian coordinates in m)</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="geo2cart"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.geo2cart">[docs]</a><span class="k">def</span> <span class="nf">geo2cart</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<div class="viewcode-block" id="geo2cart"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.geo2cart">[docs]</a><span class="k">def</span> <span class="nf">geo2cart</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
 
   <span class="n">N</span> <span class="o">=</span> <span class="n">ae</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">ee</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -417,7 +426,7 @@
 <span class="c1"># Input   : - X : [X, Y, Z] (cartesian coordinates in m)</span>
 <span class="c1"># Output  : - R : Rotation matrices from geocentric to topocentric coordinates</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="xyz2enh"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.xyz2enh">[docs]</a><span class="k">def</span> <span class="nf">xyz2enh</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<div class="viewcode-block" id="xyz2enh"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.xyz2enh">[docs]</a><span class="k">def</span> <span class="nf">xyz2enh</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
 
   <span class="n">reshape</span> <span class="o">=</span> <span class="kc">False</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)):</span>
@@ -456,7 +465,7 @@
 <span class="c1"># Output  : - R1 : Rotation matrix from ENH frame to UVH frame of first station</span>
 <span class="c1">#           - R2 : Rotation matrix from ENH frame to UVH frame of second station</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="enh2uvh"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.enh2uvh">[docs]</a><span class="k">def</span> <span class="nf">enh2uvh</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">):</span>
+<div class="viewcode-block" id="enh2uvh"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.enh2uvh">[docs]</a><span class="k">def</span> <span class="nf">enh2uvh</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">):</span>
 
   <span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">h1</span><span class="p">)</span> <span class="o">=</span> <span class="n">cart2geo</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span>
   <span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">h2</span><span class="p">)</span> <span class="o">=</span> <span class="n">cart2geo</span><span class="p">(</span><span class="n">X2</span><span class="p">)</span>
@@ -501,7 +510,7 @@
 <span class="c1">#                               returned. Default is False.</span>
 <span class="c1"># Output  : - xs              : Filtered time series</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="vondrak"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.vondrak">[docs]</a><span class="k">def</span> <span class="nf">vondrak</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">fc</span><span class="p">,</span> <span class="n">return_partials</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="vondrak"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.vondrak">[docs]</a><span class="k">def</span> <span class="nf">vondrak</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">fc</span><span class="p">,</span> <span class="n">return_partials</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
   <span class="kn">import</span> <span class="nn">numpy</span>
   <span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">linalg</span>
@@ -547,7 +556,7 @@
 <span class="c1"># Output  : - f         : Frequencies</span>
 <span class="c1">#           - p         : Powers</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="lombscargle"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.lombscargle">[docs]</a><span class="k">def</span> <span class="nf">lombscargle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">sf</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="lombscargle"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.lombscargle">[docs]</a><span class="k">def</span> <span class="nf">lombscargle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">sf</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
   <span class="c1"># Length and time span of the series</span>
   <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -601,7 +610,7 @@
 <span class="c1"># Output  : - D    : Maximal absolute difference between theoretical and empirical</span>
 <span class="c1">#                    cumulative distributions</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="kolmo2d"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.kolmo2d">[docs]</a><span class="k">def</span> <span class="nf">kolmo2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="viewcode-block" id="kolmo2d"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.kolmo2d">[docs]</a><span class="k">def</span> <span class="nf">kolmo2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 
   <span class="c1"># Initializations</span>
   <span class="n">D</span> <span class="o">=</span> <span class="mi">0</span>
@@ -655,7 +664,7 @@
 <span class="c1"># Input   : - Q : Covariance matrix</span>
 <span class="c1"># Output  : - C : Correlation matrix</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="Q2C"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.Q2C">[docs]</a><span class="k">def</span> <span class="nf">Q2C</span><span class="p">(</span><span class="n">Q</span><span class="p">):</span>
+<div class="viewcode-block" id="Q2C"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.Q2C">[docs]</a><span class="k">def</span> <span class="nf">Q2C</span><span class="p">(</span><span class="n">Q</span><span class="p">):</span>
 
   <span class="n">f</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">Q</span><span class="p">))</span>
 
@@ -674,7 +683,7 @@
 <span class="c1">#           - n : Number of polynomials to compute</span>
 <span class="c1"># Output  : - y : Values of polynomials in x</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="chebychev"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.chebychev">[docs]</a><span class="k">def</span> <span class="nf">chebychev</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="viewcode-block" id="chebychev"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.chebychev">[docs]</a><span class="k">def</span> <span class="nf">chebychev</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 
   <span class="c1"># Initialization</span>
   <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">n</span><span class="p">))</span>
@@ -707,7 +716,7 @@
 <span class="c1">#                               returned. Default is False.</span>
 <span class="c1"># Output  : - d               : Smoothed ordinates</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="spline_smooth"><a class="viewcode-back" href="../../../pyacs.sinex.mathutils.html#pyacs.sinex.mathutils.spline_smooth">[docs]</a><span class="k">def</span> <span class="nf">spline_smooth</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">return_partials</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="spline_smooth"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.mathutils.spline_smooth">[docs]</a><span class="k">def</span> <span class="nf">spline_smooth</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">return_partials</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
   <span class="c1"># Useful things</span>
   <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
@@ -742,20 +751,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -763,7 +777,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

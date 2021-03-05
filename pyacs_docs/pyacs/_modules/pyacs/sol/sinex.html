@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.sol.sinex &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.sol.sinex &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
@@ -162,7 +171,7 @@
 
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="glx2snx"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.glx2snx">[docs]</a><span class="k">def</span> <span class="nf">glx2snx</span><span class="p">(</span><span class="n">glx</span><span class="p">,</span> <span class="n">snx</span><span class="p">,</span> <span class="n">dir_snx</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="glx2snx"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.glx2snx">[docs]</a><span class="k">def</span> <span class="nf">glx2snx</span><span class="p">(</span><span class="n">glx</span><span class="p">,</span> <span class="n">snx</span><span class="p">,</span> <span class="n">dir_snx</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    converts a GLOBK glx file into a sinex file </span>
@@ -179,7 +188,7 @@
 
     
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="snx2ssc"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.snx2ssc">[docs]</a><span class="k">def</span> <span class="nf">snx2ssc</span><span class="p">(</span><span class="n">snx</span><span class="p">,</span> <span class="n">ssc</span><span class="p">,</span> <span class="n">dir_ssc</span><span class="p">):</span>
+<div class="viewcode-block" id="snx2ssc"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.snx2ssc">[docs]</a><span class="k">def</span> <span class="nf">snx2ssc</span><span class="p">(</span><span class="n">snx</span><span class="p">,</span> <span class="n">ssc</span><span class="p">,</span> <span class="n">dir_ssc</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    simplifies a sinex file into a ssc file </span>
@@ -205,7 +214,7 @@
 
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="glred_1_day"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.glred_1_day">[docs]</a><span class="k">def</span> <span class="nf">glred_1_day</span><span class="p">(</span><span class="n">glx</span><span class="p">,</span> <span class="n">dir_prt</span><span class="p">,</span> <span class="n">dir_log</span><span class="p">,</span> <span class="n">apr</span><span class="p">,</span> <span class="n">eq_rename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="glred_1_day"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.glred_1_day">[docs]</a><span class="k">def</span> <span class="nf">glred_1_day</span><span class="p">(</span><span class="n">glx</span><span class="p">,</span> <span class="n">dir_prt</span><span class="p">,</span> <span class="n">dir_log</span><span class="p">,</span> <span class="n">apr</span><span class="p">,</span> <span class="n">eq_rename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    run glred over a day</span>
@@ -295,7 +304,7 @@
     
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex">[docs]</a><span class="k">class</span> <span class="nc">SSinex</span><span class="p">:</span>
+<div class="viewcode-block" id="SSinex"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex">[docs]</a><span class="k">class</span> <span class="nc">SSinex</span><span class="p">:</span>
 <span class="c1">###############################################################################</span>
     
     <span class="sd">&quot;&quot;&quot;</span>
@@ -306,7 +315,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     
 <span class="c1">###############################################################################</span>
-    <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">VCV</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">VCV</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -323,7 +332,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">end_time</span> <span class="o">=</span> <span class="s1">&#39;00:000:00000&#39;</span>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.from_sinex"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.from_sinex">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="SSinex.from_sinex"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.from_sinex">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_sinex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">snx</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -331,7 +340,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
-        <span class="kn">from</span> <span class="nn">pyacs.sol.gpoint</span> <span class="k">import</span> <span class="n">Gpoint</span>
+        <span class="kn">from</span> <span class="nn">pyacs.sol.gpoint</span> <span class="kn">import</span> <span class="n">Gpoint</span>
         
         <span class="n">name</span> <span class="o">=</span> <span class="n">snx</span><span class="o">.</span><span class="n">file</span>
                 
@@ -355,7 +364,7 @@
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">estimates</span><span class="p">,</span> <span class="n">VCV</span><span class="p">)</span></div>
         
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.clear"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.clear"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clear the sinex</span>
@@ -365,7 +374,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">end_time</span> <span class="o">=</span> <span class="s1">&#39;00:000:00000&#39;</span></div>
     
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.add_site"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.add_site">[docs]</a>    <span class="k">def</span> <span class="nf">add_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.add_site"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.add_site">[docs]</a>    <span class="k">def</span> <span class="nf">add_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds a Gpoint M in the current Sinex instance</span>
@@ -374,7 +383,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">estimates</span><span class="p">[</span><span class="n">M</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">soln</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.subset_from_code"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.subset_from_code">[docs]</a>    <span class="k">def</span> <span class="nf">subset_from_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lcode</span><span class="p">,</span> <span class="n">lsoln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.subset_from_code"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.subset_from_code">[docs]</a>    <span class="k">def</span> <span class="nf">subset_from_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lcode</span><span class="p">,</span> <span class="n">lsoln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Takes a subset from a SINEX according to a list of code and optionally a list of associated soln.</span>
@@ -395,7 +404,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">SUBSET</span><span class="p">)</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.subset_from_keys"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.subset_from_keys">[docs]</a>    <span class="k">def</span> <span class="nf">subset_from_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">H</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.subset_from_keys"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.subset_from_keys">[docs]</a>    <span class="k">def</span> <span class="nf">subset_from_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">H</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Takes a subset from a SINEX according to the key of a dictionary made of (code,soln)</span>
@@ -410,7 +419,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">SUBSET</span><span class="p">)</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.apply_helmert"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.apply_helmert">[docs]</a>    <span class="k">def</span> <span class="nf">apply_helmert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.apply_helmert"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.apply_helmert">[docs]</a>    <span class="k">def</span> <span class="nf">apply_helmert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies an Helmert transformation to a SINEX instance</span>
@@ -434,7 +443,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">new_sinex</span><span class="p">)</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.write_tsxyz"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.write_tsxyz">[docs]</a>    <span class="k">def</span> <span class="nf">write_tsxyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">HCOV</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.write_tsxyz"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.write_tsxyz">[docs]</a>    <span class="k">def</span> <span class="nf">write_tsxyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">HCOV</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write a tsxyz file from the current Sinex instance</span>
@@ -473,7 +482,7 @@
         <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.common"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.common">[docs]</a>    <span class="k">def</span> <span class="nf">common</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">H_Gpoint</span><span class="p">,</span> <span class="n">prefit</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.common"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.common">[docs]</a>    <span class="k">def</span> <span class="nf">common</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">H_Gpoint</span><span class="p">,</span> <span class="n">prefit</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a dictionary of Gpoint common to the current Sinex object and a dictionary (code,soln) of Gpoint</span>
@@ -513,7 +522,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">H_common_Gpoint</span><span class="p">)</span></div>
       
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.read_section_estimate"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.read_section_estimate">[docs]</a>    <span class="k">def</span> <span class="nf">read_section_estimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">lonly</span><span class="o">=</span><span class="p">[],</span> <span class="n">discontinuity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.read_section_estimate"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.read_section_estimate">[docs]</a>    <span class="k">def</span> <span class="nf">read_section_estimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">lonly</span><span class="o">=</span><span class="p">[],</span> <span class="n">discontinuity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reads the ESTIMATE section of a SINEX file.</span>
@@ -535,7 +544,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
-        <span class="kn">from</span> <span class="nn">pyacs.sol.gpoint</span> <span class="k">import</span> <span class="n">Gpoint</span>
+        <span class="kn">from</span> <span class="nn">pyacs.sol.gpoint</span> <span class="kn">import</span> <span class="n">Gpoint</span>
 
         <span class="c1"># DEAL WITH RENAME IF PROVIDED</span>
         
@@ -705,7 +714,7 @@
 <span class="c1">#             sys.exit()</span>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.write_sinex"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.write_sinex">[docs]</a>    <span class="k">def</span> <span class="nf">write_sinex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sinex_name</span><span class="p">,</span> <span class="n">Agency_Code</span><span class="o">=</span><span class="s1">&#39;IRD&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.write_sinex"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.write_sinex">[docs]</a>    <span class="k">def</span> <span class="nf">write_sinex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sinex_name</span><span class="p">,</span> <span class="n">Agency_Code</span><span class="o">=</span><span class="s1">&#39;IRD&#39;</span><span class="p">):</span>
 
 <span class="c1">###############################################################################</span>
         <span class="k">def</span> <span class="nf">write_header</span><span class="p">(</span><span class="n">fs</span><span class="p">):</span>
@@ -756,7 +765,7 @@
         <span class="k">def</span> <span class="nf">write_section_estimate</span><span class="p">(</span><span class="n">fs</span><span class="p">):</span>
 
             <span class="k">def</span> <span class="nf">fmt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-                <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">fabs</span>
+                <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">fabs</span>
                 <span class="n">tmp_string</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%21.15E</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
                 <span class="n">integer</span> <span class="o">=</span> <span class="n">tmp_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 <span class="n">exponent</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tmp_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
@@ -809,7 +818,7 @@
 <span class="c1"># GPoint routines</span>
 <span class="c1">###############################################################################</span>
 
-<div class="viewcode-block" id="SSinex.get_STA"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.get_STA">[docs]</a>    <span class="k">def</span> <span class="nf">get_STA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">psd_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">discontinuity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.get_STA"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.get_STA">[docs]</a>    <span class="k">def</span> <span class="nf">get_STA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">psd_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">discontinuity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Provides the predicted coordinates for a site at a given epoch. Accounts for soln and psd if provided.</span>
@@ -820,7 +829,7 @@
         <span class="c1"># read soln file if provided</span>
         
         <span class="k">if</span> <span class="n">soln_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">pyacs.sol.discontinuity</span> <span class="k">import</span> <span class="n">Discontinuities</span>
+            <span class="kn">from</span> <span class="nn">pyacs.sol.discontinuity</span> <span class="kn">import</span> <span class="n">Discontinuities</span>
             <span class="n">discontinuity</span> <span class="o">=</span> <span class="n">Discontinuity</span><span class="p">()</span>
             <span class="n">discontinuity</span><span class="o">.</span><span class="n">read_igs_discontinuity</span><span class="p">(</span><span class="n">soln_file</span><span class="p">)</span>  
         
@@ -872,13 +881,13 @@
         
         <span class="c1"># adds psd contribution</span>
         <span class="k">if</span> <span class="n">psd_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">pyacs.sinex</span> <span class="k">import</span> <span class="n">snxutils</span>
+            <span class="kn">from</span> <span class="nn">pyacs.sinex</span> <span class="kn">import</span> <span class="n">snxutils</span>
             <span class="kn">import</span> <span class="nn">pyacs.lib.coordinates</span>
 
             <span class="n">sepoch</span> <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2epoch</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
             <span class="c1"># Compute ENH post-seismic deformations</span>
 
-            <span class="kn">from</span> <span class="nn">pyacs.sinex.sinex</span> <span class="k">import</span> <span class="n">sinex</span>
+            <span class="kn">from</span> <span class="nn">pyacs.sinex.sinex</span> <span class="kn">import</span> <span class="n">sinex</span>
             <span class="n">psd</span> <span class="o">=</span> <span class="n">sinex</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">psd_file</span><span class="p">)</span>
             <span class="p">(</span><span class="n">denh</span><span class="p">,</span> <span class="n">_senh</span><span class="p">)</span> <span class="o">=</span> <span class="n">snxutils</span><span class="o">.</span><span class="n">compute_psd</span><span class="p">(</span><span class="n">psd</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">sepoch</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">denh</span><span class="p">)</span> <span class="ow">and</span> <span class="n">verbose</span><span class="p">:</span>
@@ -896,7 +905,7 @@
         <span class="k">return</span><span class="p">([</span><span class="n">X_at_epoch</span><span class="p">,</span> <span class="n">Y_at_epoch</span><span class="p">,</span> <span class="n">Z_at_epoch</span><span class="p">])</span></div>
       
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.print_STA"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.print_STA">[docs]</a>    <span class="k">def</span> <span class="nf">print_STA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.print_STA"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.print_STA">[docs]</a>    <span class="k">def</span> <span class="nf">print_STA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        print STA values for a given code and optional soln</span>
@@ -918,7 +927,7 @@
                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;! WARNING &#39;</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="s1">&#39; not present in &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></div>
      
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.add_to_STA"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.add_to_STA">[docs]</a>    <span class="k">def</span> <span class="nf">add_to_STA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">add_sta</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.add_to_STA"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.add_to_STA">[docs]</a>    <span class="k">def</span> <span class="nf">add_to_STA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">add_sta</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        add sta [dx,dx,dz] to STA values for a given code and soln</span>
@@ -932,7 +941,7 @@
         <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%02d</span><span class="s2"> STAX </span><span class="si">%18.4lf</span><span class="s2"> STAY </span><span class="si">%18.4lf</span><span class="s2"> STAZ </span><span class="si">%18.4lf</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">soln</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">Z</span><span class="p">)))</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.change_STA"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.change_STA">[docs]</a>    <span class="k">def</span> <span class="nf">change_STA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">add_sta</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.change_STA"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.change_STA">[docs]</a>    <span class="k">def</span> <span class="nf">change_STA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">add_sta</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        change STA values for a given code and soln</span>
@@ -945,7 +954,7 @@
         <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%02d</span><span class="s2"> STAX </span><span class="si">%18.4lf</span><span class="s2"> STAY </span><span class="si">%18.4lf</span><span class="s2"> STAZ </span><span class="si">%18.4lf</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">soln</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">Z</span><span class="p">)))</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.site"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.site">[docs]</a>    <span class="k">def</span> <span class="nf">site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.site"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.site">[docs]</a>    <span class="k">def</span> <span class="nf">site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        return site for a given code and soln</span>
@@ -953,7 +962,7 @@
         <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimates</span><span class="p">[</span><span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="p">])</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.info_gpoint"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.info_gpoint">[docs]</a>    <span class="k">def</span> <span class="nf">info_gpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.info_gpoint"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.info_gpoint">[docs]</a>    <span class="k">def</span> <span class="nf">info_gpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print info for a given code and optionally soln</span>
@@ -972,7 +981,7 @@
                     <span class="nb">print</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s1">&#39;VXYZ&#39;</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">velxyz</span><span class="p">())</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.lcode"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.lcode">[docs]</a>    <span class="k">def</span> <span class="nf">lcode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.lcode"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.lcode">[docs]</a>    <span class="k">def</span> <span class="nf">lcode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a list of all point codes in current Sinex object</span>
@@ -983,7 +992,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">lcode</span><span class="p">)</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="SSinex.read_apr"><a class="viewcode-back" href="../../../pyacs.sol.sinex.html#pyacs.sol.sinex.SSinex.read_apr">[docs]</a>    <span class="k">def</span> <span class="nf">read_apr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">discontinuity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="SSinex.read_apr"><a class="viewcode-back" href="../../../pyacs.sol.html#pyacs.sol.sinex.SSinex.read_apr">[docs]</a>    <span class="k">def</span> <span class="nf">read_apr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">discontinuity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reads a Globk apr file.</span>
@@ -1000,7 +1009,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
-        <span class="kn">from</span> <span class="nn">pyacs.sol.gpoint</span> <span class="k">import</span> <span class="n">Gpoint</span>
+        <span class="kn">from</span> <span class="nn">pyacs.sol.gpoint</span> <span class="kn">import</span> <span class="n">Gpoint</span>
 
         <span class="c1"># DEAL WITH RENAME IF PROVIDED</span>
         
@@ -1053,20 +1062,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1074,7 +1088,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

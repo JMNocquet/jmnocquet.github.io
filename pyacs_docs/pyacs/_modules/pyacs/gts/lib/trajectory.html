@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.trajectory &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.gts.lib.trajectory &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
@@ -158,7 +167,7 @@
 
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="trajectory"><a class="viewcode-back" href="../../../../pyacs.gts.lib.trajectory.html#pyacs.gts.Gts.trajectory">[docs]</a><span class="k">def</span> <span class="nf">trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="trajectory"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.trajectory">[docs]</a><span class="k">def</span> <span class="nf">trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                <span class="n">model_type</span><span class="p">,</span>
                <span class="n">offset_dates</span><span class="o">=</span><span class="p">[],</span>
                <span class="n">eq_dates</span><span class="o">=</span><span class="p">[],</span>
@@ -182,7 +191,7 @@
 
 <span class="sd">    offset : Heaviside( t - t_offset_i ) * offset_i +</span>
 
-<span class="sd">    post-seismic_deformation as decaying log (psd_log):   psd_eq_i * np.log( 1 + Heaveside( t - eq_i )/tau_i )</span>
+<span class="sd">    post-seismic_deformation as decaying log (psd_log):   psd_eq_i * np.log( 1 + Heaviside( t - eq_i )/tau_i )</span>
 
 <span class="sd">    :param model_type: string made of the key-word the parameters to be estimated.</span>
 
@@ -305,7 +314,7 @@
 
     <span class="c1"># Run the estimation</span>
 
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.non_linear_model.non_linear_gts_model</span> <span class="k">import</span> <span class="n">nl_gts_fit</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.non_linear_model.non_linear_gts_model</span> <span class="kn">import</span> <span class="n">nl_gts_fit</span>
 
     <span class="n">t_mjd</span> <span class="o">=</span> <span class="n">at</span><span class="o">.</span><span class="n">decyear2mjd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
     <span class="n">t_mjd_ed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_mjd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t_mjd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -363,17 +372,17 @@
 
     <span class="n">H_res</span> <span class="o">=</span> <span class="p">[</span><span class="n">H_res_N</span><span class="p">,</span> <span class="n">H_res_E</span><span class="p">,</span> <span class="n">H_res_U</span><span class="p">]</span>
 
-    <span class="n">model_gts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">model_gts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data_xyz</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">model_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">model_N</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">model_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">model_E</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">model_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">model_U</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-    <span class="n">residual_gts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">residual_gts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data_xyz</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">residual_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">residuals_N</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">residual_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">residuals_E</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">residual_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">residuals_U</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-    <span class="n">model_ed_gts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">model_ed_gts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data_xyz</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">model_ed_gts</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">t_ed</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10</span><span class="p">))</span>
     <span class="n">model_ed_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_ed</span>
     <span class="n">model_ed_gts</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">model_ed_N</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -387,20 +396,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -408,7 +422,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

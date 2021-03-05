@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.sinex package &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.sinex package &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -29,14 +37,10 @@
     <script type="text/javascript" src="static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pyacs.sinex.constants module" href="pyacs.sinex.constants.html" />
-    <link rel="prev" title="pyacs.lib.vel_field module" href="pyacs.lib.vel_field.html" /> 
+    <link rel="next" title="pyacs.sol package" href="pyacs.sol.html" />
+    <link rel="prev" title="pyacs.message package" href="pyacs.message.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -60,7 +64,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -87,14 +92,17 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time_series.html">Time series analysis</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Full code documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="pyacs.html">pyacs package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="pyacs.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyacs.glinalg.html">pyacs.glinalg package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyacs.gts.html">pyacs.gts package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyacs.lib.html">pyacs.lib package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyacs.message.html">pyacs.message package</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">pyacs.sinex package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyacs.sol.html">pyacs.sol package</a></li>
 </ul>
@@ -109,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -143,13 +152,15 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">Code documentation</a> &raquo;</li>
+          <li><a href="modules.html">Full code documentation</a> &raquo;</li>
         
           <li><a href="pyacs.html">pyacs package</a> &raquo;</li>
         
@@ -158,7 +169,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/pyacs.sinex.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -176,16 +187,577 @@
 <h1>pyacs.sinex package<a class="headerlink" href="#pyacs-sinex-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.sinex.constants.html">pyacs.sinex.constants module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.sinex.date.html">pyacs.sinex.date module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.sinex.mathutils.html">pyacs.sinex.mathutils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.sinex.sinex.html">pyacs.sinex.sinex module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.sinex.snxutils.html">pyacs.sinex.snxutils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.sinex.utils.html">pyacs.sinex.utils module</a></li>
-</ul>
 </div>
+<div class="section" id="module-pyacs.sinex.constants">
+<span id="pyacs-sinex-constants-module"></span><h2>pyacs.sinex.constants module<a class="headerlink" href="#module-pyacs.sinex.constants" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyacs.sinex.constants.record">
+<em class="property">class </em><code class="sig-prename descclassname">pyacs.sinex.constants.</code><code class="sig-name descname">record</code><a class="reference internal" href="_modules/pyacs/sinex/constants.html#record"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.constants.record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.sinex.date">
+<span id="pyacs-sinex-date-module"></span><h2>pyacs.sinex.date module<a class="headerlink" href="#module-pyacs.sinex.date" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyacs.sinex.date.date">
+<em class="property">class </em><code class="sig-prename descclassname">pyacs.sinex.date.</code><code class="sig-name descname">date</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.add_s">
+<code class="sig-name descname">add_s</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.add_s"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.add_s" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.add_h">
+<code class="sig-name descname">add_h</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.add_h"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.add_h" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.add_d">
+<code class="sig-name descname">add_d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.add_d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.add_d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.from_mjd">
+<em class="property">classmethod </em><code class="sig-name descname">from_mjd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.from_mjd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.from_mjd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.from_ymdhms">
+<em class="property">classmethod </em><code class="sig-name descname">from_ymdhms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">hour</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">min</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">sec</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.from_ymdhms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.from_ymdhms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.from_weekdow">
+<em class="property">classmethod </em><code class="sig-name descname">from_weekdow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.from_weekdow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.from_weekdow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.from_snxepoch">
+<em class="property">classmethod </em><code class="sig-name descname">from_snxepoch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.from_snxepoch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.from_snxepoch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.from_ydec">
+<em class="property">classmethod </em><code class="sig-name descname">from_ydec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.from_ydec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.from_ydec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.from_wdec">
+<em class="property">classmethod </em><code class="sig-name descname">from_wdec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">w</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.from_wdec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.from_wdec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.snxepoch">
+<code class="sig-name descname">snxepoch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.snxepoch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.snxepoch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.ydec">
+<code class="sig-name descname">ydec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.ydec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.ydec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.isoepoch">
+<code class="sig-name descname">isoepoch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.isoepoch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.isoepoch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.date.date.wdec">
+<code class="sig-name descname">wdec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/date.html#date.wdec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.date.date.wdec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.sinex.mathutils">
+<span id="pyacs-sinex-mathutils-module"></span><h2>pyacs.sinex.mathutils module<a class="headerlink" href="#module-pyacs.sinex.mathutils" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.dot">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">A</span></em>, <em class="sig-param"><span class="n">B</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#dot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.dot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.syminv">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">syminv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">M</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#syminv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.syminv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.sympinv">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">sympinv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">M</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#sympinv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.sympinv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.rms">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">rms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#rms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.rms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.trend">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">trend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#trend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.trend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.detrend">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">detrend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#detrend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.detrend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.cart2geo">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">cart2geo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#cart2geo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.cart2geo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.geo2cart">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">geo2cart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phi</span></em>, <em class="sig-param"><span class="n">lam</span></em>, <em class="sig-param"><span class="n">h</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#geo2cart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.geo2cart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.xyz2enh">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">xyz2enh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#xyz2enh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.xyz2enh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.enh2uvh">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">enh2uvh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X1</span></em>, <em class="sig-param"><span class="n">X2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#enh2uvh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.enh2uvh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.vondrak">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">vondrak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">fc</span></em>, <em class="sig-param"><span class="n">return_partials</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#vondrak"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.vondrak" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.lombscargle">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">lombscargle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">sf</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#lombscargle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.lombscargle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.kolmo2d">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">kolmo2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#kolmo2d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.kolmo2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.Q2C">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">Q2C</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Q</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#Q2C"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.Q2C" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.chebychev">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">chebychev</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#chebychev"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.chebychev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.mathutils.spline_smooth">
+<code class="sig-prename descclassname">pyacs.sinex.mathutils.</code><code class="sig-name descname">spline_smooth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">l</span></em>, <em class="sig-param"><span class="n">return_partials</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/mathutils.html#spline_smooth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.mathutils.spline_smooth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.sinex.sinex">
+<span id="pyacs-sinex-sinex-module"></span><h2>pyacs.sinex.sinex module<a class="headerlink" href="#module-pyacs.sinex.sinex" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyacs.sinex.sinex.sinex">
+<em class="property">class </em><code class="sig-prename descclassname">pyacs.sinex.sinex.</code><code class="sig-name descname">sinex</code><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.read">
+<em class="property">classmethod </em><code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">dont_read</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">dont_write</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">epochs_style</span><span class="o">=</span><span class="default_value">'new'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.check_staid">
+<code class="sig-name descname">check_staid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">codomes</span></em>, <em class="sig-param"><span class="n">check_pt</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">check_crd</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">check_desc</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.check_staid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.check_staid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.check_solns">
+<code class="sig-name descname">check_solns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solns</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.check_solns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.check_solns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.check_erp">
+<code class="sig-name descname">check_erp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.check_erp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.check_erp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_xyz">
+<code class="sig-name descname">get_xyz</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_xyz"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_xyz" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_plh">
+<code class="sig-name descname">get_plh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_plh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_plh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_lonlat">
+<code class="sig-name descname">get_lonlat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_lonlat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_lonlat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_sigenh">
+<code class="sig-name descname">get_sigenh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">soln</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_sigenh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_sigenh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_cov_sta">
+<code class="sig-name descname">get_cov_sta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_cov_sta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_cov_sta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_helmert_matrix">
+<code class="sig-name descname">get_helmert_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">'RST'</span></em>, <em class="sig-param"><span class="n">pole</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gc</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_helmert_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_helmert_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.map">
+<code class="sig-name descname">map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">write_codes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.propagate">
+<code class="sig-name descname">propagate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epo</span></em>, <em class="sig-param"><span class="n">keep_vel</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.propagate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.propagate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.remove_sta">
+<code class="sig-name descname">remove_sta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.remove_sta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.remove_sta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.keep_sta">
+<code class="sig-name descname">keep_sta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.keep_sta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.keep_sta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.remove_sta_wo_domes">
+<code class="sig-name descname">remove_sta_wo_domes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.remove_sta_wo_domes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.remove_sta_wo_domes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.keep_relevant_solns">
+<code class="sig-name descname">keep_relevant_solns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">solns</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.keep_relevant_solns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.keep_relevant_solns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.remove_params">
+<code class="sig-name descname">remove_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">types</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.remove_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.remove_params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.remove_undef_params">
+<code class="sig-name descname">remove_undef_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.remove_undef_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.remove_undef_params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.unconstrain">
+<code class="sig-name descname">unconstrain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.unconstrain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.unconstrain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.prior2ref">
+<code class="sig-name descname">prior2ref</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.prior2ref"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.prior2ref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.fix_params">
+<code class="sig-name descname">fix_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">types</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.fix_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.fix_params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.fix_sta">
+<code class="sig-name descname">fix_sta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.fix_sta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.fix_sta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.reduce_params">
+<code class="sig-name descname">reduce_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">types</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.reduce_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.reduce_params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.reduce_sta">
+<code class="sig-name descname">reduce_sta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.reduce_sta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.reduce_sta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.reduce_doublons">
+<code class="sig-name descname">reduce_doublons</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.reduce_doublons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.reduce_doublons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.setup_geocenter">
+<code class="sig-name descname">setup_geocenter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tref</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.setup_geocenter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.setup_geocenter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.setup_scale">
+<code class="sig-name descname">setup_scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tref</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.setup_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.setup_scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.reduce_helmerts">
+<code class="sig-name descname">reduce_helmerts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.reduce_helmerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.reduce_helmerts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.add_min_const">
+<code class="sig-name descname">add_min_const</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">0.0001</span></em>, <em class="sig-param"><span class="n">code</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reduce_B</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.add_min_const"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.add_min_const" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.set_constraints">
+<code class="sig-name descname">set_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keep_const_on</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">add_const_on</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">add_const_sig</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">min_const_on</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">min_const_sig</span><span class="o">=</span><span class="default_value">0.0001</span></em>, <em class="sig-param"><span class="n">code</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reduce_B</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.set_constraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.set_constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.neqinv">
+<code class="sig-name descname">neqinv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keep_const_on</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">add_const_on</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">add_const_sig</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">min_const_on</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">min_const_sig</span><span class="o">=</span><span class="default_value">0.0001</span></em>, <em class="sig-param"><span class="n">code</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">soln</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reduce_B</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.neqinv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.neqinv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.rescale">
+<code class="sig-name descname">rescale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.rescale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.rescale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_common_points">
+<code class="sig-name descname">get_common_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_common_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_common_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.helmert_wrt">
+<code class="sig-name descname">helmert_wrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">'RST'</span></em>, <em class="sig-param"><span class="n">weighting</span><span class="o">=</span><span class="default_value">'identity'</span></em>, <em class="sig-param"><span class="n">with_vel</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.helmert_wrt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.helmert_wrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.trim_metadata">
+<code class="sig-name descname">trim_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.trim_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.trim_metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.update_stalist">
+<code class="sig-name descname">update_stalist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sta</span></em>, <em class="sig-param"><span class="n">ac</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.update_stalist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.update_stalist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_core">
+<code class="sig-name descname">get_core</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">ref</span></em>, <em class="sig-param"><span class="n">thr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_core"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_core" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.extract_core">
+<code class="sig-name descname">extract_core</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">ref</span></em>, <em class="sig-param"><span class="n">thr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.extract_core"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.extract_core" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.apriori_sf">
+<code class="sig-name descname">apriori_sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdref</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.apriori_sf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.apriori_sf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.add_metadata">
+<code class="sig-name descname">add_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metasnx</span></em>, <em class="sig-param"><span class="n">ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">comments</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">acks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.add_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.add_metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_residuals">
+<code class="sig-name descname">get_residuals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref</span></em>, <em class="sig-param"><span class="n">erp</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gc</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_residuals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_residuals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.check_sat_pco">
+<code class="sig-name descname">check_sat_pco</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.check_sat_pco"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.check_sat_pco" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.refsys_effect">
+<code class="sig-name descname">refsys_effect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">['all']</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.refsys_effect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.refsys_effect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.correct_opoleload">
+<code class="sig-name descname">correct_opoleload</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">opole</span></em>, <em class="sig-param"><span class="n">mjd</span></em>, <em class="sig-param"><span class="n">meanpm</span><span class="o">=</span><span class="default_value">'IERS2010'</span></em>, <em class="sig-param"><span class="n">reverse</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.correct_opoleload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.correct_opoleload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.get_nonpubsolns">
+<code class="sig-name descname">get_nonpubsolns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sigmax</span></em>, <em class="sig-param"><span class="n">fcontr</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.get_nonpubsolns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.get_nonpubsolns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.add_psd">
+<code class="sig-name descname">add_psd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">psd</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.add_psd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.add_psd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.remove_psd">
+<code class="sig-name descname">remove_psd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">psd</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.remove_psd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.remove_psd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.add_per">
+<code class="sig-name descname">add_per</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">T</span></em>, <em class="sig-param"><span class="n">tref</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.add_per"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.add_per" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.plate_poles">
+<code class="sig-name descname">plate_poles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">Trate</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">weighting</span><span class="o">=</span><span class="default_value">'full'</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.plate_poles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.plate_poles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.insert_disc">
+<code class="sig-name descname">insert_disc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.insert_disc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.insert_disc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.apply_offsets">
+<code class="sig-name descname">apply_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">soln</span></em>, <em class="sig-param"><span class="n">denh</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.apply_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.apply_offsets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.write_solndomes">
+<code class="sig-name descname">write_solndomes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solns</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.write_solndomes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.write_solndomes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyacs.sinex.sinex.sinex.loadest_wrt">
+<code class="sig-name descname">loadest_wrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">lmax</span></em>, <em class="sig-param"><span class="n">lovefile</span></em>, <em class="sig-param"><span class="n">weighting</span><span class="o">=</span><span class="default_value">'full'</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/sinex.html#sinex.loadest_wrt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.sinex.sinex.loadest_wrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.sinex.snxutils">
+<span id="pyacs-sinex-snxutils-module"></span><h2>pyacs.sinex.snxutils module<a class="headerlink" href="#module-pyacs.sinex.snxutils" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.earlier">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">earlier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span></em>, <em class="sig-param"><span class="n">t2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#earlier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.earlier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.read_domes">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">read_domes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">coord</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#read_domes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.read_domes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.read_solns">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">read_solns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#read_solns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.read_solns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.extract_solns">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">extract_solns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solns</span></em>, <em class="sig-param"><span class="n">snx</span></em>, <em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">comment</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#extract_solns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.extract_solns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.helmert_outliers">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">helmert_outliers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">soln</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">vn</span></em>, <em class="sig-param"><span class="n">thr_raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thr_norm</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thr_auto</span><span class="o">=</span><span class="default_value">4.0</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#helmert_outliers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.helmert_outliers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.helmert14_outliers">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">helmert14_outliers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">soln</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">vn</span></em>, <em class="sig-param"><span class="n">thr_raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thr_norm</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thr_auto</span><span class="o">=</span><span class="default_value">5.0</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#helmert14_outliers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.helmert14_outliers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.helmert_hist">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">helmert_hist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">'mm'</span></em>, <em class="sig-param"><span class="n">nbins</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_up</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#helmert_hist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.helmert_hist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.helmert_map">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">helmert_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lon</span></em>, <em class="sig-param"><span class="n">lat</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">'mm'</span></em>, <em class="sig-param"><span class="n">h_scale</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">v_scale</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_up</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#helmert_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.helmert_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.station_map">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">station_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lon</span></em>, <em class="sig-param"><span class="n">lat</span></em>, <em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">write_codes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#station_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.station_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.meanpole">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">meanpole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">meanpm</span><span class="o">=</span><span class="default_value">'IERS2010'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#meanpole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.meanpole" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.read_opoleload">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">read_opoleload</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#read_opoleload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.read_opoleload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.compute_opoleload">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">compute_opoleload</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">opole</span></em>, <em class="sig-param"><span class="n">lon</span></em>, <em class="sig-param"><span class="n">lat</span></em>, <em class="sig-param"><span class="n">mjd</span></em>, <em class="sig-param"><span class="n">xpo</span></em>, <em class="sig-param"><span class="n">ypo</span></em>, <em class="sig-param"><span class="n">meanpm</span><span class="o">=</span><span class="default_value">'IERS2010'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#compute_opoleload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.compute_opoleload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.snxutils.compute_psd">
+<code class="sig-prename descclassname">pyacs.sinex.snxutils.</code><code class="sig-name descname">compute_psd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">snx</span></em>, <em class="sig-param"><span class="n">sta</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/snxutils.html#compute_psd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.snxutils.compute_psd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.sinex.utils">
+<span id="pyacs-sinex-utils-module"></span><h2>pyacs.sinex.utils module<a class="headerlink" href="#module-pyacs.sinex.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyacs.sinex.utils.leapsec">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">leapsec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">timescale</span><span class="o">=</span><span class="default_value">'UTC'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#leapsec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.leapsec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.temp_file">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">temp_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#temp_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.temp_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.ps2png">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">ps2png</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ps</span></em>, <em class="sig-param"><span class="n">png</span></em>, <em class="sig-param"><span class="n">rotate</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">margin</span><span class="o">=</span><span class="default_value">20</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#ps2png"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.ps2png" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.sed_keywords">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">sed_keywords</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#sed_keywords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.sed_keywords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.dict2rec">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">dict2rec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">sed</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#dict2rec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.dict2rec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.rec2dict">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">rec2dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#rec2dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.rec2dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.read_yaml">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">read_yaml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em>, <em class="sig-param"><span class="n">sed</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#read_yaml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.read_yaml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.write_yaml">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">write_yaml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">out</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#write_yaml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.write_yaml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.parallel_sh">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">parallel_sh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">nproc</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#parallel_sh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.parallel_sh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.print_message">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">print_message</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">mainlog</span></em>, <em class="sig-param"><span class="n">timestamp</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#print_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.print_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.sinex.utils.isfloat">
+<code class="sig-prename descclassname">pyacs.sinex.utils.</code><code class="sig-name descname">isfloat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/sinex/utils.html#isfloat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.sinex.utils.isfloat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="module-pyacs.sinex">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyacs.sinex" title="Permalink to this headline">¶</a></h2>
@@ -197,29 +769,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="pyacs.sinex.constants.html" class="btn btn-neutral float-right" title="pyacs.sinex.constants module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="pyacs.lib.vel_field.html" class="btn btn-neutral float-left" title="pyacs.lib.vel_field module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="pyacs.sol.html" class="btn btn-neutral float-right" title="pyacs.sol package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pyacs.message.html" class="btn btn-neutral float-left" title="pyacs.message package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -227,7 +799,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

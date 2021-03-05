@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.step_detect &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.gts.lib.step_detect &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
@@ -157,14 +166,14 @@
 <span class="sd">thomas.b.kahn@gmail.com</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 <span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">six.moves</span> <span class="k">import</span> <span class="nb">range</span>
-<span class="kn">from</span> <span class="nn">six.moves</span> <span class="k">import</span> <span class="nb">zip</span>
+<span class="kn">from</span> <span class="nn">six.moves</span> <span class="kn">import</span> <span class="nb">range</span>
+<span class="kn">from</span> <span class="nn">six.moves</span> <span class="kn">import</span> <span class="nb">zip</span>
 
 
-<div class="viewcode-block" id="t_scan"><a class="viewcode-back" href="../../../../pyacs.gts.lib.step_detect.html#pyacs.gts.lib.step_detect.t_scan">[docs]</a><span class="k">def</span> <span class="nf">t_scan</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">window</span> <span class="o">=</span> <span class="mf">1e3</span><span class="p">,</span> <span class="n">num_workers</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="t_scan"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.lib.step_detect.t_scan">[docs]</a><span class="k">def</span> <span class="nf">t_scan</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">window</span> <span class="o">=</span> <span class="mf">1e3</span><span class="p">,</span> <span class="n">num_workers</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Computes t statistic for i to i+window points versus i-window to i</span>
 <span class="sd">    points for each point i in input array. Uses multiple processes to</span>
@@ -243,7 +252,7 @@
     <span class="k">return</span> <span class="n">frame</span><span class="p">,</span> <span class="n">output</span>
 
 
-<div class="viewcode-block" id="mz_fwt"><a class="viewcode-back" href="../../../../pyacs.gts.lib.step_detect.html#pyacs.gts.lib.step_detect.mz_fwt">[docs]</a><span class="k">def</span> <span class="nf">mz_fwt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="mz_fwt"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.lib.step_detect.mz_fwt">[docs]</a><span class="k">def</span> <span class="nf">mz_fwt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Computes the multiscale product of the Mallat-Zhong discrete forward</span>
 <span class="sd">    wavelet transform up to and including scale n for the input data x.</span>
@@ -310,7 +319,7 @@
     <span class="k">return</span> <span class="n">out</span>
 
 
-<div class="viewcode-block" id="find_steps"><a class="viewcode-back" href="../../../../pyacs.gts.lib.step_detect.html#pyacs.gts.lib.step_detect.find_steps">[docs]</a><span class="k">def</span> <span class="nf">find_steps</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+<div class="viewcode-block" id="find_steps"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.lib.step_detect.find_steps">[docs]</a><span class="k">def</span> <span class="nf">find_steps</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Finds local maxima by segmenting array based on positions at which</span>
 <span class="sd">    the threshold value is crossed. Note that this thresholding is </span>
@@ -340,7 +349,7 @@
     <span class="k">return</span> <span class="n">steps</span></div>
 
 
-<div class="viewcode-block" id="get_step_sizes"><a class="viewcode-back" href="../../../../pyacs.gts.lib.step_detect.html#pyacs.gts.lib.step_detect.get_step_sizes">[docs]</a><span class="k">def</span> <span class="nf">get_step_sizes</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<div class="viewcode-block" id="get_step_sizes"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.lib.step_detect.get_step_sizes">[docs]</a><span class="k">def</span> <span class="nf">get_step_sizes</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculates step size for each index within the supplied list. Step</span>
 <span class="sd">    size is determined by averaging over a range of points (specified</span>
@@ -388,20 +397,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -409,7 +423,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

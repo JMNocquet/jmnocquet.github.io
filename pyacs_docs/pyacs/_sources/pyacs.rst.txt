@@ -5,9 +5,12 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
+   pyacs.glinalg
    pyacs.gts
    pyacs.lib
+   pyacs.message
    pyacs.sinex
    pyacs.sol
 

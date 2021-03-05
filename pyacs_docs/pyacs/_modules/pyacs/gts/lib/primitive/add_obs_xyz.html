@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.primitive.add_obs_xyz &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.gts.lib.primitive.add_obs_xyz &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
@@ -153,15 +162,14 @@
             
   <h1>Source code for pyacs.gts.lib.primitive.add_obs_xyz</h1><div class="highlight"><pre>
 <span></span><span class="c1">###################################################################</span>
-<div class="viewcode-block" id="add_obs_xyz"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.primitive.add_obs_xyz.html#pyacs.gts.Gts.add_obs_xyz">[docs]</a><span class="k">def</span> <span class="nf">add_obs_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date</span><span class="p">,</span><span class="n">XYZSXSYSZCXYCXZCYZ</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">neu</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="add_obs_xyz"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.primitive.html#pyacs.gts.Gts.add_obs_xyz">[docs]</a><span class="k">def</span> <span class="nf">add_obs_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date</span><span class="p">,</span><span class="n">XYZSXSYSZCXYCXZCYZ</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">neu</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Adds observation(s) as XYZ to a time series</span>
 <span class="sd">    </span>
 <span class="sd">    :param date: date in decimal year. float, a list or 1D numpy array</span>
 <span class="sd">    :param XYZSXSYSZCXYCXZCYZ: value to be added in the Gts, provided as a list, a 1D numpy array or a 2D numpy array.\</span>
-<span class="sd">    requires at least X,Y,Z</span>
-<span class="sd">    optional: SX, SY, SZ, CXY, CXZ, CYZ: standard deviations and correlation coefficients.\</span>
+<span class="sd">    requires at least X,Y,Z. Optional: SX, SY, SZ, CXY, CXZ, CYZ: standard deviations and correlation coefficients.\</span>
 <span class="sd">    If not provided, SX=SY=SZ=0.001 (1 mm) and CXY=CXZ=CYZ=0</span>
 <span class="sd">    :param in_place: boolean, if True add_obs to the current Gts, if False, returns a new Gts</span>
 <span class="sd">    :param check: check time order , duplicate dates and re-generate NEU time series (.data)</span>
@@ -286,20 +294,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -307,7 +320,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

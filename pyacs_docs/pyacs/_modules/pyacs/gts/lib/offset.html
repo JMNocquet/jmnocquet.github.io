@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.offset &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.gts.lib.offset &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
@@ -157,7 +166,7 @@
 <span class="c1">#from ..Gts import Gts</span>
 <span class="kn">import</span> <span class="nn">pyacs</span>
 
-<div class="viewcode-block" id="print_no_return"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.print_no_return">[docs]</a><span class="k">def</span> <span class="nf">print_no_return</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+<div class="viewcode-block" id="print_no_return"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.print_no_return">[docs]</a><span class="k">def</span> <span class="nf">print_no_return</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
 
     <span class="kn">import</span> <span class="nn">sys</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">)</span>
@@ -213,7 +222,7 @@
     <span class="k">return</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">lindex</span> <span class="p">,</span> <span class="n">lvalue</span> <span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">T</span> 
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="suspect_offsets_mf"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.suspect_offsets_mf">[docs]</a><span class="k">def</span> <span class="nf">suspect_offsets_mf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span><span class="p">,</span><span class="n">n_max_offsets</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="suspect_offsets_mf"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.suspect_offsets_mf">[docs]</a><span class="k">def</span> <span class="nf">suspect_offsets_mf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span><span class="p">,</span><span class="n">n_max_offsets</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tries to find offsets in a time series using a median filter</span>
@@ -352,7 +361,7 @@
         
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="test_offset_significance"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.test_offset_significance">[docs]</a><span class="k">def</span> <span class="nf">test_offset_significance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date</span><span class="p">,</span><span class="n">conf_level</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="test_offset_significance"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.test_offset_significance">[docs]</a><span class="k">def</span> <span class="nf">test_offset_significance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date</span><span class="p">,</span><span class="n">conf_level</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    test the significance of an offset</span>
@@ -378,7 +387,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">F</span><span class="o">=</span><span class="p">(</span> <span class="p">(</span><span class="n">chi_square_1</span><span class="o">-</span><span class="n">chi_square_2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">p2</span><span class="o">-</span><span class="n">p1</span><span class="p">)</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">chi_square_2</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">p2</span><span class="p">)</span> <span class="p">)</span>
         
-        <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">f</span>
+        <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">f</span>
         <span class="k">return</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">p2</span><span class="o">-</span><span class="n">p1</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="n">p2</span><span class="p">))</span>
         
 
@@ -600,16 +609,12 @@
     <span class="k">return</span><span class="p">(</span><span class="n">OK</span><span class="p">)</span></div>
 
 <span class="c1">###########################################################################</span>
-<div class="viewcode-block" id="local_offset_robust"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.local_offset_robust">[docs]</a><span class="k">def</span> <span class="nf">local_offset_robust</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="local_offset_robust"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.local_offset_robust">[docs]</a><span class="k">def</span> <span class="nf">local_offset_robust</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">date</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    estimate a local offset (no velocity) with a robust method</span>
-<span class="sd">    </span>
-<span class="sd">    </span>
 <span class="sd">    :param date: date in decimal year</span>
 <span class="sd">    :param n: number of dates before and after the dates used in the estimation</span>
-<span class="sd">    </span>
 <span class="sd">    :return : a 1D numpy array with [date, north, east, up, s_north, s_east, s_up]</span>
-<span class="sd">    </span>
 <span class="sd">    :note: the offsets are estimated using the difference between the median position before and after the earthquake using i days</span>
 <span class="sd">    for all i &lt;=n. Then the median of the estimates is returned. </span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -644,7 +649,7 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="n">date</span> <span class="p">,</span> <span class="n">final_values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">final_values</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">final_values</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">]</span> <span class="p">)</span></div>
        
 <span class="c1">###########################################################################</span>
-<div class="viewcode-block" id="apply_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.apply_offsets">[docs]</a><span class="k">def</span> <span class="nf">apply_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">np_offset</span><span class="p">,</span><span class="n">opposite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="apply_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.apply_offsets">[docs]</a><span class="k">def</span> <span class="nf">apply_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">np_offset</span><span class="p">,</span><span class="n">opposite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###########################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Applies given offsets to a times series</span>
@@ -713,7 +718,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">new_Gts</span><span class="p">)</span></div>
         
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="find_offsets_t_scan"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.find_offsets_t_scan">[docs]</a><span class="k">def</span> <span class="nf">find_offsets_t_scan</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="find_offsets_t_scan"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.find_offsets_t_scan">[docs]</a><span class="k">def</span> <span class="nf">find_offsets_t_scan</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     
     <span class="c1"># working Gts</span>
@@ -722,7 +727,7 @@
     
     <span class="c1"># import</span>
     
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib</span> <span class="k">import</span> <span class="n">step_detect</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib</span> <span class="kn">import</span> <span class="n">step_detect</span>
 
     <span class="n">lindex_step_north</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">lindex_step_east</span>  <span class="o">=</span> <span class="p">[]</span>
@@ -827,7 +832,7 @@
     
 
 <span class="c1">###########################################################################</span>
-<div class="viewcode-block" id="get_suspected_dates"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.get_suspected_dates">[docs]</a><span class="k">def</span> <span class="nf">get_suspected_dates</span><span class="p">(</span><span class="n">diff_data</span><span class="p">,</span><span class="n">threshold</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NEU&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="get_suspected_dates"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.get_suspected_dates">[docs]</a><span class="k">def</span> <span class="nf">get_suspected_dates</span><span class="p">(</span><span class="n">diff_data</span><span class="p">,</span><span class="n">threshold</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NEU&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###########################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    get the list of the largest values; these are suspected offsets</span>
@@ -883,7 +888,7 @@
 
 
 <span class="c1">###########################################################################</span>
-<div class="viewcode-block" id="check_suspected_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.check_suspected_offsets">[docs]</a><span class="k">def</span> <span class="nf">check_suspected_offsets</span><span class="p">(</span><span class="n">lindex</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="check_suspected_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.check_suspected_offsets">[docs]</a><span class="k">def</span> <span class="nf">check_suspected_offsets</span><span class="p">(</span><span class="n">lindex</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###########################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Check that the list of suspected index does not contain two successive values.</span>
@@ -921,7 +926,7 @@
 
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="find_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.find_offsets">[docs]</a><span class="k">def</span> <span class="nf">find_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">n_max_offsets</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="n">conf_level</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="find_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.find_offsets">[docs]</a><span class="k">def</span> <span class="nf">find_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">n_max_offsets</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="n">conf_level</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A simple empirical procedure to find offsets.</span>
@@ -1108,7 +1113,7 @@
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; Outliers search : </span><span class="si">%03d</span><span class="s2"> outliers found&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">loutliers_dates</span><span class="p">)))</span>
     
     <span class="k">if</span> <span class="n">loutliers_dates</span> <span class="o">!=</span> <span class="p">[]:</span>
-        <span class="kn">from</span> <span class="nn">..Gts</span> <span class="k">import</span> <span class="n">get_index_from_dates</span>
+        <span class="kn">from</span> <span class="nn">..Gts</span> <span class="kn">import</span> <span class="n">get_index_from_dates</span>
         <span class="n">returned_index</span><span class="o">=</span><span class="n">get_index_from_dates</span><span class="p">(</span><span class="n">loutliers_dates</span><span class="p">,</span><span class="n">tts</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
         <span class="n">loutliers</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">returned_index</span><span class="p">)))</span>
         <span class="c1">#tts.outliers=loutliers</span>
@@ -1132,7 +1137,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">new_Gts</span><span class="p">)</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="suspect_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.suspect_offsets">[docs]</a><span class="k">def</span> <span class="nf">suspect_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span><span class="p">,</span><span class="n">n_max_offsets</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="suspect_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.suspect_offsets">[docs]</a><span class="k">def</span> <span class="nf">suspect_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">lcomponent</span><span class="o">=</span><span class="s1">&#39;NE&#39;</span><span class="p">,</span><span class="n">n_max_offsets</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tries to find offsets in a time series</span>
@@ -1182,7 +1187,7 @@
 
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="find_time_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.find_time_offsets">[docs]</a><span class="k">def</span> <span class="nf">find_time_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">option</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">ndays</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">th_detection_rms</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">th_detection_offset</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<div class="viewcode-block" id="find_time_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.find_time_offsets">[docs]</a><span class="k">def</span> <span class="nf">find_time_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">option</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">ndays</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">th_detection_rms</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">th_detection_offset</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     
     <span class="sd">&quot;&quot;&quot;</span>
@@ -1253,7 +1258,7 @@
 
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="delete_small_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.delete_small_offsets">[docs]</a><span class="k">def</span> <span class="nf">delete_small_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">offsets</span><span class="p">,</span><span class="n">del_by_pricise</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="delete_small_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.delete_small_offsets">[docs]</a><span class="k">def</span> <span class="nf">delete_small_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">offsets</span><span class="p">,</span><span class="n">del_by_pricise</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The aim for test_offset modul. </span>
@@ -1351,7 +1356,7 @@
 <span class="c1">###########################################################################################################</span>
 <span class="c1">### Test the offsets</span>
 <span class="c1">###########################################################################################################</span>
-<div class="viewcode-block" id="test_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.test_offsets">[docs]</a><span class="k">def</span> <span class="nf">test_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">window_length</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="test_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.test_offsets">[docs]</a><span class="k">def</span> <span class="nf">test_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">window_length</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Test the offset:</span>
 <span class="sd">         - delete the small offset (1mm for East/North, 2mm for Up)</span>
@@ -1426,7 +1431,7 @@
 <span class="c1">###########################################################################</span>
 <span class="c1">## estimate the local offsets of time series with the trendline y = a  + offsets</span>
 <span class="c1">###########################################################################</span>
-<div class="viewcode-block" id="estimate_local_offset"><a class="viewcode-back" href="../../../../pyacs.gts.lib.offset.html#pyacs.gts.Gts.estimate_local_offset">[docs]</a><span class="k">def</span> <span class="nf">estimate_local_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">window_length</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="estimate_local_offset"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.estimate_local_offset">[docs]</a><span class="k">def</span> <span class="nf">estimate_local_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">window_length</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Estimate the local offset, just used window_length positions before &amp; window_length positions behind of offset</span>
 <span class="sd">    output: amplitude of local offsets</span>
@@ -1485,20 +1490,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1506,7 +1516,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

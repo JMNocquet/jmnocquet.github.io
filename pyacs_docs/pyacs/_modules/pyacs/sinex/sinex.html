@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.sinex.sinex &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.sinex.sinex &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
@@ -220,16 +229,16 @@
 <span class="c1"># LIBRARIES</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="kn">import</span> <span class="nn">copy</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">sparse</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">special</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">special</span>
 
-<span class="kn">from</span> <span class="nn">.constants</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.snxutils</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.mathutils</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.date</span> <span class="k">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">.constants</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.snxutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.mathutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.date</span> <span class="kn">import</span> <span class="n">date</span>
 
 
 
@@ -271,7 +280,7 @@
 
 <span class="c1"># SINEX CLASS</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex">[docs]</a><span class="k">class</span> <span class="nc">sinex</span><span class="p">:</span>
+<div class="viewcode-block" id="sinex"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex">[docs]</a><span class="k">class</span> <span class="nc">sinex</span><span class="p">:</span>
 
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : __init__</span>
@@ -284,7 +293,7 @@
 <span class="c1"># Input   :</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">file</span>     <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">version</span>  <span class="o">=</span> <span class="kc">None</span>
@@ -341,7 +350,7 @@
 <span class="c1">#             &#39;metadata&#39; in order not to read receivers, antennas...</span>
 <span class="c1"># Output  : - snx : sinex object</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.read"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.read">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="sinex.read"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.read">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">dont_read</span> <span class="o">=</span> <span class="p">[]):</span>
 
         <span class="c1"># Initializations</span>
@@ -863,7 +872,7 @@
 <span class="c1">#                            &#39;apriori&#39;  in order not to write a priori information</span>
 <span class="c1">#                            &#39;metadata&#39; in order not to write receivers, antennas...</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.write"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">dont_write</span><span class="o">=</span><span class="p">[],</span> <span class="n">epochs_style</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.write"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">dont_write</span><span class="o">=</span><span class="p">[],</span> <span class="n">epochs_style</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1206,7 +1215,7 @@
 <span class="c1">#           - append     : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  : - modif      : True if any modification has to be made</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.check_staid"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.check_staid">[docs]</a>    <span class="k">def</span> <span class="nf">check_staid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">codomes</span><span class="p">,</span> <span class="n">check_pt</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check_crd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check_desc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.check_staid"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.check_staid">[docs]</a>    <span class="k">def</span> <span class="nf">check_staid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">codomes</span><span class="p">,</span> <span class="n">check_pt</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check_crd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check_desc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1377,7 +1386,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.check_solns"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.check_solns">[docs]</a>    <span class="k">def</span> <span class="nf">check_solns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solns</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.check_solns"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.check_solns">[docs]</a>    <span class="k">def</span> <span class="nf">check_solns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solns</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1476,7 +1485,7 @@
 <span class="c1"># Input   :</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.check_erp"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.check_erp">[docs]</a>    <span class="k">def</span> <span class="nf">check_erp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.check_erp"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.check_erp">[docs]</a>    <span class="k">def</span> <span class="nf">check_erp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1507,7 +1516,7 @@
 <span class="c1">#           - soln : Solns. Default is None.</span>
 <span class="c1"># Output  : - X    : [X, Y, Z] cartesian coordinates in m</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_xyz"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_xyz">[docs]</a>    <span class="k">def</span> <span class="nf">get_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_xyz"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_xyz">[docs]</a>    <span class="k">def</span> <span class="nf">get_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1555,7 +1564,7 @@
 <span class="c1">#           - lam  : Longitudes (rad)</span>
 <span class="c1">#           - h    : Ellipsoidal heights (m)</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_plh"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_plh">[docs]</a>    <span class="k">def</span> <span class="nf">get_plh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_plh"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_plh">[docs]</a>    <span class="k">def</span> <span class="nf">get_plh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1578,7 +1587,7 @@
 <span class="c1"># Output  : - lon  : Longitudes (deg)</span>
 <span class="c1">#           - lat  : Latitudes (deg)</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_lonlat"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_lonlat">[docs]</a>    <span class="k">def</span> <span class="nf">get_lonlat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_lonlat"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_lonlat">[docs]</a>    <span class="k">def</span> <span class="nf">get_lonlat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1601,7 +1610,7 @@
 <span class="c1">#           - soln : Solns</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_sigenh"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_sigenh">[docs]</a>    <span class="k">def</span> <span class="nf">get_sigenh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">soln</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_sigenh"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_sigenh">[docs]</a>    <span class="k">def</span> <span class="nf">get_sigenh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">soln</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1637,7 +1646,7 @@
 <span class="c1">#           - soln : Solns</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_cov_sta"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_cov_sta">[docs]</a>    <span class="k">def</span> <span class="nf">get_cov_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_cov_sta"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_cov_sta">[docs]</a>    <span class="k">def</span> <span class="nf">get_cov_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1672,7 +1681,7 @@
 <span class="c1">#           - gc     : If True, the TX/XGC, TY/YGC and TZ/ZGC partial derivatives are set to 1.</span>
 <span class="c1"># Output  : - A      : Design matrix of Helmert parameters</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_helmert_matrix"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_helmert_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">get_helmert_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;RST&#39;</span><span class="p">,</span> <span class="n">pole</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gc</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_helmert_matrix"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_helmert_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">get_helmert_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;RST&#39;</span><span class="p">,</span> <span class="n">pole</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gc</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1733,7 +1742,7 @@
 <span class="c1">#           - output      : Output file. Default is None.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.map"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">write_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.map"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">write_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
@@ -1755,7 +1764,7 @@
 <span class="c1">#           - keep_vel : True or False depending on whether station velocities</span>
 <span class="c1">#                        should be kept or not. Default is False.</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.propagate"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.propagate">[docs]</a>    <span class="k">def</span> <span class="nf">propagate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epo</span><span class="p">,</span> <span class="n">keep_vel</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.propagate"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.propagate">[docs]</a>    <span class="k">def</span> <span class="nf">propagate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epo</span><span class="p">,</span> <span class="n">keep_vel</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1826,7 +1835,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.remove_sta"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.remove_sta">[docs]</a>    <span class="k">def</span> <span class="nf">remove_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.remove_sta"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.remove_sta">[docs]</a>    <span class="k">def</span> <span class="nf">remove_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1977,7 +1986,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.keep_sta"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.keep_sta">[docs]</a>    <span class="k">def</span> <span class="nf">keep_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.keep_sta"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.keep_sta">[docs]</a>    <span class="k">def</span> <span class="nf">keep_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
@@ -2126,7 +2135,7 @@
 <span class="c1"># Input   :</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.remove_sta_wo_domes"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.remove_sta_wo_domes">[docs]</a>    <span class="k">def</span> <span class="nf">remove_sta_wo_domes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.remove_sta_wo_domes"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.remove_sta_wo_domes">[docs]</a>    <span class="k">def</span> <span class="nf">remove_sta_wo_domes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2157,7 +2166,7 @@
 <span class="c1">#           - solns : Soln table</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.keep_relevant_solns"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.keep_relevant_solns">[docs]</a>    <span class="k">def</span> <span class="nf">keep_relevant_solns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">solns</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.keep_relevant_solns"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.keep_relevant_solns">[docs]</a>    <span class="k">def</span> <span class="nf">keep_relevant_solns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">solns</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2206,7 +2215,7 @@
 <span class="c1">#                   &#39;STA&#39;; &#39;VEL&#39;; &#39;GC&#39; and &#39;TRANS&#39; for all transformation parameters.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.remove_params"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.remove_params">[docs]</a>    <span class="k">def</span> <span class="nf">remove_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">types</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.remove_params"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.remove_params">[docs]</a>    <span class="k">def</span> <span class="nf">remove_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">types</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2294,7 +2303,7 @@
 <span class="c1"># Input   :</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.remove_undef_params"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.remove_undef_params">[docs]</a>    <span class="k">def</span> <span class="nf">remove_undef_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.remove_undef_params"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.remove_undef_params">[docs]</a>    <span class="k">def</span> <span class="nf">remove_undef_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2355,7 +2364,7 @@
 <span class="c1"># Input   :</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.unconstrain"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.unconstrain">[docs]</a>    <span class="k">def</span> <span class="nf">unconstrain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.unconstrain"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.unconstrain">[docs]</a>    <span class="k">def</span> <span class="nf">unconstrain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2461,7 +2470,7 @@
 <span class="c1">#           - append    : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.prior2ref"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.prior2ref">[docs]</a>    <span class="k">def</span> <span class="nf">prior2ref</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.prior2ref"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.prior2ref">[docs]</a>    <span class="k">def</span> <span class="nf">prior2ref</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
@@ -2575,7 +2584,7 @@
 <span class="c1">#                   &#39;STA&#39;; &#39;VEL&#39;; &#39;GC&#39;; &#39;SBIAS&#39;; &#39;ST&#39;</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.fix_params"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.fix_params">[docs]</a>    <span class="k">def</span> <span class="nf">fix_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">types</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.fix_params"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.fix_params">[docs]</a>    <span class="k">def</span> <span class="nf">fix_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">types</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2632,7 +2641,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.fix_sta"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.fix_sta">[docs]</a>    <span class="k">def</span> <span class="nf">fix_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.fix_sta"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.fix_sta">[docs]</a>    <span class="k">def</span> <span class="nf">fix_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2739,7 +2748,7 @@
 <span class="c1">#                   &#39;STA&#39;; &#39;VEL&#39;; &#39;GC&#39;; &#39;RBIAS&#39;</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.reduce_params"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.reduce_params">[docs]</a>    <span class="k">def</span> <span class="nf">reduce_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">types</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.reduce_params"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.reduce_params">[docs]</a>    <span class="k">def</span> <span class="nf">reduce_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">types</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2803,7 +2812,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.reduce_sta"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.reduce_sta">[docs]</a>    <span class="k">def</span> <span class="nf">reduce_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.reduce_sta"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.reduce_sta">[docs]</a>    <span class="k">def</span> <span class="nf">reduce_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2906,7 +2915,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.reduce_doublons"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.reduce_doublons">[docs]</a>    <span class="k">def</span> <span class="nf">reduce_doublons</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.reduce_doublons"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.reduce_doublons">[docs]</a>    <span class="k">def</span> <span class="nf">reduce_doublons</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -2940,7 +2949,7 @@
 <span class="c1"># Input   : tref : Reference epoch (SINEX format)</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.setup_geocenter"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.setup_geocenter">[docs]</a>    <span class="k">def</span> <span class="nf">setup_geocenter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tref</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.setup_geocenter"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.setup_geocenter">[docs]</a>    <span class="k">def</span> <span class="nf">setup_geocenter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tref</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3003,7 +3012,7 @@
 <span class="c1"># Input   : tref : Reference epoch (SINEX format)</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.setup_scale"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.setup_scale">[docs]</a>    <span class="k">def</span> <span class="nf">setup_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tref</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.setup_scale"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.setup_scale">[docs]</a>    <span class="k">def</span> <span class="nf">setup_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tref</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3056,7 +3065,7 @@
 <span class="c1">#                   &#39;S&#39; (scale) and &#39;R&#39; (rotations).</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.reduce_helmerts"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.reduce_helmerts">[docs]</a>    <span class="k">def</span> <span class="nf">reduce_helmerts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.reduce_helmerts"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.reduce_helmerts">[docs]</a>    <span class="k">def</span> <span class="nf">reduce_helmerts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3089,7 +3098,7 @@
 <span class="c1">#           - reduce_B       : True if the rows of B should be reduced rather than the columns of A. Default is False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.add_min_const"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.add_min_const">[docs]</a>    <span class="k">def</span> <span class="nf">add_min_const</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduce_B</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.add_min_const"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.add_min_const">[docs]</a>    <span class="k">def</span> <span class="nf">add_min_const</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduce_B</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3178,7 +3187,7 @@
 <span class="c1">#           - reduce_B       : True if the rows of B should be reduced rather than the columns of A. Default is False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.set_constraints"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.set_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">set_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keep_const_on</span><span class="o">=</span><span class="p">[],</span> <span class="n">add_const_on</span><span class="o">=</span><span class="p">[],</span> <span class="n">add_const_sig</span><span class="o">=</span><span class="p">[],</span> <span class="n">min_const_on</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<div class="viewcode-block" id="sinex.set_constraints"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.set_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">set_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keep_const_on</span><span class="o">=</span><span class="p">[],</span> <span class="n">add_const_on</span><span class="o">=</span><span class="p">[],</span> <span class="n">add_const_sig</span><span class="o">=</span><span class="p">[],</span> <span class="n">min_const_on</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
                         <span class="n">min_const_sig</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduce_B</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
@@ -3352,7 +3361,7 @@
 <span class="c1">#           - reduce_B       : True if the rows of B should be reduced rather than the columns of A. Default is False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.neqinv"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.neqinv">[docs]</a>    <span class="k">def</span> <span class="nf">neqinv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keep_const_on</span><span class="o">=</span><span class="p">[],</span> <span class="n">add_const_on</span><span class="o">=</span><span class="p">[],</span> <span class="n">add_const_sig</span><span class="o">=</span><span class="p">[],</span> <span class="n">min_const_on</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<div class="viewcode-block" id="sinex.neqinv"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.neqinv">[docs]</a>    <span class="k">def</span> <span class="nf">neqinv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keep_const_on</span><span class="o">=</span><span class="p">[],</span> <span class="n">add_const_on</span><span class="o">=</span><span class="p">[],</span> <span class="n">add_const_sig</span><span class="o">=</span><span class="p">[],</span> <span class="n">min_const_on</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
                <span class="n">min_const_sig</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">soln</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduce_B</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         
@@ -3383,7 +3392,7 @@
 <span class="c1"># Input   : f : Scale factor (square-root of variance factor)</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.rescale"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.rescale">[docs]</a>    <span class="k">def</span> <span class="nf">rescale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.rescale"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.rescale">[docs]</a>    <span class="k">def</span> <span class="nf">rescale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3409,7 +3418,7 @@
 <span class="c1">#           - pt        : PT codes of common points</span>
 <span class="c1">#           - soln      : Solns of common points</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_common_points"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_common_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_common_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_common_points"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_common_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_common_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3465,7 +3474,7 @@
 <span class="c1">#           - vn        : Normalized E, N, H residuals</span>
 <span class="c1">#           - w         : E, N, H WRMS (mm[/y])</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.helmert_wrt"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.helmert_wrt">[docs]</a>    <span class="k">def</span> <span class="nf">helmert_wrt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;RST&#39;</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span> <span class="n">with_vel</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.helmert_wrt"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.helmert_wrt">[docs]</a>    <span class="k">def</span> <span class="nf">helmert_wrt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;RST&#39;</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span> <span class="n">with_vel</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3786,7 +3795,7 @@
 <span class="c1">#           - end   : End of period of interest in SINEX format</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.trim_metadata"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.trim_metadata">[docs]</a>    <span class="k">def</span> <span class="nf">trim_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.trim_metadata"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.trim_metadata">[docs]</a>    <span class="k">def</span> <span class="nf">trim_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3849,7 +3858,7 @@
 <span class="c1">#           - ac  : AC combination options</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.update_stalist"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.update_stalist">[docs]</a>    <span class="k">def</span> <span class="nf">update_stalist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sta</span><span class="p">,</span> <span class="n">ac</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.update_stalist"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.update_stalist">[docs]</a>    <span class="k">def</span> <span class="nf">update_stalist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sta</span><span class="p">,</span> <span class="n">ac</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -3911,7 +3920,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_core"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_core">[docs]</a>    <span class="k">def</span> <span class="nf">get_core</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_core"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_core">[docs]</a>    <span class="k">def</span> <span class="nf">get_core</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4022,7 +4031,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.extract_core"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.extract_core">[docs]</a>    <span class="k">def</span> <span class="nf">extract_core</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.extract_core"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.extract_core">[docs]</a>    <span class="k">def</span> <span class="nf">extract_core</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4124,7 +4133,7 @@
 <span class="c1"># Input   : - stdref : Reference 3D formal error (mm)</span>
 <span class="c1"># Output  : - sf     : A priori scale factor</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.apriori_sf"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.apriori_sf">[docs]</a>    <span class="k">def</span> <span class="nf">apriori_sf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stdref</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.apriori_sf"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.apriori_sf">[docs]</a>    <span class="k">def</span> <span class="nf">apriori_sf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stdref</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4160,7 +4169,7 @@
 <span class="c1">#           - t        : date object (needed for FILE/REFERENCE block). Default is None.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.add_metadata"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.add_metadata">[docs]</a>    <span class="k">def</span> <span class="nf">add_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metasnx</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">acks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.add_metadata"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.add_metadata">[docs]</a>    <span class="k">def</span> <span class="nf">add_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metasnx</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">acks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4234,7 +4243,7 @@
 <span class="c1">#           - vgc  : Geocenter residuals (mm)</span>
 <span class="c1">#           - sgc  : Geocenter formal errors (mm)</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_residuals"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">get_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">erp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gc</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_residuals"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">get_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">erp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gc</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4327,7 +4336,7 @@
 <span class="c1"># Input   : - ref  : Reference sinex object containing nominal satellite PCOs</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.check_sat_pco"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.check_sat_pco">[docs]</a>    <span class="k">def</span> <span class="nf">check_sat_pco</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.check_sat_pco"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.check_sat_pco">[docs]</a>    <span class="k">def</span> <span class="nf">check_sat_pco</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4380,7 +4389,7 @@
 <span class="c1">#           - append : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.refsys_effect"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.refsys_effect">[docs]</a>    <span class="k">def</span> <span class="nf">refsys_effect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">],</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.refsys_effect"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.refsys_effect">[docs]</a>    <span class="k">def</span> <span class="nf">refsys_effect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">],</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4650,7 +4659,7 @@
 <span class="c1">#                       of removed. Default is False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.correct_opoleload"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.correct_opoleload">[docs]</a>    <span class="k">def</span> <span class="nf">correct_opoleload</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opole</span><span class="p">,</span> <span class="n">mjd</span><span class="p">,</span> <span class="n">meanpm</span><span class="o">=</span><span class="s1">&#39;IERS2010&#39;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.correct_opoleload"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.correct_opoleload">[docs]</a>    <span class="k">def</span> <span class="nf">correct_opoleload</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opole</span><span class="p">,</span> <span class="n">mjd</span><span class="p">,</span> <span class="n">meanpm</span><span class="o">=</span><span class="s1">&#39;IERS2010&#39;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4707,7 +4716,7 @@
 <span class="c1">#           - soln   : Solution numbers of solns to remove</span>
 <span class="c1">#           - domes  : DOMES numbers of solns to remove</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.get_nonpubsolns"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.get_nonpubsolns">[docs]</a>    <span class="k">def</span> <span class="nf">get_nonpubsolns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sigmax</span><span class="p">,</span> <span class="n">fcontr</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.get_nonpubsolns"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.get_nonpubsolns">[docs]</a>    <span class="k">def</span> <span class="nf">get_nonpubsolns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sigmax</span><span class="p">,</span> <span class="n">fcontr</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4766,7 +4775,7 @@
 <span class="c1"># Input   : psd : sinex object containing post-seismic deformation models</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.add_psd"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.add_psd">[docs]</a>    <span class="k">def</span> <span class="nf">add_psd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">psd</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.add_psd"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.add_psd">[docs]</a>    <span class="k">def</span> <span class="nf">add_psd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">psd</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4810,7 +4819,7 @@
 <span class="c1"># Input   : psd : sinex object containing post-seismic deformation models</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.remove_psd"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.remove_psd">[docs]</a>    <span class="k">def</span> <span class="nf">remove_psd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">psd</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.remove_psd"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.remove_psd">[docs]</a>    <span class="k">def</span> <span class="nf">remove_psd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">psd</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4850,7 +4859,7 @@
 <span class="c1">#           - tref : Reference epoch</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.add_per"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.add_per">[docs]</a>    <span class="k">def</span> <span class="nf">add_per</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">tref</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.add_per"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.add_per">[docs]</a>    <span class="k">def</span> <span class="nf">add_per</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">tref</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -4903,7 +4912,7 @@
 <span class="c1">#           - append    : If true, text will be appended to log file. Default if False.</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.plate_poles"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.plate_poles">[docs]</a>    <span class="k">def</span> <span class="nf">plate_poles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">Trate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.plate_poles"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.plate_poles">[docs]</a>    <span class="k">def</span> <span class="nf">plate_poles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">Trate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -5156,7 +5165,7 @@
 <span class="c1">#           - t    : discontinuity date (SINEX format)</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.insert_disc"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.insert_disc">[docs]</a>    <span class="k">def</span> <span class="nf">insert_disc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.insert_disc"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.insert_disc">[docs]</a>    <span class="k">def</span> <span class="nf">insert_disc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -5239,7 +5248,7 @@
 <span class="c1">#           - denh   : E/N/H position offsets (mm)</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.apply_offsets"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.apply_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">apply_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">denh</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.apply_offsets"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.apply_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">apply_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">denh</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -5275,7 +5284,7 @@
 <span class="c1">#           - file  : File to write</span>
 <span class="c1"># Output  :</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.write_solndomes"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.write_solndomes">[docs]</a>    <span class="k">def</span> <span class="nf">write_solndomes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solns</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.write_solndomes"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.write_solndomes">[docs]</a>    <span class="k">def</span> <span class="nf">write_solndomes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solns</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
         <span class="n">snx</span> <span class="o">=</span> <span class="bp">self</span>
@@ -5332,7 +5341,7 @@
 <span class="c1">#           - vln       : Normalized E, N, H residuals</span>
 <span class="c1">#           - w         : WRMS of topocentric residuals</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sinex.loadest_wrt"><a class="viewcode-back" href="../../../pyacs.sinex.sinex.html#pyacs.sinex.sinex.sinex.loadest_wrt">[docs]</a>    <span class="k">def</span> <span class="nf">loadest_wrt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">lmax</span><span class="p">,</span> <span class="n">lovefile</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="sinex.loadest_wrt"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.sinex.sinex.loadest_wrt">[docs]</a>    <span class="k">def</span> <span class="nf">loadest_wrt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">lmax</span><span class="p">,</span> <span class="n">lovefile</span><span class="p">,</span> <span class="n">weighting</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
 
         <span class="c1"># snx = self for class methof # Added JMN 05/01/2018</span>
@@ -5655,20 +5664,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -5676,7 +5690,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

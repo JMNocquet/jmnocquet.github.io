@@ -13,9 +13,11 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+
    foreword
    installation
    libraries
+   gts
    make_time_series
    time_series
    
@@ -27,4 +29,10 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. automodule:: pyacs
+    :members:
+	
+.. autoclass:: pyacs.gts.Gts::Gts
+	.. automethod::
 

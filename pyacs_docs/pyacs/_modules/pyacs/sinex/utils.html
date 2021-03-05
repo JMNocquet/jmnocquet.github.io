@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.sinex.utils &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.sinex.utils &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
@@ -180,8 +189,8 @@
 <span class="kn">import</span> <span class="nn">yaml</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 
-<span class="kn">from</span> <span class="nn">.constants</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.date</span> <span class="k">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">.constants</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.date</span> <span class="kn">import</span> <span class="n">date</span>
 
 
 <span class="c1">#-------------------------------------------------------------------------------</span>
@@ -196,7 +205,7 @@
 <span class="c1">#           - timescale : &#39;GPS&#39; or &#39;UTC&#39; depending on time scale of d. Default is &#39;UTC&#39;.</span>
 <span class="c1"># Output  : - l         : GPS-UTC leap seconds at requested dates</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="leapsec"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.leapsec">[docs]</a><span class="k">def</span> <span class="nf">leapsec</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">timescale</span><span class="o">=</span><span class="s1">&#39;UTC&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="leapsec"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.leapsec">[docs]</a><span class="k">def</span> <span class="nf">leapsec</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">timescale</span><span class="o">=</span><span class="s1">&#39;UTC&#39;</span><span class="p">):</span>
 
   <span class="c1"># Initialization</span>
   <span class="n">l</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
@@ -227,7 +236,7 @@
 <span class="c1"># Input   : </span>
 <span class="c1"># Output  : </span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="temp_file"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.temp_file">[docs]</a><span class="k">def</span> <span class="nf">temp_file</span><span class="p">():</span>
+<div class="viewcode-block" id="temp_file"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.temp_file">[docs]</a><span class="k">def</span> <span class="nf">temp_file</span><span class="p">():</span>
   
   <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span></div>
 
@@ -246,7 +255,7 @@
 <span class="c1">#           - margin : Margin. Default is 20.</span>
 <span class="c1"># Output  : </span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="ps2png"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.ps2png">[docs]</a><span class="k">def</span> <span class="nf">ps2png</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">png</span><span class="p">,</span> <span class="n">rotate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<div class="viewcode-block" id="ps2png"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.ps2png">[docs]</a><span class="k">def</span> <span class="nf">ps2png</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">png</span><span class="p">,</span> <span class="n">rotate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
 
   <span class="c1"># Temporary file</span>
   <span class="n">tmp</span> <span class="o">=</span> <span class="n">temp_file</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span>
@@ -269,7 +278,7 @@
 <span class="c1">#           - t : date object</span>
 <span class="c1"># Output  : - s : Updated string</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="sed_keywords"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.sed_keywords">[docs]</a><span class="k">def</span> <span class="nf">sed_keywords</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<div class="viewcode-block" id="sed_keywords"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.sed_keywords">[docs]</a><span class="k">def</span> <span class="nf">sed_keywords</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
   
   <span class="c1"># Date elements</span>
   <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="s1">&#39;\$yyyy&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">yyyy</span><span class="p">,</span> <span class="n">s</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -303,7 +312,7 @@
 <span class="c1">#           - t   : date object required if sed=True. Default is None.</span>
 <span class="c1"># Output  : - r   : record object</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="dict2rec"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.dict2rec">[docs]</a><span class="k">def</span> <span class="nf">dict2rec</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="dict2rec"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.dict2rec">[docs]</a><span class="k">def</span> <span class="nf">dict2rec</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
   
   <span class="c1"># Initialization</span>
   <span class="n">r</span> <span class="o">=</span> <span class="n">record</span><span class="p">()</span>
@@ -349,7 +358,7 @@
 <span class="c1"># Input   : - r : record object</span>
 <span class="c1"># Output  : - d : dictionary</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="rec2dict"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.rec2dict">[docs]</a><span class="k">def</span> <span class="nf">rec2dict</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+<div class="viewcode-block" id="rec2dict"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.rec2dict">[docs]</a><span class="k">def</span> <span class="nf">rec2dict</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
   
   <span class="c1"># Initialization</span>
   <span class="n">d</span> <span class="o">=</span> <span class="nb">vars</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
@@ -382,7 +391,7 @@
 <span class="c1">#           - t     : date object required if sed=True. Default is None.</span>
 <span class="c1"># Output  : Record or list</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="read_yaml"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.read_yaml">[docs]</a><span class="k">def</span> <span class="nf">read_yaml</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">sed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="read_yaml"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.read_yaml">[docs]</a><span class="k">def</span> <span class="nf">read_yaml</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">sed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
   
     <span class="n">y</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
     
@@ -419,7 +428,7 @@
 <span class="c1">#           - out : File to write</span>
 <span class="c1"># Output  : </span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="write_yaml"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.write_yaml">[docs]</a><span class="k">def</span> <span class="nf">write_yaml</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+<div class="viewcode-block" id="write_yaml"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.write_yaml">[docs]</a><span class="k">def</span> <span class="nf">write_yaml</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
   
   <span class="c1"># If r is a record,</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;instance&#39;</span><span class="p">):</span>
@@ -452,7 +461,7 @@
 <span class="c1">#           - nproc : Number of processors to use</span>
 <span class="c1"># Output  : </span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="parallel_sh"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.parallel_sh">[docs]</a><span class="k">def</span> <span class="nf">parallel_sh</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">nproc</span><span class="p">):</span>
+<div class="viewcode-block" id="parallel_sh"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.parallel_sh">[docs]</a><span class="k">def</span> <span class="nf">parallel_sh</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">nproc</span><span class="p">):</span>
   
   <span class="c1"># Read list of commands</span>
   <span class="n">commands</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -487,7 +496,7 @@
 <span class="c1">#           - mainlog   : Log file handle</span>
 <span class="c1">#           - timestamp : True if a time stamp should be added at the beginning of message</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="print_message"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.print_message">[docs]</a><span class="k">def</span> <span class="nf">print_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">mainlog</span><span class="p">,</span> <span class="n">timestamp</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="print_message"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.print_message">[docs]</a><span class="k">def</span> <span class="nf">print_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">mainlog</span><span class="p">,</span> <span class="n">timestamp</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
   <span class="c1"># Add time stamp if requested</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">timestamp</span><span class="p">):</span>
@@ -511,7 +520,7 @@
 <span class="c1"># Input   : s : String</span>
 <span class="c1"># Output  : True or False</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="isfloat"><a class="viewcode-back" href="../../../pyacs.sinex.utils.html#pyacs.sinex.utils.isfloat">[docs]</a><span class="k">def</span> <span class="nf">isfloat</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="viewcode-block" id="isfloat"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.utils.isfloat">[docs]</a><span class="k">def</span> <span class="nf">isfloat</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
   
   <span class="k">try</span><span class="p">:</span>
     <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -525,20 +534,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -546,7 +560,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

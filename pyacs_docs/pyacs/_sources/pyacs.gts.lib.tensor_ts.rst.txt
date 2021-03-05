@@ -4,9 +4,13 @@ pyacs.gts.lib.tensor\_ts package
 Submodules
 ----------
 
-.. toctree::
+pyacs.gts.lib.tensor\_ts.sgts2tsr module
+----------------------------------------
 
-   pyacs.gts.lib.tensor_ts.sgts2tsr
+.. automodule:: pyacs.gts.lib.tensor_ts.sgts2tsr
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Module contents
 ---------------

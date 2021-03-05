@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib package &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.gts.lib package &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -29,14 +37,10 @@
     <script type="text/javascript" src="static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="pyacs.gts.lib.filters package" href="pyacs.gts.lib.filters.html" />
-    <link rel="prev" title="pyacs.gts.Sgts_methods.write_pck module" href="pyacs.gts.Sgts_methods.write_pck.html" /> 
+    <link rel="prev" title="pyacs.gts.Sgts_methods package" href="pyacs.gts.Sgts_methods.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -60,7 +64,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -87,14 +92,17 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time_series.html">Time series analysis</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Code documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Full code documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="pyacs.html">pyacs package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="pyacs.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyacs.glinalg.html">pyacs.glinalg package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="pyacs.gts.html">pyacs.gts package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyacs.lib.html">pyacs.lib package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyacs.message.html">pyacs.message package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyacs.sinex.html">pyacs.sinex package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyacs.sol.html">pyacs.sol package</a></li>
 </ul>
@@ -109,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -143,13 +152,15 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">Code documentation</a> &raquo;</li>
+          <li><a href="modules.html">Full code documentation</a> &raquo;</li>
         
           <li><a href="pyacs.html">pyacs package</a> &raquo;</li>
         
@@ -160,7 +171,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/pyacs.gts.lib.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -181,85 +192,112 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.filters.html">pyacs.gts.lib.filters package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.filters.median.html">pyacs.gts.lib.filters.median module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.filters.minimum_component.html">pyacs.gts.lib.filters.minimum_component module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.filters.piecewise_linear.html">pyacs.gts.lib.filters.piecewise_linear module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.filters.savitzky_golay.html">pyacs.gts.lib.filters.savitzky_golay module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.filters.total_variation.html">pyacs.gts.lib.filters.total_variation module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.filters.vondrak.html">pyacs.gts.lib.filters.vondrak module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.filters.wiener.html">pyacs.gts.lib.filters.wiener module</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.el1_trend">pyacs.gts.lib.filters.el1_trend module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.l1_trend">pyacs.gts.lib.filters.l1_trend module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.median">pyacs.gts.lib.filters.median module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.minimum_component">pyacs.gts.lib.filters.minimum_component module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.piecewise_linear">pyacs.gts.lib.filters.piecewise_linear module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.savitzky_golay">pyacs.gts.lib.filters.savitzky_golay module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.smooth">pyacs.gts.lib.filters.smooth module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.spline">pyacs.gts.lib.filters.spline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.total_variation">pyacs.gts.lib.filters.total_variation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.vondrak">pyacs.gts.lib.filters.vondrak module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters.wiener">pyacs.gts.lib.filters.wiener module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.filters.html#module-pyacs.gts.lib.filters">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.format.html">pyacs.gts.lib.format package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.cats.html">pyacs.gts.lib.format.cats module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.force_daily.html">pyacs.gts.lib.format.force_daily module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.get_unr.html">pyacs.gts.lib.format.get_unr module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.kenv.html">pyacs.gts.lib.format.kenv module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.mb_file.html">pyacs.gts.lib.format.mb_file module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.pos.html">pyacs.gts.lib.format.pos module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.pride.html">pyacs.gts.lib.format.pride module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.tdp.html">pyacs.gts.lib.format.tdp module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.format.track.html">pyacs.gts.lib.format.track module</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.cats">pyacs.gts.lib.format.cats module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.force_daily">pyacs.gts.lib.format.force_daily module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.get_unr">pyacs.gts.lib.format.get_unr module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.kenv">pyacs.gts.lib.format.kenv module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.mb_file">pyacs.gts.lib.format.mb_file module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.pos">pyacs.gts.lib.format.pos module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.pride">pyacs.gts.lib.format.pride module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.tdp">pyacs.gts.lib.format.tdp module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.to_pandas_df">pyacs.gts.lib.format.to_pandas_df module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format.track">pyacs.gts.lib.format.track module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.format.html#module-pyacs.gts.lib.format">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.plot.html">pyacs.gts.lib.plot package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.plot.gts_to_ts.html">pyacs.gts.lib.plot.gts_to_ts module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.plot.init_plot_default.html">pyacs.gts.lib.plot.init_plot_default module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.plot.init_plot_settings.html">pyacs.gts.lib.plot.init_plot_settings module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.plot.make_stitle.html">pyacs.gts.lib.plot.make_stitle module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.plot.plot.html">pyacs.gts.lib.plot.plot module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.plot.plot_ts.html">pyacs.gts.lib.plot.plot_ts module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.model.html">pyacs.gts.lib.model package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.add_vel_sigma">pyacs.gts.lib.model.add_vel_sigma module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.detrend">pyacs.gts.lib.model.detrend module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.detrend_annual">pyacs.gts.lib.model.detrend_annual module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.detrend_median">pyacs.gts.lib.model.detrend_median module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.detrend_seasonal">pyacs.gts.lib.model.detrend_seasonal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.detrend_seasonal_median">pyacs.gts.lib.model.detrend_seasonal_median module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.frame">pyacs.gts.lib.model.frame module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.make_model">pyacs.gts.lib.model.make_model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.mmodel">pyacs.gts.lib.model.mmodel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.non_linear_gts_model">pyacs.gts.lib.model.non_linear_gts_model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.remove_pole">pyacs.gts.lib.model.remove_pole module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model.trajectory">pyacs.gts.lib.model.trajectory module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.model.html#module-pyacs.gts.lib.model">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.outliers.html">pyacs.gts.lib.outliers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#module-pyacs.gts.lib.outliers.find_l1trend">pyacs.gts.lib.outliers.find_l1trend module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#module-pyacs.gts.lib.outliers.find_outliers_around_date">pyacs.gts.lib.outliers.find_outliers_around_date module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#module-pyacs.gts.lib.outliers.find_outliers_percentage">pyacs.gts.lib.outliers.find_outliers_percentage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#module-pyacs.gts.lib.outliers.find_outliers_simple">pyacs.gts.lib.outliers.find_outliers_simple module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#module-pyacs.gts.lib.outliers.find_outliers_sliding_window">pyacs.gts.lib.outliers.find_outliers_sliding_window module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#module-pyacs.gts.lib.outliers.find_outliers_vondrak">pyacs.gts.lib.outliers.find_outliers_vondrak module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#module-pyacs.gts.lib.outliers.remove_outliers">pyacs.gts.lib.outliers.remove_outliers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.outliers.html#module-pyacs.gts.lib.outliers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.plot.html">pyacs.gts.lib.plot package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#module-pyacs.gts.lib.plot.gts_to_ts">pyacs.gts.lib.plot.gts_to_ts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#module-pyacs.gts.lib.plot.init_plot_default">pyacs.gts.lib.plot.init_plot_default module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#module-pyacs.gts.lib.plot.init_plot_settings">pyacs.gts.lib.plot.init_plot_settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#module-pyacs.gts.lib.plot.make_stitle">pyacs.gts.lib.plot.make_stitle module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#module-pyacs.gts.lib.plot.plot">pyacs.gts.lib.plot.plot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#module-pyacs.gts.lib.plot.plot_ts">pyacs.gts.lib.plot.plot_ts module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.plot.html#module-pyacs.gts.lib.plot">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.primitive.html">pyacs.gts.lib.primitive package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.add_obs.html">pyacs.gts.lib.primitive.add_obs module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.add_obs_xyz.html">pyacs.gts.lib.primitive.add_obs_xyz module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.add_offsets_dates.html">pyacs.gts.lib.primitive.add_offsets_dates module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.cdata.html">pyacs.gts.lib.primitive.cdata module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.copy.html">pyacs.gts.lib.primitive.copy module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.correct_duplicated_dates.html">pyacs.gts.lib.primitive.correct_duplicated_dates module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.decimate.html">pyacs.gts.lib.primitive.decimate module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.differentiate.html">pyacs.gts.lib.primitive.differentiate module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.displacement.html">pyacs.gts.lib.primitive.displacement module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.exclude_periods.html">pyacs.gts.lib.primitive.exclude_periods module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.extract_dates.html">pyacs.gts.lib.primitive.extract_dates module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.extract_ndates_after_date.html">pyacs.gts.lib.primitive.extract_ndates_after_date module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.extract_ndates_around_date.html">pyacs.gts.lib.primitive.extract_ndates_around_date module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.extract_ndates_before_date.html">pyacs.gts.lib.primitive.extract_ndates_before_date module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.extract_periods.html">pyacs.gts.lib.primitive.extract_periods module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.get_coseismic.html">pyacs.gts.lib.primitive.get_coseismic module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.insert_gts_data.html">pyacs.gts.lib.primitive.insert_gts_data module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.neu2xyz.html">pyacs.gts.lib.primitive.neu2xyz module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.remove_velocity.html">pyacs.gts.lib.primitive.remove_velocity module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.reorder.html">pyacs.gts.lib.primitive.reorder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.rotate.html">pyacs.gts.lib.primitive.rotate module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.set_zero_at_date.html">pyacs.gts.lib.primitive.set_zero_at_date module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.substract_ts.html">pyacs.gts.lib.primitive.substract_ts module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.substract_ts_daily.html">pyacs.gts.lib.primitive.substract_ts_daily module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.primitive.xyz2neu.html">pyacs.gts.lib.primitive.xyz2neu module</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.add_obs">pyacs.gts.lib.primitive.add_obs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.add_obs_xyz">pyacs.gts.lib.primitive.add_obs_xyz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.add_offsets_dates">pyacs.gts.lib.primitive.add_offsets_dates module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.cdata">pyacs.gts.lib.primitive.cdata module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.copy">pyacs.gts.lib.primitive.copy module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.correct_duplicated_dates">pyacs.gts.lib.primitive.correct_duplicated_dates module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.decimate">pyacs.gts.lib.primitive.decimate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.differentiate">pyacs.gts.lib.primitive.differentiate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.displacement">pyacs.gts.lib.primitive.displacement module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.exclude_periods">pyacs.gts.lib.primitive.exclude_periods module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.extract_dates">pyacs.gts.lib.primitive.extract_dates module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.extract_ndates_after_date">pyacs.gts.lib.primitive.extract_ndates_after_date module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.extract_ndates_around_date">pyacs.gts.lib.primitive.extract_ndates_around_date module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.extract_ndates_before_date">pyacs.gts.lib.primitive.extract_ndates_before_date module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.extract_periods">pyacs.gts.lib.primitive.extract_periods module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.find_large_uncertainty">pyacs.gts.lib.primitive.find_large_uncertainty module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.get_coseismic">pyacs.gts.lib.primitive.get_coseismic module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.insert_gts_data">pyacs.gts.lib.primitive.insert_gts_data module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.interpolate">pyacs.gts.lib.primitive.interpolate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.neu2xyz">pyacs.gts.lib.primitive.neu2xyz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.remove_velocity">pyacs.gts.lib.primitive.remove_velocity module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.reorder">pyacs.gts.lib.primitive.reorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.rotate">pyacs.gts.lib.primitive.rotate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.set_zero_at_date">pyacs.gts.lib.primitive.set_zero_at_date module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.split_gap">pyacs.gts.lib.primitive.split_gap module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.substract_ts">pyacs.gts.lib.primitive.substract_ts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.substract_ts_daily">pyacs.gts.lib.primitive.substract_ts_daily module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive.xyz2neu">pyacs.gts.lib.primitive.xyz2neu module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.primitive.html#module-pyacs.gts.lib.primitive">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.tensor_ts.html">pyacs.gts.lib.tensor_ts package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.tensor_ts.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pyacs.gts.lib.tensor_ts.sgts2tsr.html">pyacs.gts.lib.tensor_ts.sgts2tsr module</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.tensor_ts.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.tensor_ts.html#module-pyacs.gts.lib.tensor_ts.sgts2tsr">pyacs.gts.lib.tensor_ts.sgts2tsr module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyacs.gts.lib.tensor_ts.html#module-pyacs.gts.lib.tensor_ts">Module contents</a></li>
 </ul>
 </li>
@@ -268,21 +306,780 @@
 </div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.errors.html">pyacs.gts.lib.errors module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.gts_dates.html">pyacs.gts.lib.gts_dates module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.gts_estimators.html">pyacs.gts.lib.gts_estimators module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.metadata.html">pyacs.gts.lib.metadata module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.model.html">pyacs.gts.lib.model module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.noise.html">pyacs.gts.lib.noise module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.offset.html">pyacs.gts.lib.offset module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.outliers.html">pyacs.gts.lib.outliers module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.step_detect.html">pyacs.gts.lib.step_detect module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.step_detect_edge_filter.html">pyacs.gts.lib.step_detect_edge_filter module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyacs.gts.lib.trajectory.html">pyacs.gts.lib.trajectory module</a></li>
-</ul>
 </div>
+<div class="section" id="module-pyacs.gts.lib.errors">
+<span id="pyacs-gts-lib-errors-module"></span><h2>pyacs.gts.lib.errors module<a class="headerlink" href="#module-pyacs.gts.lib.errors" title="Permalink to this headline">¶</a></h2>
+<p>Exception class for Gts</p>
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsError</code><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputDataNone">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputDataNone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputDataNone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputDataNone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputData_xyzNone">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputData_xyzNone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputData_xyzNone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputData_xyzNone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputData_allNone">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputData_allNone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputData_allNone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputData_allNone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputDataTypeError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputDataTypeError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputDataTypeError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputDataTypeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputDataBadDim">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputDataBadDim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputDataBadDim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputDataBadDim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputDataBadNcolumns">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputDataBadNcolumns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputDataBadNcolumns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputDataBadNcolumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputDataBadNrows">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputDataBadNrows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputDataBadNrows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputDataBadNrows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputData_xyzTypeError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputData_xyzTypeError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputData_xyzTypeError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputData_xyzTypeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputData_xyzBadDim">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputData_xyzBadDim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputData_xyzBadDim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputData_xyzBadDim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputData_xyzBadNcolumns">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputData_xyzBadNcolumns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputData_xyzBadNcolumns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputData_xyzBadNcolumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputData_xyzBadNrows">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputData_xyzBadNrows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputData_xyzBadNrows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputData_xyzBadNrows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputDataDiffShape">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputDataDiffShape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputDataDiffShape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputDataDiffShape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsInputDataDiffDate">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsInputDataDiffDate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsInputDataDiffDate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsInputDataDiffDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsCDataError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsCDataError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">gts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsCDataError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsCDataError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsReadFileError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsReadFileError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsReadFileError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsReadFileError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyacs.gts.lib.errors.GtsMethodError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyacs.gts.lib.errors.</code><code class="sig-name descname">GtsMethodError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method_name</span></em>, <em class="sig-param"><span class="n">lib</span></em>, <em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/errors.html#GtsMethodError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.errors.GtsMethodError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyacs.gts.lib.errors.GtsError" title="pyacs.gts.lib.errors.GtsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyacs.gts.lib.errors.GtsError</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.gts_dates">
+<span id="pyacs-gts-lib-gts-dates-module"></span><h2>pyacs.gts.lib.gts_dates module<a class="headerlink" href="#module-pyacs.gts.lib.gts_dates" title="Permalink to this headline">¶</a></h2>
+<p>This module gathers a few useful date functions, which can be used to read different time series formats.
+pyacs.pygts uses decimal year as time defaults. Seconds for High-Rate GPS solution can also be used.</p>
+<dl class="py function">
+<dt id="pyacs.gts.lib.gts_dates.np_yyyy_mm_dd_hh_mm_ss_2_decyear">
+<code class="sig-prename descclassname">pyacs.gts.lib.gts_dates.</code><code class="sig-name descname">np_yyyy_mm_dd_hh_mm_ss_2_decyear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/gts_dates.html#np_yyyy_mm_dd_hh_mm_ss_2_decyear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.gts_dates.np_yyyy_mm_dd_hh_mm_ss_2_decyear" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts a numpy array including year month mday hour minute sec to decimal year
+returns a 1D array</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.gts_dates.np_yyyy_mm_dd_hh_mm_ss_2_datetime">
+<code class="sig-prename descclassname">pyacs.gts.lib.gts_dates.</code><code class="sig-name descname">np_yyyy_mm_dd_hh_mm_ss_2_datetime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/gts_dates.html#np_yyyy_mm_dd_hh_mm_ss_2_datetime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.gts_dates.np_yyyy_mm_dd_hh_mm_ss_2_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts a numpy array including year month mday hour minute sec to an array of python datetime.datetime object
+returns a hash</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.gts_dates.np_datetime_2_eq_time">
+<code class="sig-prename descclassname">pyacs.gts.lib.gts_dates.</code><code class="sig-name descname">np_datetime_2_eq_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">leap_sec</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">eq_time</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/gts_dates.html#np_datetime_2_eq_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.gts_dates.np_datetime_2_eq_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes a hash of python datetime.datetime object and return a numpy array of seconds with respect to eq_time
+if the input array is in GPS time, providing leap_sec correct for the GPS_time - UTC delta</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>leap_sec</strong> – number of seconds between GPS_time - UTC delta (leap_sec=17 that is GPS is ahead of UTC by 17 seconds on 13/02/2016)</p></li>
+<li><p><strong>eq_time</strong> – time of earthquake as a python datetime.datetime object (in UTC)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.gts_dates.decyear2days">
+<code class="sig-prename descclassname">pyacs.gts.lib.gts_dates.</code><code class="sig-name descname">decyear2days</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ref_date</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/gts_dates.html#decyear2days"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.gts_dates.decyear2days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the dates of a time series from decimal years to days after a reference date
+ref_date is read by guess_date</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.gts_estimators">
+<span id="pyacs-gts-lib-gts-estimators-module"></span><h2>pyacs.gts.lib.gts_estimators module<a class="headerlink" href="#module-pyacs.gts.lib.gts_estimators" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyacs.gts.lib.gts_estimators.least_square">
+<code class="sig-prename descclassname">pyacs.gts.lib.gts_estimators.</code><code class="sig-name descname">least_square</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">A</span></em>, <em class="sig-param"><span class="n">L</span></em>, <em class="sig-param"><span class="n">P</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/gts_estimators.html#least_square"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.gts_estimators.least_square" title="Permalink to this definition">¶</a></dt>
+<dd><p>Least squares estimation for system equation AX + L = 0, P
+input: A: design matrix;L observation vector L; P: weight matrix for L
+(P defaut is the identity matrix)
+output: unknown matrix  : X
+residuals matrix: V
+standard deviation sigma_0: std
+unknown parameters variance: s_X
+residuals variance: s_V
+model S:S = A*X</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.message">
+<span id="pyacs-gts-lib-message-module"></span><h2>pyacs.gts.lib.message module<a class="headerlink" href="#module-pyacs.gts.lib.message" title="Permalink to this headline">¶</a></h2>
+<p>Print messages and log</p>
+<dl class="py function">
+<dt id="pyacs.gts.lib.message.message">
+<code class="sig-prename descclassname">pyacs.gts.lib.message.</code><code class="sig-name descname">message</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">log_file</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/message.html#message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.message.message" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – message to be printed</p></li>
+<li><p><strong>log_file</strong> – file object where message will be written</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.metadata">
+<span id="pyacs-gts-lib-metadata-module"></span><h2>pyacs.gts.lib.metadata module<a class="headerlink" href="#module-pyacs.gts.lib.metadata" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.read_lon_lat">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">read_lon_lat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">gmt_file</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#read_lon_lat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.read_lon_lat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a gmt psvelo file and populates Gts.lon &amp; Gts.lat</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gmt_file</strong> – gmt psvelo file</p></li>
+<li><p><strong>verbose</strong> – verbose mode (boolean)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the current Gts instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.save_velocity">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">save_velocity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">gmt_file</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">comment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">up</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#save_velocity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.save_velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends velocity estimates (with uncertainties) to a gmt psvelo file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gmt_file</strong> – output gmt psvelo file (will append if gmt_file already exists)</p></li>
+<li><p><strong>verbose</strong> – verbose mode (boolean)</p></li>
+<li><p><strong>comment</strong> – comment as a string. ‘# ‘ is pre-prended to comment if not provided</p></li>
+<li><p><strong>up</strong> – boolean. If True, then Ve, SVe and SVen are set to 0 and Vu and Vu are written as 4-th and 6-th fields</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the current Gts instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.save_offsets">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">save_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ofile</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">comment</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">up</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">info</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#save_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.save_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends offsets values to a given text file (gmt psvelo format)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ofile</strong> – output offset file</p></li>
+<li><p><strong>verbose</strong> – verbose mode (boolean)</p></li>
+<li><p><strong>comment</strong> – comment as a string. ‘# ‘ is pre-prended to comment if not provided</p></li>
+<li><p><strong>up</strong> – boolean. If True, then Ve, SVe and SVen are set to 0 and Vu and Vu are written as 4-th and 6-th fields</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the current Gts instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.read_eq_rename">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">read_eq_rename</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">eq_rename</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#read_eq_rename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.read_eq_rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the information for the current site (code) from an eq_rename globk file.</p>
+<p>Populates loutliers and offsets_dates
+Found excluded periods in the eq_rename file are added to loutliers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eq_rename</strong> – eq_rename (globk format) file to be read</p></li>
+<li><p><strong>in_place</strong> – boolean. If True then the Gts instance is modified, if False the Gts instance is preserved and a new Gts instance is return</p></li>
+<li><p><strong>verbose</strong> – verbose mode (boolean)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Gts instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.save_eq_rename">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">save_eq_rename</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">eq_rename</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">excluded_periods</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#save_eq_rename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.save_eq_rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>save results of a Gts analysis in globk format eq_rename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eq_rename</strong> – output eq_rename file (Golbk format)</p></li>
+<li><p><strong>verbose</strong> – verbose mode (boolean)</p></li>
+<li><p><strong>exluded_periods</strong> – periods to be excluded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Gts instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.make_dynamic_apr">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">make_dynamic_apr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">apr</span></em>, <em class="sig-param"><span class="n">time_step</span><span class="o">=</span><span class="default_value">30.0</span></em>, <em class="sig-param"><span class="n">pos_tol</span><span class="o">=</span><span class="default_value">0.03</span></em>, <em class="sig-param"><span class="n">dates</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">gap</span><span class="o">=</span><span class="default_value">20.0</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#make_dynamic_apr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.make_dynamic_apr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an apr file for GAMIT
+The created apr file has no velocity, but a series of coordinates at different time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>apr</strong> – apr file (Globk format)</p></li>
+<li><p><strong>time_step</strong> – time step for writing dates (default 30 days)</p></li>
+<li><p><strong>pos_tol</strong> – position tolerance. If exceeded, a new date will be written. (default 0.03 m)</p></li>
+<li><p><strong>dates</strong> – a list of dates in decimal years where writing will be forced</p></li>
+<li><p><strong>gap</strong> – gap in days. If there is no data during a duration greater than gap, then observation is forced to be included and tested against pos_tol</p></li>
+<li><p><strong>verbose</strong> – verbose mode (boolean)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Gts instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.save_apr">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">save_apr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">apr</span></em>, <em class="sig-param"><span class="n">epoch</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">excluded_periods</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#save_apr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.save_apr" title="Permalink to this definition">¶</a></dt>
+<dd><p>save results of a Gts analysis in globk format apr file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>apr</strong> – apr file (Globk format)</p></li>
+<li><p><strong>epoch</strong> – epoch in decimal year for coordinates in apr</p></li>
+<li><p><strong>verbose</strong> – verbose mode (boolean)</p></li>
+<li><p><strong>exluded_periods</strong> – periods to be excluded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Gts instance</p>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>following Globk’s convention, site will be named XXXX_1PS, XXXX_2PS etc between offset dates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.read_offset_dates">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">read_offset_dates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">offset_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#read_offset_dates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.read_offset_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads an offset file and populates offsets_dates (pyacs format) attribute of the current Gts instance.
+format is simply a code dates. dates can be any format read by pyacs.guess_date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>offset_file</strong> – offset_file to be read</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the current Gts instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.metadata.info">
+<code class="sig-prename descclassname">pyacs.gts.lib.metadata.</code><code class="sig-name descname">info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">info</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/metadata.html#info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.metadata.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print various informations about the time series</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.noise">
+<span id="pyacs-gts-lib-noise-module"></span><h2>pyacs.gts.lib.noise module<a class="headerlink" href="#module-pyacs.gts.lib.noise" title="Permalink to this headline">¶</a></h2>
+<p>Pyacs noise module
+This is a wrapper to Globk tsfit and the CATS Software
+Reference
+Herring, T. A., King, R. W., Floyd, M. A. &amp; McClusky, S. C. (2015). GAMIT/GLOBK Reference manual, 10.6. 
+Williams, S. D. (2008). CATS: GPS coordinate time series analysis software. GPS solutions, 12(2), 147-153.</p>
+<dl class="py function">
+<dt id="pyacs.gts.lib.noise.wrms">
+<code class="sig-prename descclassname">pyacs.gts.lib.noise.</code><code class="sig-name descname">wrms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/noise.html#wrms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.noise.wrms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the wrms
+:return wrms: return(np.array([wrms_n,wrms_e,wrms_up]))</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.noise.realistic_sigma">
+<code class="sig-prename descclassname">pyacs.gts.lib.noise.</code><code class="sig-name descname">realistic_sigma</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">option</span><span class="o">=</span><span class="default_value">'tsfit'</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/noise.html#realistic_sigma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.noise.realistic_sigma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates realistic sigmas on velocity components
+:param option:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>tsfit: globk T. Herring realistic sigma</p></li>
+<li><p>cats_pl: CATS estimates with noise type estimated (i.e. –model=pl:)</p></li>
+<li><p>cats_seasonal_pl: CATS estimates with seasonal terms and noise type estimated (i.e. –model=pl: –sinusoid=1y1)</p></li>
+<li><p>cats_flicker: CATS estimates assuming flicker noise (i.e. –model=pl:k-1)</p></li>
+<li><p>cats_seasonal_flicker: CATS estimates with seasonal terms and assuming flicker noise (i.e. –model=pl:k-1 –sinusoid=1y1)</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.noise.sigma_cats">
+<code class="sig-prename descclassname">pyacs.gts.lib.noise.</code><code class="sig-name descname">sigma_cats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">'k-1'</span></em>, <em class="sig-param"><span class="n">seasonal</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/noise.html#sigma_cats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.noise.sigma_cats" title="Permalink to this definition">¶</a></dt>
+<dd><p>runs CATS for getting realistic sigma</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.noise.sigma_vel_tsfit">
+<code class="sig-prename descclassname">pyacs.gts.lib.noise.</code><code class="sig-name descname">sigma_vel_tsfit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/noise.html#sigma_vel_tsfit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.noise.sigma_vel_tsfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>runs tsfit for getting realistic sigma</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.noise.get_spectral_index">
+<code class="sig-prename descclassname">pyacs.gts.lib.noise.</code><code class="sig-name descname">get_spectral_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cats_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/noise.html#get_spectral_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.noise.get_spectral_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.noise.get_vel_and_sigma">
+<code class="sig-prename descclassname">pyacs.gts.lib.noise.</code><code class="sig-name descname">get_vel_and_sigma</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cats_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/noise.html#get_vel_and_sigma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.noise.get_vel_and_sigma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.offset">
+<span id="pyacs-gts-lib-offset-module"></span><h2>pyacs.gts.lib.offset module<a class="headerlink" href="#module-pyacs.gts.lib.offset" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.print_no_return">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">print_no_return</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#print_no_return"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.print_no_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.suspect_offsets_mf">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">suspect_offsets_mf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">lcomponent</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">n_max_offsets</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">debug</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#suspect_offsets_mf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.suspect_offsets_mf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to find offsets in a time series using a median filter</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.test_offset_significance">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">test_offset_significance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">date</span></em>, <em class="sig-param"><span class="n">conf_level</span><span class="o">=</span><span class="default_value">95</span></em>, <em class="sig-param"><span class="n">lcomponent</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">debug</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'local'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#test_offset_significance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.test_offset_significance" title="Permalink to this definition">¶</a></dt>
+<dd><p>test the significance of an offset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>date        : date of the offset to be tested</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>conf_level  : confidence level in percent (default=95)</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>lcomponent  : component to be tested (default=’NE’)</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>mode        : choose among ‘local’,’detrend’,’detrend_seasonal’ to test significance</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>verbose     : verbose mode</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True if significant, else False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.local_offset_robust">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">local_offset_robust</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">date</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">debug</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#local_offset_robust"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.local_offset_robust" title="Permalink to this definition">¶</a></dt>
+<dd><p>estimate a local offset (no velocity) with a robust method
+:param date: date in decimal year
+:param n: number of dates before and after the dates used in the estimation
+:return : a 1D numpy array with [date, north, east, up, s_north, s_east, s_up]
+:note: the offsets are estimated using the difference between the median position before and after the earthquake using i days
+for all i &lt;=n. Then the median of the estimates is returned.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.apply_offsets">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">apply_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">np_offset</span></em>, <em class="sig-param"><span class="n">opposite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#apply_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.apply_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies given offsets to a times series
+np_offset is a 1D np.array with lines [dates,north,east,up]
+if in_place = True then replace the current time series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>np_offset</strong> – 1D or 3D numpy array or list or list of list with column offset_dates, north, east, up, s_north, s_east, s_up</p></li>
+<li><p><strong>opposite</strong> – boolean, if True apply the oppsite of provided offsets</p></li>
+<li><p><strong>in_place</strong> – if True, will make change in place, if False, return s a new time series</p></li>
+<li><p><strong>verbose</strong> – boolean, verbose mode</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.find_offsets_t_scan">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">find_offsets_t_scan</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.8</span></em>, <em class="sig-param"><span class="n">window</span><span class="o">=</span><span class="default_value">250</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">lcomponent</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">debug</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#find_offsets_t_scan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.find_offsets_t_scan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.get_suspected_dates">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">get_suspected_dates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">diff_data</span></em>, <em class="sig-param"><span class="n">threshold</span></em>, <em class="sig-param"><span class="n">lcomponent</span><span class="o">=</span><span class="default_value">'NEU'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#get_suspected_dates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.get_suspected_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of the largest values; these are suspected offsets</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.check_suspected_offsets">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">check_suspected_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lindex</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#check_suspected_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.check_suspected_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check that the list of suspected index does not contain two successive values.
+In this case, it is certainly an isolated outlier and the suspected offsets are removed from the list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.find_offsets">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">find_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">n_max_offsets</span><span class="o">=</span><span class="default_value">9</span></em>, <em class="sig-param"><span class="n">conf_level</span><span class="o">=</span><span class="default_value">95</span></em>, <em class="sig-param"><span class="n">lcomponent</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#find_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.find_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple empirical procedure to find offsets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>threshold</strong> – threshold value for offset preliminary detection</p></li>
+<li><p><strong>n_max_offset</strong> – maximum number of offsets to be detected simultaneously</p></li>
+<li><p><strong>conf_level</strong> – confidence level for a suspected offset to be accepted</p></li>
+<li><p><strong>lcomponent</strong> – components used for offset detection</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new Gts instance with offsets_dates and outliers now populated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.suspect_offsets">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">suspect_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">lcomponent</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">n_max_offsets</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#suspect_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.suspect_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to find offsets in a time series</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.find_time_offsets">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">find_time_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">option</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ndays</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">th_detection_rms</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">th_detection_offset</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#find_time_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.find_time_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Find the time of suspected offsets by rms time series calculated over ndays
+Then check the time of offsets: if one offset is too small/None then it is removed
+input:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>ndays: number of positions in the windows. rms time series are calculated over ndays.</p></li>
+<li><p>th_detection_rms: the threshold for detecting the anomalous windows rms(t) &gt; th_detection_rms*median(rms(ts)).</p></li>
+<li><dl class="simple">
+<dt>th_detection_offset: the threshold for detecting the offsets,</dt><dd><p>for each anomalous time windows, differentiate positions
+then test whether it is a suspected offset (differentiated(t) &gt; threshold * median(differentiated))</p>
+</dd>
+</dl>
+</li>
+</ul>
+<blockquote>
+<div><p>output:</p>
+<blockquote>
+<div><p>add the time of offsets in to self.offsets</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.delete_small_offsets">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">delete_small_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">offsets</span></em>, <em class="sig-param"><span class="n">del_by_pricise</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#delete_small_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.delete_small_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>The aim for test_offset modul. 
+Estimate the offsets with clean data.
+Then delete the offsets which their values are so small
+input: list of time offsets
+output: list of time offsets tested</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.test_offsets">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">test_offsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">debug</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">window_length</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#test_offsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.test_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Test the offset:</dt><dd><ul class="simple">
+<li><p>delete the small offset (1mm for East/North, 2mm for Up)</p></li>
+<li><p>then make a F ratio test</p></li>
+<li><p>re-check to delete the small offsets</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.offset.estimate_local_offset">
+<code class="sig-prename descclassname">pyacs.gts.lib.offset.</code><code class="sig-name descname">estimate_local_offset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">window_length</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/offset.html#estimate_local_offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.offset.estimate_local_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the local offset, just used window_length positions before &amp; window_length positions behind of offset
+output: amplitude of local offsets</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.outliers_old">
+<span id="pyacs-gts-lib-outliers-old-module"></span><h2>pyacs.gts.lib.outliers_old module<a class="headerlink" href="#module-pyacs.gts.lib.outliers_old" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.remove_outliers">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">remove_outliers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">periods</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#remove_outliers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.remove_outliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>removes outliers provided in self.outliers
+return a new Gts without the outliers
+if in_place = True then self has the outliers removed as well (in _place)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.find_outlier_around_date">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">find_outlier_around_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">date</span></em>, <em class="sig-param"><span class="n">conf_level</span><span class="o">=</span><span class="default_value">95</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">lcomponent</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#find_outlier_around_date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.find_outlier_around_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find an outlier around a given date 
+returns the index of the outlier, returns [] if no outlier found
+:param date       : given date
+:param conf_level : confidence level for F_ratio test of outlier significance (default 95%%)
+:param n          : number of dates either sides of date (default n=3)
+:param lcomponent : components ‘N’,’E’,’U’,’NE’,’NEU’ (default ‘NE’)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.find_outliers_percentage">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">find_outliers_percentage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">percentage</span><span class="o">=</span><span class="default_value">0.03</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">component</span><span class="o">=</span><span class="default_value">'NEU'</span></em>, <em class="sig-param"><span class="n">periods</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">excluded_periods</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#find_outliers_percentage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.find_outliers_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>detrend a time series and
+ranks the residuals by increasing absolute value
+populate the outliers with the x % largest ones on each component</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.find_outliers_simple">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">find_outliers_simple</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">window_length</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">component</span><span class="o">=</span><span class="default_value">'NEU'</span></em>, <em class="sig-param"><span class="n">periods</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">excluded_periods</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#find_outliers_simple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.find_outliers_simple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.find_outliers_and_offsets_through_differentiation">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">find_outliers_and_offsets_through_differentiation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">th</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#find_outliers_and_offsets_through_differentiation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.find_outliers_and_offsets_through_differentiation" title="Permalink to this definition">¶</a></dt>
+<dd><p>find outliers and offsets using differenciation</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.find_outliers_by_RMS_ts">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">find_outliers_by_RMS_ts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ndays</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">th_detection</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">th_rejection</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#find_outliers_by_RMS_ts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.find_outliers_by_RMS_ts" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Find index of outliers in a time series, populate self.outliers.</dt><dd><ul class="simple">
+<li><p>rms time series are first calculated over ndays</p></li>
+<li><p>time windows are kept for further inspection if rms(t) &gt; th_detection * median(rms(ts))</p></li>
+<li><p>for each anomalous time windows, differentiate positions, find the max</p></li>
+<li><p>test whether it is a true outlier (differentiated(t) &gt; th_rejection * median(differentiated))</p></li>
+</ul>
+</dd>
+<dt>output:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.find_outliers_by_residuals">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">find_outliers_by_residuals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">'detrend_seasonal'</span></em>, <em class="sig-param"><span class="n">component</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#find_outliers_by_residuals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.find_outliers_by_residuals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find index of outliers by trendline/trendline_annual/trendline_seasonal (the complete model)
+Then the outliers are detected if their residuals are greater than th_rejection*standard_deviation</p>
+<dl class="simple">
+<dt>output:</dt><dd><p>Add the list of outlier index into self.outliers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.find_outliers_vondrak">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">find_outliers_vondrak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">fc</span><span class="o">=</span><span class="default_value">2.0</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">periods</span><span class="o">=</span><span class="default_value">[[]]</span></em>, <em class="sig-param"><span class="n">excluded_periods</span><span class="o">=</span><span class="default_value">[[]]</span></em>, <em class="sig-param"><span class="n">component</span><span class="o">=</span><span class="default_value">'NE'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#find_outliers_vondrak"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.find_outliers_vondrak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find outliers using a Vondrak filter</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.outliers_old.find_outliers_sliding_window">
+<code class="sig-prename descclassname">pyacs.gts.lib.outliers_old.</code><code class="sig-name descname">find_outliers_sliding_window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">periods</span><span class="o">=</span><span class="default_value">[[]]</span></em>, <em class="sig-param"><span class="n">excluded_periods</span><span class="o">=</span><span class="default_value">[[]]</span></em>, <em class="sig-param"><span class="n">component</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">window_len</span><span class="o">=</span><span class="default_value">15</span></em>, <em class="sig-param"><span class="n">automatic</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/outliers_old.html#find_outliers_sliding_window"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.outliers_old.find_outliers_sliding_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find outliers using sliding windows</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.step_detect">
+<span id="pyacs-gts-lib-step-detect-module"></span><h2>pyacs.gts.lib.step_detect module<a class="headerlink" href="#module-pyacs.gts.lib.step_detect" title="Permalink to this headline">¶</a></h2>
+<p>Thomas Kahn
+<a class="reference external" href="mailto:thomas&#46;b&#46;kahn&#37;&#52;&#48;gmail&#46;com">thomas<span>&#46;</span>b<span>&#46;</span>kahn<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<dl class="py function">
+<dt id="pyacs.gts.lib.step_detect.t_scan">
+<code class="sig-prename descclassname">pyacs.gts.lib.step_detect.</code><code class="sig-name descname">t_scan</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">L</span></em>, <em class="sig-param"><span class="n">window</span><span class="o">=</span><span class="default_value">1000.0</span></em>, <em class="sig-param"><span class="n">num_workers</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/step_detect.html#t_scan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.step_detect.t_scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes t statistic for i to i+window points versus i-window to i
+points for each point i in input array. Uses multiple processes to
+do this calculation asynchronously. Array is decomposed into window
+number of frames, each consisting of points spaced at window
+intervals. This optimizes the calculation, as the drone function
+need only compute the mean and variance for each set once.
+Parameters
+———-
+L : numpy array</p>
+<blockquote>
+<div><p>1 dimensional array that represents time series of datapoints</p>
+</div></blockquote>
+<dl class="simple">
+<dt>window<span class="classifier">int / float</span></dt><dd><p>Number of points that comprise the windows of data that are
+compared</p>
+</dd>
+<dt>num_workers<span class="classifier">int</span></dt><dd><p>Number of worker processes for multithreaded t_stat computation
+Defult value uses num_cpu - 1 workers</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>t_stat<span class="classifier">numpy array</span></dt><dd><p>Array which holds t statistic values for each point. The first 
+and last (window) points are replaced with zero, since the t
+statistic calculation cannot be performed in that case.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.step_detect.mz_fwt">
+<code class="sig-prename descclassname">pyacs.gts.lib.step_detect.</code><code class="sig-name descname">mz_fwt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/step_detect.html#mz_fwt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.step_detect.mz_fwt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the multiscale product of the Mallat-Zhong discrete forward
+wavelet transform up to and including scale n for the input data x.
+If n is even, the spikes in the signal will be positive. If n is odd
+the spikes will match the polarity of the step (positive for steps
+up, negative for steps down).
+This function is essentially a direct translation of the MATLAB code
+provided by Sadler and Swami in section A.4 of the following:
+<a class="reference external" href="http://www.dtic.mil/dtic/tr/fulltext/u2/a351960.pdf">http://www.dtic.mil/dtic/tr/fulltext/u2/a351960.pdf</a>
+Parameters
+———-
+x : numpy array</p>
+<blockquote>
+<div><p>1 dimensional array that represents time series of data points</p>
+</div></blockquote>
+<dl class="simple">
+<dt>n<span class="classifier">int</span></dt><dd><p>Highest scale to multiply to</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>prod<span class="classifier">numpy array</span></dt><dd><p>The multiscale product for x</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.step_detect.find_steps">
+<code class="sig-prename descclassname">pyacs.gts.lib.step_detect.</code><code class="sig-name descname">find_steps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">threshold</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/step_detect.html#find_steps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.step_detect.find_steps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds local maxima by segmenting array based on positions at which
+the threshold value is crossed. Note that this thresholding is 
+applied after the absolute value of the array is taken. Thus,
+the distinction between upward and downward steps is lost. However,
+get_step_sizes can be used to determine directionality after the
+fact.
+Parameters
+———-
+array : numpy array</p>
+<blockquote>
+<div><p>1 dimensional array that represents time series of data points</p>
+</div></blockquote>
+<dl class="simple">
+<dt>threshold<span class="classifier">int / float</span></dt><dd><p>Threshold value that defines a step</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>steps<span class="classifier">list</span></dt><dd><p>List of indices of the detected steps</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyacs.gts.lib.step_detect.get_step_sizes">
+<code class="sig-prename descclassname">pyacs.gts.lib.step_detect.</code><code class="sig-name descname">get_step_sizes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">indices</span></em>, <em class="sig-param"><span class="n">window</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/step_detect.html#get_step_sizes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.step_detect.get_step_sizes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates step size for each index within the supplied list. Step
+size is determined by averaging over a range of points (specified
+by the window parameter) before and after the index of step
+occurrence. The directionality of the step is reflected by the sign
+of the step size (i.e. a positive value indicates an upward step,
+and a negative value indicates a downward step). The combined 
+standard deviation of both measurements (as a measure of uncertainty
+in step calculation) is also provided.
+Parameters
+———-
+array : numpy array</p>
+<blockquote>
+<div><p>1 dimensional array that represents time series of data points</p>
+</div></blockquote>
+<dl class="simple">
+<dt>indices<span class="classifier">list</span></dt><dd><p>List of indices of the detected steps (as provided by 
+find_steps, for example)</p>
+</dd>
+<dt>window<span class="classifier">int, optional</span></dt><dd><p>Number of points to average over to determine baseline levels
+before and after step.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>step_sizes<span class="classifier">list</span></dt><dd><p>List of the calculated sizes of each step</p>
+</dd>
+</dl>
+<p>step_error : list</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyacs.gts.lib.step_detect_edge_filter">
+<span id="pyacs-gts-lib-step-detect-edge-filter-module"></span><h2>pyacs.gts.lib.step_detect_edge_filter module<a class="headerlink" href="#module-pyacs.gts.lib.step_detect_edge_filter" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyacs.gts.lib.step_detect_edge_filter.find_offsets_edge_filter">
+<code class="sig-prename descclassname">pyacs.gts.lib.step_detect_edge_filter.</code><code class="sig-name descname">find_offsets_edge_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.6</span></em>, <em class="sig-param"><span class="n">search_lbda</span><span class="o">=</span><span class="default_value">[3, 5, 7, 10, 20, 50, 100, 200, 300]</span></em>, <em class="sig-param"><span class="n">delta_day</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">lcomponent</span><span class="o">=</span><span class="default_value">'NE'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">debug</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">eq_file</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyacs/gts/lib/step_detect_edge_filter.html#find_offsets_edge_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyacs.gts.lib.step_detect_edge_filter.find_offsets_edge_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="module-pyacs.gts.lib">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyacs.gts.lib" title="Permalink to this headline">¶</a></h2>
@@ -294,29 +1091,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="pyacs.gts.lib.filters.html" class="btn btn-neutral float-right" title="pyacs.gts.lib.filters package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="pyacs.gts.Sgts_methods.write_pck.html" class="btn btn-neutral float-left" title="pyacs.gts.Sgts_methods.write_pck module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="pyacs.gts.lib.filters.html" class="btn btn-neutral float-right" title="pyacs.gts.lib.filters package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pyacs.gts.Sgts_methods.html" class="btn btn-neutral float-left" title="pyacs.gts.Sgts_methods package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -324,7 +1121,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

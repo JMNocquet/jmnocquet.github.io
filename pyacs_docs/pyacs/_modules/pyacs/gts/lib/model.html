@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.model &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.gts.lib.model &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
@@ -154,7 +163,7 @@
   <h1>Source code for pyacs.gts.lib.model</h1><div class="highlight"><pre>
 <span></span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyacs.gts.Gts</span> <span class="k">import</span> <span class="n">Gts</span>
+<span class="kn">from</span> <span class="nn">pyacs.gts.Gts</span> <span class="kn">import</span> <span class="n">Gts</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
 
 <span class="c1">###################################################################</span>
@@ -235,7 +244,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -296,7 +305,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -358,7 +367,7 @@
 
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -417,7 +426,7 @@
 
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -433,7 +442,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;!!! ERROR: lon &amp; lat needs to be properly filled to use this method.&quot;</span><span class="p">)</span>
         <span class="k">return</span><span class="p">()</span>
     
-    <span class="kn">from</span> <span class="nn">pyacs.lib.gmtpoint</span> <span class="k">import</span> <span class="n">GMT_Point</span>
+    <span class="kn">from</span> <span class="nn">pyacs.lib.gmtpoint</span> <span class="kn">import</span> <span class="n">GMT_Point</span>
     
     <span class="n">M</span><span class="o">=</span><span class="n">GMT_Point</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span><span class="n">lon</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span><span class="n">Ve</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span><span class="n">Vn</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span><span class="n">SVe</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span><span class="n">SVn</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
     <span class="c1">#N=M.substract_pole(pole,pole_type)</span>
@@ -463,7 +472,7 @@
 
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -497,13 +506,9 @@
 
 <div class="viewcode-block" id="spline"><a class="viewcode-back" href="../../../../pyacs.gts.lib.model.html#pyacs.gts.Gts.spline">[docs]</a><span class="k">def</span> <span class="nf">spline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">smoothing</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">degree</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-
 <span class="sd">    :param smoothing: Positive smoothing factor used to choose the number of knots. Number of knots will be increased</span>
 <span class="sd">    until the smoothing condition is satisfied:</span>
-
-<span class="sd">    sum((w[i] * (y[i]-spl(x[i])))**2, axis=0) &lt;= s</span>
-
-
+<span class="sd">        sum((w[i] * (y[i]-spl(x[i])))**2, axis=0) &lt;= s</span>
 <span class="sd">    :param degree: Degree of the smoothing spline. Must be &lt;= 5. Default is k=3, a cubic spline.</span>
 <span class="sd">    :param date: 1D array of interpolation dates in decimal year, or &#39;day&#39; for every day. defualt None will interpolate</span>
 <span class="sd">    at data date only.</span>
@@ -512,7 +517,7 @@
 
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -525,7 +530,7 @@
     <span class="c1">###########################################################################</span>
 
     <span class="c1"># import</span>
-    <span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="k">import</span> <span class="n">UnivariateSpline</span>
+    <span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">UnivariateSpline</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
     <span class="n">Spline_ts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -562,7 +567,7 @@
 
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -670,7 +675,7 @@
 
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -903,23 +908,19 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculates a velocity using the median of pair of displacements exactly separated by one year, inspired from MIDAS</span>
 <span class="sd">    If the time series has less than a year of data, then the time series is kept untouched.</span>
-
-<span class="sd">    :param delta_day: if None, it is one year, if 0 then it is the relax mode for campaign data, </span>
-<span class="sd">                      any integer is the time delta (in days) used to compute velocity.</span>
-<span class="sd">    </span>
+<span class="sd">    :param delta_day: if None, it is one year, if 0 then it is the relax mode for campaign data,  dany integer is the time delta (in days) used to compute velocity.</span>
 <span class="sd">    :param in_place: boolean, if True, in_place, if False, returns a new Gts instance (default)</span>
 <span class="sd">    :param periods: periods (list of lists) to be included for trend calculation</span>
 <span class="sd">    :param exclude_periods: periods (list of lists) to be excluded for trend calculation</span>
 <span class="sd">    :param verbose: verbose mode</span>
 <span class="sd">    :param auto: if True, then start will delta_day=None, if it fails or found less than 100 pairs then use delta_day=0, </span>
 <span class="sd">    if fails then use regular detrend</span>
-<span class="sd">    </span>
 <span class="sd">    :note: returns None if time series is shorter than 1 year</span>
 <span class="sd">    &quot;&quot;&quot;</span>    
 
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1285,7 +1286,7 @@
 
     <span class="c1">###########################################################################</span>
     <span class="c1"># check data is not None</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1420,20 +1421,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1441,7 +1447,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

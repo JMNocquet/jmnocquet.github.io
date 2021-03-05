@@ -99,5 +99,5 @@ Sgts.show_map(tile=True) requires cartopy 0.18.0 which does not import properly.
 
 ::
 
-CFLAGS='-stdlib=libc++' pip install cartopy --upgrade
+	CFLAGS='-stdlib=libc++' pip install cartopy --upgrade
 

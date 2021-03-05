@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.lib.utils &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.lib.utils &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
@@ -177,7 +186,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="numpy_array_2_numpy_recarray"><a class="viewcode-back" href="../../../pyacs.lib.utils.html#pyacs.lib.utils.numpy_array_2_numpy_recarray">[docs]</a><span class="k">def</span> <span class="nf">numpy_array_2_numpy_recarray</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">names</span><span class="p">):</span>
+<div class="viewcode-block" id="numpy_array_2_numpy_recarray"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.utils.numpy_array_2_numpy_recarray">[docs]</a><span class="k">def</span> <span class="nf">numpy_array_2_numpy_recarray</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">names</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a numpy array to a numpy recarray</span>
@@ -188,7 +197,7 @@
     <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rec</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">records</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">A</span><span class="p">[:,:]</span><span class="o">.</span><span class="n">T</span><span class="p">)),</span><span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;names&#39;</span><span class="p">:</span><span class="n">names</span><span class="p">,</span><span class="s1">&#39;formats&#39;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]))})))</span></div>
 
 <span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="numpy_recarray_2_numpy_array"><a class="viewcode-back" href="../../../pyacs.lib.utils.html#pyacs.lib.utils.numpy_recarray_2_numpy_array">[docs]</a><span class="k">def</span> <span class="nf">numpy_recarray_2_numpy_array</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<div class="viewcode-block" id="numpy_recarray_2_numpy_array"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.utils.numpy_recarray_2_numpy_array">[docs]</a><span class="k">def</span> <span class="nf">numpy_recarray_2_numpy_array</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a structured array (with homogeneous dtype) to a np.array</span>
@@ -198,7 +207,7 @@
 
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="save_np_array_with_string"><a class="viewcode-back" href="../../../pyacs.lib.utils.html#pyacs.lib.utils.save_np_array_with_string">[docs]</a><span class="k">def</span> <span class="nf">save_np_array_with_string</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">fmt</span><span class="p">,</span><span class="n">outfile</span><span class="p">,</span><span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="save_np_array_with_string"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.utils.save_np_array_with_string">[docs]</a><span class="k">def</span> <span class="nf">save_np_array_with_string</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">fmt</span><span class="p">,</span><span class="n">outfile</span><span class="p">,</span><span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    saves a numpy array as a text file.</span>
@@ -245,17 +254,17 @@
     <span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="make_grid"><a class="viewcode-back" href="../../../pyacs.lib.utils.html#pyacs.lib.utils.make_grid">[docs]</a><span class="k">def</span> <span class="nf">make_grid</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">min_lon</span><span class="p">,</span><span class="n">max_lon</span><span class="p">,</span><span class="n">min_lat</span><span class="p">,</span><span class="n">max_lat</span><span class="p">,</span> \
-              <span class="n">nx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ny</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">step_x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">step_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;psvelo&#39;</span> <span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="make_grid"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.utils.make_grid">[docs]</a><span class="k">def</span> <span class="nf">make_grid</span><span class="p">(</span><span class="n">min_lon</span><span class="p">,</span><span class="n">max_lon</span><span class="p">,</span><span class="n">min_lat</span><span class="p">,</span><span class="n">max_lat</span><span class="p">,</span> \
+              <span class="n">nx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ny</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">step_x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">step_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;psvelo&#39;</span> <span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generates a text file as a grid</span>
 <span class="sd">    </span>
-<span class="sd">    :param outfile: output file name</span>
 <span class="sd">    :param min_lon,max_lon,min_lat,max_lat: grid bounds coordinates in decimal degrees</span>
 <span class="sd">    :param nx ny: number of points in the grid along longitude. If ny is not provided, ny=nx</span>
 <span class="sd">    :param step_x,step_y: step for the grid. This is an alternative to nx. If step_y is not provided, step_y=step_x</span>
-<span class="sd">    :param format: if format is None, then only lon, lat are written. If format=&#39;psvelo&#39; (default), then the line is filled with 0. and sequentially site names   </span>
+<span class="sd">    :param outfile: output file name. Default=None, no file written</span>
+<span class="sd">    :param format: if format is None, then only lon, lat are written. If format=&#39;psvelo&#39; (default), then the line is filled with 0. and sequentially site names</span>
 <span class="sd">    :param comment: comment to be added to the output file.</span>
 <span class="sd">    </span>
 <span class="sd">    :return: the grid as 2D numpy array</span>
@@ -264,7 +273,7 @@
     <span class="c1"># import</span>
     
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-    <span class="kn">from</span> <span class="nn">colors</span> <span class="k">import</span> <span class="n">red</span>
+    <span class="kn">from</span> <span class="nn">colors</span> <span class="kn">import</span> <span class="n">red</span>
 
     <span class="c1"># check arguments</span>
     
@@ -301,16 +310,18 @@
         <span class="n">output_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span> <span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="mi">8</span> <span class="p">)</span> <span class="p">)</span>
         <span class="n">output_np</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid</span>
         <span class="n">output_np</span><span class="p">[:,</span><span class="mi">7</span><span class="p">]</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span> 
-    
-        <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">output_np</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%10.6lf</span><span class="s2"> </span><span class="si">%10.6lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%04d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">outfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">output_np</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%10.6lf</span><span class="s2"> </span><span class="si">%10.6lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%4.1lf</span><span class="s2"> </span><span class="si">%04d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
         
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%10.6lf</span><span class="s2"> </span><span class="si">%10.6lf</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">outfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%10.6lf</span><span class="s2"> </span><span class="si">%10.6lf</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
         
     <span class="k">return</span><span class="p">(</span> <span class="n">grid</span> <span class="p">)</span></div>
     
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="str2list_float"><a class="viewcode-back" href="../../../pyacs.lib.utils.html#pyacs.lib.utils.str2list_float">[docs]</a><span class="k">def</span> <span class="nf">str2list_float</span><span class="p">(</span><span class="n">my_str</span><span class="p">):</span>
+<div class="viewcode-block" id="str2list_float"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.utils.str2list_float">[docs]</a><span class="k">def</span> <span class="nf">str2list_float</span><span class="p">(</span><span class="n">my_str</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a list provided as a string to a true list of float</span>
@@ -328,20 +339,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -349,7 +365,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

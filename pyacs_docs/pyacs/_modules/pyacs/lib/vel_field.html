@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.lib.vel_field &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.lib.vel_field &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
@@ -152,7 +161,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for pyacs.lib.vel_field</h1><div class="highlight"><pre>
-<div class="viewcode-block" id="Velocity_Field"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field">[docs]</a><span></span><span class="k">class</span> <span class="nc">Velocity_Field</span><span class="p">:</span>
+<div class="viewcode-block" id="Velocity_Field"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field">[docs]</a><span></span><span class="k">class</span> <span class="nc">Velocity_Field</span><span class="p">:</span>
     
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Velocity_Field class: reads a velocity field from a GMT psvelo file </span>
@@ -160,7 +169,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     
 <span class="c1">###################################################################</span>
-    <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lgmt_points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lgmt_points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -170,7 +179,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">sites</span> <span class="o">=</span> <span class="p">[]</span>
 
-<div class="viewcode-block" id="Velocity_Field.read"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.read">[docs]</a>    <span class="nd">@classmethod</span>        
+<div class="viewcode-block" id="Velocity_Field.read"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.read">[docs]</a>    <span class="nd">@classmethod</span>        
 <span class="c1">###################################################################</span>
     <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">lonly</span><span class="o">=</span><span class="p">[],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
@@ -240,7 +249,7 @@
 
         <span class="c1"># populates velocity field</span>
         
-        <span class="kn">from</span> <span class="nn">pyacs.lib.gmtpoint</span> <span class="k">import</span> <span class="n">GMT_Point</span>
+        <span class="kn">from</span> <span class="nn">pyacs.lib.gmtpoint</span> <span class="kn">import</span> <span class="n">GMT_Point</span>
 
         <span class="n">lgmt_points</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -277,7 +286,7 @@
         <span class="k">return</span> <span class="n">vf</span> </div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.info"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span> <span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.info"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span> <span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print basics information</span>
@@ -296,7 +305,7 @@
 <span class="c1">###################################################################</span>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.add_point"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.add_point">[docs]</a>    <span class="k">def</span> <span class="nf">add_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.add_point"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.add_point">[docs]</a>    <span class="k">def</span> <span class="nf">add_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Appends a GMT_Point to a velocity field</span>
@@ -307,7 +316,7 @@
         <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.remove_point"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.remove_point">[docs]</a>    <span class="k">def</span> <span class="nf">remove_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.remove_point"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.remove_point">[docs]</a>    <span class="k">def</span> <span class="nf">remove_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Removes the a GMT_Point to a velocity field given its code</span>
@@ -320,7 +329,7 @@
         <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.write"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">up</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.write"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">up</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes a GMT psvelo file</span>
@@ -353,7 +362,7 @@
         <span class="n">fs</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
                         
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.nsites"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.nsites">[docs]</a>    <span class="k">def</span> <span class="nf">nsites</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.nsites"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.nsites">[docs]</a>    <span class="k">def</span> <span class="nf">nsites</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the number of sites in velocity field</span>
@@ -369,7 +378,7 @@
 <span class="c1">#                return M</span>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.l_GMT_Point"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.l_GMT_Point">[docs]</a>    <span class="k">def</span> <span class="nf">l_GMT_Point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.l_GMT_Point"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.l_GMT_Point">[docs]</a>    <span class="k">def</span> <span class="nf">l_GMT_Point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         
         <span class="sd">&quot;&quot;&quot;</span>
@@ -382,7 +391,7 @@
         <span class="k">return</span> <span class="n">lsite</span></div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.print_info_site"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.print_info_site">[docs]</a>    <span class="k">def</span> <span class="nf">print_info_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.print_info_site"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.print_info_site">[docs]</a>    <span class="k">def</span> <span class="nf">print_info_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print the info for a given site by his code</span>
@@ -392,7 +401,7 @@
                 <span class="n">M</span><span class="o">.</span><span class="n">get_info</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="n">verbose</span> <span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.subset"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.subset">[docs]</a>    <span class="k">def</span> <span class="nf">subset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lonly</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.subset"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.subset">[docs]</a>    <span class="k">def</span> <span class="nf">subset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lonly</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
 
         <span class="sd">&quot;&quot;&quot;</span>
@@ -420,7 +429,7 @@
         <span class="k">return</span> <span class="n">Velocity_Field</span><span class="p">(</span><span class="n">lgmt_points</span><span class="o">=</span><span class="n">lGpoint</span><span class="p">)</span></div>
     
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.radial"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.radial">[docs]</a>    <span class="k">def</span> <span class="nf">radial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.radial"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.radial">[docs]</a>    <span class="k">def</span> <span class="nf">radial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
 
         <span class="sd">&quot;&quot;&quot;</span>
@@ -453,7 +462,7 @@
         <span class="k">return</span> <span class="n">new_vel</span></div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.lcode"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.lcode">[docs]</a>    <span class="k">def</span> <span class="nf">lcode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.lcode"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.lcode">[docs]</a>    <span class="k">def</span> <span class="nf">lcode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a list of all point codes in current Velocity Field object</span>
@@ -465,7 +474,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">lcode</span><span class="p">)</span></div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.site"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.site">[docs]</a>    <span class="k">def</span> <span class="nf">site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.site"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.site">[docs]</a>    <span class="k">def</span> <span class="nf">site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
 
         <span class="sd">&quot;&quot;&quot;</span>
@@ -477,7 +486,7 @@
         <span class="k">return</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span></div>
     
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.calc_pole"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.calc_pole">[docs]</a>    <span class="k">def</span> <span class="nf">calc_pole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plates</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;WLS&#39;</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.calc_pole"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.calc_pole">[docs]</a>    <span class="k">def</span> <span class="nf">calc_pole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plates</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;WLS&#39;</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Performs Euler pole calculation</span>
@@ -570,7 +579,7 @@
         <span class="n">euler_sum_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
                     
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.pole"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.pole">[docs]</a>    <span class="k">def</span> <span class="nf">pole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;WLS&#39;</span><span class="p">,</span> <span class="n">exp</span><span class="o">=</span><span class="s1">&#39;pLate&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.pole"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.pole">[docs]</a>    <span class="k">def</span> <span class="nf">pole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;WLS&#39;</span><span class="p">,</span> <span class="n">exp</span><span class="o">=</span><span class="s1">&#39;pLate&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Euler pole calculation; available optimization methods are WLS: weighted least squares, LS: least-squares, Dikin: L1 linear estimator</span>
@@ -654,9 +663,13 @@
         <span class="c1"># Inversion</span>
         <span class="n">Q</span> <span class="o">=</span> <span class="n">nplinalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
         <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
-        
+
+        <span class="c1"># Model Prediction</span>
+        <span class="n">MP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+
+
         <span class="c1"># Residuals</span>
-        <span class="n">RVen</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">X</span><span class="p">))</span>
+        <span class="n">RVen</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span> <span class="o">-</span> <span class="n">MP</span> <span class="p">)</span>
 
         <span class="n">VCV_POLE_X</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">*</span> <span class="mf">1.E-12</span>
         <span class="n">chi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">RVen</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">),</span> <span class="n">RVen</span><span class="p">)</span>
@@ -719,8 +732,8 @@
 
         <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">RESIDUALS</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;----------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;site                      R_ve       R_vn       S_ve       S_vn      RN_ve      RN_vn</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;site                    pred_e     pred_n         Ve         Vn       R_ve       R_vn       S_ve       S_vn      RN_ve      RN_vn</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;------------------------------------------------------------------------------------------------------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="n">cpt_site</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -732,20 +745,27 @@
             <span class="n">M</span> <span class="o">=</span> <span class="n">H_sites</span><span class="p">[</span><span class="n">site</span><span class="p">]</span>
             <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">code</span> <span class="ow">in</span> <span class="n">lexclude</span><span class="p">):</span>
                 <span class="n">i</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">get_index</span><span class="p">()</span>
-        
+
+                <span class="n">mpe</span> <span class="o">=</span> <span class="n">MP</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                <span class="n">mpn</span> <span class="o">=</span> <span class="n">MP</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+                <span class="n">oe</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                <span class="n">on</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
                 <span class="n">rve</span> <span class="o">=</span> <span class="n">RVen</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
                 <span class="n">rvn</span> <span class="o">=</span> <span class="n">RVen</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
                 <span class="n">sve</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">SVe</span>
                 <span class="n">svn</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">SVn</span>
  
-                <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%-19s</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">rve</span><span class="p">,</span> <span class="n">rvn</span><span class="p">,</span> <span class="n">sve</span><span class="p">,</span> <span class="n">svn</span><span class="p">,</span> <span class="n">rve</span> <span class="o">/</span> <span class="n">sve</span><span class="p">,</span> <span class="n">rvn</span> <span class="o">/</span> <span class="n">svn</span><span class="p">))</span>
+                <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%-19s</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="s2"> </span><span class="si">%10.2lf</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> \
+                           <span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">mpe</span><span class="p">,</span><span class="n">mpn</span><span class="p">,</span><span class="n">oe</span><span class="p">,</span><span class="n">on</span><span class="p">,</span><span class="n">rve</span><span class="p">,</span> <span class="n">rvn</span><span class="p">,</span> <span class="n">sve</span><span class="p">,</span> <span class="n">svn</span><span class="p">,</span> <span class="n">rve</span> <span class="o">/</span> <span class="n">sve</span><span class="p">,</span> <span class="n">rvn</span> <span class="o">/</span> <span class="n">svn</span><span class="p">))</span>
             
                 <span class="n">cpt_site</span> <span class="o">=</span> <span class="n">cpt_site</span> <span class="o">+</span> <span class="mi">1</span>
  
                 <span class="n">rms</span> <span class="o">=</span> <span class="n">rms</span> <span class="o">+</span> <span class="n">rve</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">rvn</span> <span class="o">**</span> <span class="mi">2</span>
                 <span class="n">wrms</span> <span class="o">=</span> <span class="n">wrms</span> <span class="o">+</span> <span class="p">(</span><span class="n">rve</span> <span class="o">/</span> <span class="n">sve</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">rvn</span> <span class="o">/</span> <span class="n">svn</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
                 <span class="n">dwrms</span> <span class="o">=</span> <span class="n">dwrms</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">sve</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">svn</span> <span class="o">**</span> <span class="mi">2</span>
-        <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">flog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;------------------------------------------------------------------------------------------------------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="n">rms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rms</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">cpt_site</span><span class="p">)</span>
         <span class="n">wrms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">wrms</span> <span class="o">/</span> <span class="n">dwrms</span><span class="p">)</span>
@@ -759,7 +779,7 @@
         <span class="k">return</span><span class="p">(</span><span class="n">X</span> <span class="o">*</span> <span class="mf">1.E-6</span> <span class="p">,</span> <span class="n">VCV_POLE_X</span><span class="p">)</span></div>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.substract_pole"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.substract_pole">[docs]</a>    <span class="k">def</span> <span class="nf">substract_pole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_euler</span><span class="o">=</span><span class="s1">&#39;rot&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.substract_pole"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.substract_pole">[docs]</a>    <span class="k">def</span> <span class="nf">substract_pole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">type_euler</span><span class="o">=</span><span class="s1">&#39;rot&#39;</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        substract the prediction of an Euler pole to the velocity field</span>
@@ -823,7 +843,7 @@
 <span class="c1"># !!!!!!!!!!!!! NOT TESTED YET       </span>
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.common"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.common">[docs]</a>    <span class="k">def</span> <span class="nf">common</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linGpoint</span><span class="p">,</span> <span class="n">prefit</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[]):</span>
+<div class="viewcode-block" id="Velocity_Field.common"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.common">[docs]</a>    <span class="k">def</span> <span class="nf">common</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linGpoint</span><span class="p">,</span> <span class="n">prefit</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">lexclude</span><span class="o">=</span><span class="p">[]):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a list of sites common to the current Velocity Field object and the list of GMT_Points provided in argument</span>
@@ -847,7 +867,7 @@
     
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.proj_profile"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.proj_profile">[docs]</a>    <span class="k">def</span> <span class="nf">proj_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slon</span><span class="p">,</span> <span class="n">slat</span><span class="p">,</span> <span class="n">elon</span><span class="p">,</span> <span class="n">elat</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.proj_profile"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.proj_profile">[docs]</a>    <span class="k">def</span> <span class="nf">proj_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slon</span><span class="p">,</span> <span class="n">slat</span><span class="p">,</span> <span class="n">elon</span><span class="p">,</span> <span class="n">elat</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        project velocity components along a great circle defined by initial/stop points (slon,slat,elon,elat)</span>
@@ -885,9 +905,9 @@
         <span class="c1"># import</span>
         
         <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-        <span class="kn">from</span> <span class="nn">pyacs.lib</span> <span class="k">import</span> <span class="n">coordinates</span> <span class="k">as</span> <span class="n">Coordinates</span>
-        <span class="kn">from</span> <span class="nn">pyacs.lib</span> <span class="k">import</span> <span class="n">vectors</span>
-        <span class="kn">from</span> <span class="nn">pyacs.lib.gmtpoint</span> <span class="k">import</span> <span class="n">GMT_Point</span>
+        <span class="kn">from</span> <span class="nn">pyacs.lib</span> <span class="kn">import</span> <span class="n">coordinates</span> <span class="k">as</span> <span class="n">Coordinates</span>
+        <span class="kn">from</span> <span class="nn">pyacs.lib</span> <span class="kn">import</span> <span class="n">vectors</span>
+        <span class="kn">from</span> <span class="nn">pyacs.lib.gmtpoint</span> <span class="kn">import</span> <span class="n">GMT_Point</span>
         
         <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">zi</span><span class="p">)</span> <span class="o">=</span> <span class="n">Coordinates</span><span class="o">.</span><span class="n">geo2xyz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">slon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">slat</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
         <span class="n">Xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">zi</span><span class="p">])</span>
@@ -1008,7 +1028,7 @@
 
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="Velocity_Field.strain"><a class="viewcode-back" href="../../../pyacs.lib.vel_field.html#pyacs.lib.vel_field.Velocity_Field.strain">[docs]</a>    <span class="k">def</span> <span class="nf">strain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lcode</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;WLS&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Velocity_Field.strain"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.strain">[docs]</a>    <span class="k">def</span> <span class="nf">strain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lcode</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;WLS&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the strain rate given a list of sites</span>
@@ -1290,20 +1310,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1311,7 +1336,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

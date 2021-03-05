@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.plot.plot &mdash; pyacs 0.64.2 documentation</title>
+  <title>pyacs.gts.lib.plot.plot &mdash; pyacs 0.65.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
@@ -29,10 +37,6 @@
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" /> 
 </head>
@@ -58,7 +62,7 @@
             
             
               <div class="version">
-                0.64.2
+                0.65.3
               </div>
             
           
@@ -75,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +90,17 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../foreword.html">What is pyacs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../libraries.html">List of pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../libraries.html">pyacs core libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../gts.html">Time series library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../make_time_series.html">pyacs_make_time_series.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Full code documentation</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,11 +135,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
@@ -153,54 +162,56 @@
             
   <h1>Source code for pyacs.gts.lib.plot.plot</h1><div class="highlight"><pre>
 <span></span><span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="plot"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.plot.plot.html#pyacs.gts.Gts.plot">[docs]</a><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>\
-         <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>\
-         <span class="n">loffset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>\
-         <span class="n">loutliers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>\
-         <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>\
-         <span class="n">date</span><span class="o">=</span><span class="p">[],</span>\
-         <span class="n">yaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> \
-         <span class="n">yupaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> \
-         <span class="n">xticks_minor_locator</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> \
-         <span class="n">lcomponent</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">],</span>\
-         <span class="n">error_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> \
-         <span class="n">lperiod</span><span class="o">=</span><span class="p">[[]],</span>\
-         <span class="n">lvline</span><span class="o">=</span><span class="p">[],</span>\
-         <span class="n">save_dir_plots</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> \
-         <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>\
-         <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>\
-         <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span>\
-         <span class="n">date_unit</span><span class="o">=</span><span class="s1">&#39;cal&#39;</span><span class="p">,</span> \
-         <span class="n">date_ref</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>\
-         <span class="n">superimposed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> \
-         <span class="n">lcolor</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> \
-         <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> \
-         <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> \
-         <span class="n">set_zero_at_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> \
-         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> \
-         <span class="n">plot_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> \
-         <span class="n">info</span> <span class="o">=</span> <span class="p">[],</span> \
-         <span class="n">xlabel_fmt</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> \
+<div class="viewcode-block" id="plot"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.plot.html#pyacs.gts.Gts.plot">[docs]</a><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+         <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">loffset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">loutliers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+         <span class="n">date</span><span class="o">=</span><span class="p">[],</span>
+         <span class="n">yaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">min_yaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">yupaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">xticks_minor_locator</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+         <span class="n">lcomponent</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">],</span>
+         <span class="n">error_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+         <span class="n">lperiod</span><span class="o">=</span><span class="p">[[]],</span>
+         <span class="n">lvline</span><span class="o">=</span><span class="p">[],</span>
+         <span class="n">save_dir_plots</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+         <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span>
+         <span class="n">date_unit</span><span class="o">=</span><span class="s1">&#39;cal&#39;</span><span class="p">,</span>
+         <span class="n">date_ref</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">superimposed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">lcolor</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],</span>
+         <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+         <span class="n">set_zero_at_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">plot_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">info</span> <span class="o">=</span> <span class="p">[],</span>
+         <span class="n">xlabel_fmt</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
          <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="c1">###############################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create a plot of a North-East-Up time series and related info (offsets, outliers) using Matplotlib</span>
+
 <span class="sd">    Coordinates of the time series are assumed to be in meters</span>
 <span class="sd">    default plots units will be mm; Use unit=&#39;m&#39; to get meters instead</span>
-<span class="sd">    </span>
+
 <span class="sd">    :param title: string to be added to the site name as a plot title</span>
 <span class="sd">    :param loffset: boolean</span>
-<span class="sd">                     print a dash vertical line at offset dates</span>
+<span class="sd">        print a dash vertical line at offset dates</span>
 <span class="sd">    :param loutliers: boolean</span>
-<span class="sd">                     print outliers</span>
+<span class="sd">        print outliers</span>
 <span class="sd">    :param verbose: boolean</span>
-<span class="sd">                     verbose mode</span>
+<span class="sd">        verbose mode</span>
 <span class="sd">    :param date: [sdate,edate]</span>
-<span class="sd">                     start and end date for plots</span>
-<span class="sd">                     sdate and edate in decimal years if date_unit is either &#39;decyear&#39; or &#39;cal&#39;, or in days if date_unit is &#39;days&#39;</span>
+<span class="sd">        start and end date for plots</span>
+<span class="sd">        sdate and edate in decimal years if date_unit is either &#39;decyear&#39; or &#39;cal&#39;, or in days if date_unit is &#39;days&#39;</span>
 <span class="sd">    :param yaxis: [min_y,max_y]</span>
-<span class="sd">                     min and max value for the yaxis</span>
-<span class="sd">                     if not provided automatically adjusted</span>
+<span class="sd">        min and max value for the yaxis</span>
+<span class="sd">        if not provided automatically adjusted</span>
 <span class="sd">    :param yupaxis: same as yaxis but applies to the up component only</span>
 <span class="sd">    :param xticks_minor_locator: where xticks_minor_locator will be placed. Float when date_unit is &#39;decyear&#39; or &#39;days&#39;, a string &#39;%Y&#39;,&#39;%m&#39;,&#39;%d&#39; is date_unit is &#39;cal&#39;.  </span>
 <span class="sd">    :param lcomponent: list of components to be plotted (default =[&#39;N&#39;,&#39;E&#39;,&#39;U&#39;])</span>
@@ -250,18 +261,19 @@
     <span class="c1"># matplotlib</span>
     <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
     <span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
-    <span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="k">import</span> <span class="n">MultipleLocator</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">MultipleLocator</span>
     <span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>    
     
     <span class="c1"># pyacs</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="k">import</span> <span class="n">GtsInputDataNone</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.lib.errors</span> <span class="kn">import</span> <span class="n">GtsInputDataNone</span>
     <span class="kn">import</span> <span class="nn">pyacs.gts.lib.plot.init_plot_settings</span>
     <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
-    <span class="kn">from</span> <span class="nn">pyacs.gts.Gts</span> <span class="k">import</span> <span class="n">Gts</span>
+    <span class="kn">from</span> <span class="nn">pyacs.gts.Gts</span> <span class="kn">import</span> <span class="n">Gts</span>
     <span class="kn">import</span> <span class="nn">pyacs.lib.utils</span>
     <span class="kn">import</span> <span class="nn">pyacs.gts.lib.plot.make_stitle</span>
     <span class="kn">import</span> <span class="nn">pyacs.gts.lib.plot.gts_to_ts</span>
-    
+
+
     <span class="c1">###########################################################################</span>
     <span class="c1"># lcolor</span>
     <span class="c1">###########################################################################</span>
@@ -397,7 +409,13 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
     <span class="n">f</span> <span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">lcomponent</span><span class="p">)</span> <span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">plot_size</span><span class="p">)</span>
 
-    <span class="c1"># handle case where only one component and ax is not subscriptable</span>
+
+    <span class="c1">###########################################################################</span>
+    <span class="c1"># rotate xticks labels</span>
+    <span class="c1">###########################################################################</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+
+<span class="c1"># handle case where only one component and ax is not subscriptable</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">ax</span> <span class="p">])</span>
 
@@ -577,6 +595,21 @@
     <span class="c1"># yaxis</span>
     <span class="c1">###########################################################################</span>
 
+
+    <span class="c1"># added JMN 13/01/2021 to set a minimum value for y-scale</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">min_yaxis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">yaxis</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+
+        <span class="n">idx_ax</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">lcomponent</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">component</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]:</span>
+                <span class="n">cyaxis</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">idx_ax</span><span class="p">]</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+                <span class="n">ax</span><span class="p">[</span><span class="n">idx_ax</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">cyaxis</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">-</span><span class="n">min_yaxis</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">cyaxis</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">min_yaxis</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">component</span> <span class="o">==</span> <span class="s1">&#39;U&#39;</span><span class="p">:</span>
+                <span class="n">cyupaxis</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">idx_ax</span><span class="p">]</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+                <span class="n">ax</span><span class="p">[</span><span class="n">idx_ax</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">cyupaxis</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">-</span><span class="n">min_yaxis</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">cyupaxis</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">min_yaxis</span><span class="p">]))</span>
+
+            <span class="n">idx_ax</span> <span class="o">=</span> <span class="n">idx_ax</span> <span class="o">+</span> <span class="mi">1</span>
+
     <span class="k">if</span> <span class="n">yaxis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">idx_ax</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">lcomponent</span><span class="p">:</span>
@@ -587,6 +620,44 @@
             
             <span class="n">idx_ax</span> <span class="o">=</span> <span class="n">idx_ax</span> <span class="o">+</span> <span class="mi">1</span>
 
+
+    <span class="c1"># date</span>
+    <span class="c1">###########################################################################</span>
+
+    <span class="k">if</span> <span class="n">date</span> <span class="o">!=</span> <span class="p">[]:</span>
+
+        <span class="c1"># case &#39;days&#39;</span>
+        <span class="k">if</span> <span class="n">date_unit</span> <span class="o">==</span> <span class="s1">&#39;days&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">date_ref</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">date_ref</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">np_date_x</span> <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2mjd</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">date</span><span class="p">))</span> <span class="o">-</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2mjd</span><span class="p">(</span>
+                    <span class="n">date</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">np_date_x</span> <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2mjd</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">date</span><span class="p">))</span> <span class="o">-</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2mjd</span><span class="p">(</span>
+                    <span class="n">date_ref</span><span class="p">)</span>
+
+        <span class="c1"># case &#39;decyear&#39;</span>
+        <span class="k">if</span> <span class="n">date_unit</span> <span class="o">==</span> <span class="s1">&#39;decyear&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">date_ref</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">date_ref</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">np_date_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">np_date_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="o">-</span> <span class="n">date_ref</span>
+
+        <span class="c1"># case &#39;cal&#39;</span>
+        <span class="k">if</span> <span class="n">date_unit</span> <span class="o">==</span> <span class="s1">&#39;cal&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cal case&#39;</span><span class="p">)</span>
+            <span class="n">np_date_x</span> <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2datetime</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">date</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">np_date_x</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+        <span class="n">idx_ax</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">lcomponent</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">component</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;code &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;np_date_x &#39;</span><span class="p">,</span><span class="n">np_date_x</span><span class="p">)</span>
+                <span class="n">ax</span><span class="p">[</span><span class="n">idx_ax</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">np_date_x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np_date_x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">component</span> <span class="o">==</span> <span class="s1">&#39;U&#39;</span> <span class="ow">and</span> <span class="n">yupaxis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">ax</span><span class="p">[</span><span class="n">idx_ax</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">np_date_x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np_date_x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+            <span class="n">idx_ax</span> <span class="o">=</span> <span class="n">idx_ax</span> <span class="o">+</span> <span class="mi">1</span>
 
     <span class="c1"># X Label</span>
     <span class="c1">###########################################################################</span>
@@ -730,20 +801,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jean-Mathieu Nocquet IRD/Geoazur
+        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -751,7 +827,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
