@@ -5,4 +5,4 @@ type: "Undergraduate course"
 permalink: /teaching/2020-fall-teaching-1
 ---
 
-You can find a pdf of my lecture notes [here](/files/Lecture_Geodesy_01_10_2020.pdf)
+You can find a pdf of my lecture notes [here](/files/notes_cours_2021_2022.pdf)
