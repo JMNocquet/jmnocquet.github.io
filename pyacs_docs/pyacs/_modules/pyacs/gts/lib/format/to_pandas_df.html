@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.format.to_pandas_df &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.gts.lib.format.to_pandas_df &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -165,7 +167,7 @@
 <span class="sd">Converts a pyacs gts instance to a pandas DataFrame</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="to_pandas_df"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.format.html#pyacs.gts.Gts.to_pandas_df">[docs]</a><span class="k">def</span> <span class="nf">to_pandas_df</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="to_pandas_df"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.format.html#pyacs.gts.lib.format.to_pandas_df.to_pandas_df">[docs]</a><span class="k">def</span> <span class="nf">to_pandas_df</span><span class="p">(</span> <span class="bp">self</span> <span class="p">,</span> <span class="n">data_xyz</span><span class="o">=</span><span class="kc">False</span> <span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="kc">False</span> <span class="p">,</span> <span class="nb">round</span><span class="o">=</span><span class="kc">False</span> <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a pyacs Gts to a pandas dataframe</span>
 
@@ -177,8 +179,18 @@
     <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
     <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span> <span class="k">as</span> <span class="nn">at</span>
 
+    <span class="k">if</span> <span class="n">data_xyz</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">uncertainty</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_xyz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span><span class="s1">&#39;SX&#39;</span><span class="p">,</span><span class="s1">&#39;SY&#39;</span><span class="p">,</span><span class="s1">&#39;SZ&#39;</span><span class="p">,</span><span class="s1">&#39;SXY&#39;</span><span class="p">,</span><span class="s1">&#39;SXZ&#39;</span><span class="p">,</span><span class="s1">&#39;SYZ&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_xyz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">])</span>
 
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">uncertainty</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span><span class="s1">&#39;SN&#39;</span><span class="p">,</span><span class="s1">&#39;SE&#39;</span><span class="p">,</span><span class="s1">&#39;SU&#39;</span><span class="p">,</span><span class="s1">&#39;SNE&#39;</span><span class="p">,</span><span class="s1">&#39;SNU&#39;</span><span class="p">,</span><span class="s1">&#39;SEU&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">])</span>
+
     <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">at</span><span class="o">.</span><span class="n">decyear2datetime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]))</span>
 
     <span class="k">return</span> <span class="n">df</span></div>

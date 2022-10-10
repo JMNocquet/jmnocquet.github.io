@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.primitive.extract_periods &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.gts.lib.primitive.extract_periods &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -162,7 +164,7 @@
             
   <h1>Source code for pyacs.gts.lib.primitive.extract_periods</h1><div class="highlight"><pre>
 <span></span><span class="c1">###################################################################</span>
-<div class="viewcode-block" id="extract_periods"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.primitive.html#pyacs.gts.Gts.extract_periods">[docs]</a><span class="k">def</span> <span class="nf">extract_periods</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">lperiod</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_reset</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="extract_periods"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.primitive.html#pyacs.gts.lib.primitive.extract_periods.extract_periods">[docs]</a><span class="k">def</span> <span class="nf">extract_periods</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">lperiod</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_reset</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    extract periods of a Gts</span>
@@ -260,8 +262,8 @@
       
     <span class="c1"># handle outliers</span>
 
-    <span class="n">ldate_outliers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">outliers</span><span class="p">]</span>
-    <span class="n">lupdated_outliers</span><span class="o">=</span><span class="n">pyacs</span><span class="o">.</span><span class="n">gts</span><span class="o">.</span><span class="n">Gts</span><span class="o">.</span><span class="n">get_index_from_dates</span><span class="p">(</span><span class="n">ldate_outliers</span><span class="p">,</span> <span class="n">new_data_xyz</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="c1">#ldate_outliers=self.data[:,0][self.outliers]</span>
+    <span class="c1">#lupdated_outliers=pyacs.gts.Gts.get_index_from_dates(ldate_outliers, new_data_xyz, tol=0.05)</span>
     
     <span class="c1"># handles offsets_date</span>
     
@@ -289,7 +291,7 @@
     <span class="c1"># offsets &amp; outliers</span>
         
     <span class="n">new_gts</span><span class="o">.</span><span class="n">offsets_dates</span><span class="o">=</span><span class="n">upd_offsets</span>
-    <span class="n">new_gts</span><span class="o">.</span><span class="n">outliers</span><span class="o">=</span><span class="n">lupdated_outliers</span>
+    <span class="c1">#new_gts.outliers=lupdated_outliers</span>
     
     <span class="k">if</span> <span class="n">in_place</span><span class="p">:</span>
         <span class="bp">self</span> <span class="o">=</span> <span class="n">new_gts</span>

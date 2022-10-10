@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.plot.plot &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.gts.lib.plot.plot &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -162,7 +164,7 @@
             
   <h1>Source code for pyacs.gts.lib.plot.plot</h1><div class="highlight"><pre>
 <span></span><span class="c1">###############################################################################</span>
-<div class="viewcode-block" id="plot"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.plot.html#pyacs.gts.Gts.plot">[docs]</a><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="plot"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.plot.html#pyacs.gts.lib.plot.plot.plot">[docs]</a><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
          <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
          <span class="n">loffset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
          <span class="n">loutliers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -644,15 +646,10 @@
 
         <span class="c1"># case &#39;cal&#39;</span>
         <span class="k">if</span> <span class="n">date_unit</span> <span class="o">==</span> <span class="s1">&#39;cal&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cal case&#39;</span><span class="p">)</span>
             <span class="n">np_date_x</span> <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2datetime</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">date</span><span class="p">))</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">np_date_x</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
         <span class="n">idx_ax</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">lcomponent</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">component</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;code &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;np_date_x &#39;</span><span class="p">,</span><span class="n">np_date_x</span><span class="p">)</span>
                 <span class="n">ax</span><span class="p">[</span><span class="n">idx_ax</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">np_date_x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np_date_x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
             <span class="k">if</span> <span class="n">component</span> <span class="o">==</span> <span class="s1">&#39;U&#39;</span> <span class="ow">and</span> <span class="n">yupaxis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">ax</span><span class="p">[</span><span class="n">idx_ax</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">np_date_x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np_date_x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -779,8 +776,10 @@
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span> <span class="ow">in</span> <span class="n">fname</span><span class="p">:</span>
             <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         
-        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;portrait&#39;</span><span class="p">,</span> <span class="n">papertype</span><span class="o">=</span><span class="s1">&#39;a4&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-    
+<span class="c1">#        plt.savefig(fname, dpi=150, facecolor=&#39;w&#39;, edgecolor=&#39;w&#39;, orientation=&#39;portrait&#39;, papertype=&#39;a4&#39;, format=&#39;png&#39;,transparent=False, pad_inches=0.1)</span>
+<span class="c1"># change 05/04/2021 papertype appears to be decommissioned for matplotlib 3.3</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;portrait&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
     <span class="c1"># show</span>
     <span class="c1">###########################################################################</span>
     <span class="k">if</span> <span class="n">show</span><span class="p">:</span> 

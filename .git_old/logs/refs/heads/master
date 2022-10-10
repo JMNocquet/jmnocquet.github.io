@@ -1,0 +1,63 @@
+0000000000000000000000000000000000000000 e303e55c844d355eb16c168cd1de9fa9c89d699b Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1598865652 +0200	clone: from https://github.com/JMNocquet/jmnocquet.github.io.git
+e303e55c844d355eb16c168cd1de9fa9c89d699b e430e1cae8ed02b49f74dddcfbf012cae775bf1e Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1598878594 +0200	commit: picture added
+e430e1cae8ed02b49f74dddcfbf012cae775bf1e 85a761982196baadd0e920b69a0f87602ae836bb Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1598878737 +0200	commit: Update _config.yml
+85a761982196baadd0e920b69a0f87602ae836bb ebcc61a61e63ace914554acb70217ed5d20a4548 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1598880947 +0200	commit: Update _config.yml
+ebcc61a61e63ace914554acb70217ed5d20a4548 c3c8ad606571d85e79844c3e7a5940fa1342e795 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1598882524 +0200	commit: Update _config.yml
+c3c8ad606571d85e79844c3e7a5940fa1342e795 7337166c261ae23102423462b745c88a24457e9f Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1598886376 +0200	commit: Update _config.yml
+7337166c261ae23102423462b745c88a24457e9f db063a79673c010b6f0c558953d90c2487ebaf3b Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1598888792 +0200	commit: about and cv updates
+db063a79673c010b6f0c558953d90c2487ebaf3b 57bbea9d2639ecc9fdda9bbee8af7a863f058160 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1599833496 +0200	commit: Update navigation.yml
+57bbea9d2639ecc9fdda9bbee8af7a863f058160 b2dbd0fc969a535fb59fd1f372f5eefbd2761888 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1600075635 +0200	commit: software added
+b2dbd0fc969a535fb59fd1f372f5eefbd2761888 b5909cf44b0a9339bdfa2b683d9b72b49e99aa0e Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1600076622 +0200	commit: doc pyacs
+b5909cf44b0a9339bdfa2b683d9b72b49e99aa0e d68bd94ea96dd5584837f29a0631e408c91c4c12 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1600081355 +0200	commit: still trying to have it working
+d68bd94ea96dd5584837f29a0631e408c91c4c12 f4a763d9bc83618473e15eaeab60b9d4f641bfdb Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601643476 +0200	commit: pyacs doc added
+f4a763d9bc83618473e15eaeab60b9d4f641bfdb 5ef1c8c036b2ac0d97c7447bc4a7d177697be5dd Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601644182 +0200	commit: Create .nojekyll
+5ef1c8c036b2ac0d97c7447bc4a7d177697be5dd 8f8591a6a3fb693be8d797036b5e192d43429502 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601822474 +0200	commit: CV update
+8f8591a6a3fb693be8d797036b5e192d43429502 1b8f6c7e5c49dd9716d71ea911f7d3378412e89f Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601824916 +0200	commit: Update cv.md
+1b8f6c7e5c49dd9716d71ea911f7d3378412e89f 500401048c7ec9aaa0ebc01a30373cb54ae7e5f7 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601826386 +0200	commit: Add link to google scholar in cv
+500401048c7ec9aaa0ebc01a30373cb54ae7e5f7 b095c387b115905f09ed3eb4fbb9c55d795dacca Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601826612 +0200	commit: Update cv.md
+b095c387b115905f09ed3eb4fbb9c55d795dacca e6893af2209c700d92d2db9b86f7ea30119d3e5a Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601827745 +0200	commit: Update cv.md
+e6893af2209c700d92d2db9b86f7ea30119d3e5a d49279fa1160d9538a1aedf2da1eec80ba9eb0ad Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601879429 +0200	commit: added NatComm 2020 and first changes in about.md
+d49279fa1160d9538a1aedf2da1eec80ba9eb0ad 91eb175242ddff11d4c89ea49bc5da4a94b81d6e Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601882082 +0200	commit: added a projects page
+91eb175242ddff11d4c89ea49bc5da4a94b81d6e d79cb56605f38c6edbd45389fc8ff4424bf44424 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601882356 +0200	commit: rename project-1.md
+d79cb56605f38c6edbd45389fc8ff4424bf44424 111bec739dd2f2a0b73888070f8a488ce23ceb6e Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601883080 +0200	commit: update projects
+111bec739dd2f2a0b73888070f8a488ce23ceb6e 906620db91d52c9757759638bf480e91547243da Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601883793 +0200	commit: Update projects-1.md
+906620db91d52c9757759638bf480e91547243da a72ae6c7fb871d8d4a5dfaae4c4cb6461589ecf8 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601884745 +0200	commit: sphinx dir deleted
+a72ae6c7fb871d8d4a5dfaae4c4cb6461589ecf8 b61590c7ac8c604c8d5427f5146e5e870f325862 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601885012 +0200	commit: projects.html created
+b61590c7ac8c604c8d5427f5146e5e870f325862 7acdf5a9f5c8a0760b73e99719b2fb73cce845aa Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601885118 +0200	commit: Update projects.html
+7acdf5a9f5c8a0760b73e99719b2fb73cce845aa b1734caf141caf8107adbd775cc891605c28cddc Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601885360 +0200	commit: added S5 project
+b1734caf141caf8107adbd775cc891605c28cddc 104f956e9fd1335f021decb55abc681e96f7b474 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601885811 +0200	commit: check project as md
+104f956e9fd1335f021decb55abc681e96f7b474 cfcb8d3ab14dcd308227884093631170a4b56bbb Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601886869 +0200	commit: Update projects.md
+cfcb8d3ab14dcd308227884093631170a4b56bbb 3b680c469bcdbd83872dc548bf82543691fa6271 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601887154 +0200	commit: Update _config.yml
+3b680c469bcdbd83872dc548bf82543691fa6271 341474d757b65f5d9d7bfe906d015d2ed91b0409 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601887575 +0200	commit: Update projects.md
+341474d757b65f5d9d7bfe906d015d2ed91b0409 d1b995575566a368a7d2a3250970cd3fe6fe16a0 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601887858 +0200	commit: Update projects.md
+d1b995575566a368a7d2a3250970cd3fe6fe16a0 82d4f64e7785de8c8b4b7afa2748c90ad4d45fbb Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601888106 +0200	commit: Update projects.md
+82d4f64e7785de8c8b4b7afa2748c90ad4d45fbb 9119a2bf77a6c69b534e3d02980a473106c67761 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601888306 +0200	commit: Update projects-1.md
+9119a2bf77a6c69b534e3d02980a473106c67761 44578fe3d56354bf5728b5cf96b439575826e369 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601888723 +0200	commit: Update projects.md
+44578fe3d56354bf5728b5cf96b439575826e369 00a7aa40e8cda25ae9810fe802e7ad5c869c8162 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601889339 +0200	commit: Update projects.md
+00a7aa40e8cda25ae9810fe802e7ad5c869c8162 f14d68e05a8fde42ab4cf206487d374dfcffa72d Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601890102 +0200	commit: added S5 summary
+f14d68e05a8fde42ab4cf206487d374dfcffa72d 5e3b5242acaa6740ab70159f3fdce40b4da87bf4 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601890508 +0200	commit: fixes images problems
+5e3b5242acaa6740ab70159f3fdce40b4da87bf4 cd410e0a1aa3768c774b158435a445e37c585f90 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601890844 +0200	commit: Update projects.md
+cd410e0a1aa3768c774b158435a445e37c585f90 44ea9769dbe5bca4382811fe54c500ac2bd90e06 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601892021 +0200	commit: added link to pyacs doc
+44ea9769dbe5bca4382811fe54c500ac2bd90e06 8ff739153598c2f44c8a30dcfeecc38a29aebbf0 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601892787 +0200	commit: added team.md
+8ff739153598c2f44c8a30dcfeecc38a29aebbf0 f1cabe9ef4be4ea54c6abcfcc807860ee9017639 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601893545 +0200	commit: added lecture notes in teaching
+f1cabe9ef4be4ea54c6abcfcc807860ee9017639 e9c025ca951673ec4a376101026df08388645e90 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601893634 +0200	commit: Update about.md
+e9c025ca951673ec4a376101026df08388645e90 08e3280c0a1fc9ee4ac79a7f17a7cfa7212c0b94 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1601894174 +0200	commit: about.md changed
+08e3280c0a1fc9ee4ac79a7f17a7cfa7212c0b94 f27e3ed3cf1d44f59cc8e3dae1f2e250cbe782e9 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1602837881 +0200	commit: pyacs doc added
+f27e3ed3cf1d44f59cc8e3dae1f2e250cbe782e9 8fe8d572f4c6e939d1173579a82c47eb9d3141c3 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1602847334 +0200	commit: Update navigation.yml
+8fe8d572f4c6e939d1173579a82c47eb9d3141c3 3dc616795ee3c87ce73cae39f3c6c23e2331c642 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1602847704 +0200	commit: Update navigation.yml
+3dc616795ee3c87ce73cae39f3c6c23e2331c642 3a70a04ac0d7ba2b6fb0f84c97e5dbde32d125bc Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1602848289 +0200	commit: Update navigation.yml
+3a70a04ac0d7ba2b6fb0f84c97e5dbde32d125bc 23905b146d74825ea0cf249b69d5ccf8d49d2e49 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1602848666 +0200	commit: _static to static in pyacs docs
+23905b146d74825ea0cf249b69d5ccf8d49d2e49 f530d93516281c42bb5d6a89cd8d3995b4db00d3 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1602866750 +0200	commit: _static to static change in all html
+f530d93516281c42bb5d6a89cd8d3995b4db00d3 b2e1d0bd2959568f9024bac4bf819e3c256b7137 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1602866753 +0200	pull --progress origin: Merge made by the 'recursive' strategy.
+b2e1d0bd2959568f9024bac4bf819e3c256b7137 e8701e408b6e649dce021a67fe522e54fd9a4d46 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1602867735 +0200	commit: _downloads to downloads
+e8701e408b6e649dce021a67fe522e54fd9a4d46 4ec2c2c15d09648a2df58e56c6e03e54e8f97fe0 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1603269118 +0200	commit: doc updated for 0.64.2 release
+4ec2c2c15d09648a2df58e56c6e03e54e8f97fe0 f4e22ddd8c1ff3b7d22260a2c55e0f5aca05900f Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1611596390 +0100	commit: added youtube geoazur channel
+f4e22ddd8c1ff3b7d22260a2c55e0f5aca05900f 2c1dd4ba96a9d61e8d82c7cfc05af76f2ccdd088 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1611597428 +0100	commit: Update _config.yml
+2c1dd4ba96a9d61e8d82c7cfc05af76f2ccdd088 6e9d9f55cb8cd6782b2e6415c7e0c811b1e3f0b8 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1611597566 +0100	commit: Update _config.yml
+6e9d9f55cb8cd6782b2e6415c7e0c811b1e3f0b8 6c0d06c312c7e40ab1daa96a1a5da789296a4f21 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1611597994 +0100	commit: Update _config.yml
+6c0d06c312c7e40ab1daa96a1a5da789296a4f21 ec159f813babe2d07d0804c8fa461a653d6b8adc Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1611598084 +0100	commit: Update _config.yml
+ec159f813babe2d07d0804c8fa461a653d6b8adc 2e4df2a6d3fe182b4c7efdc14a8564d40161e98a Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1611598305 +0100	commit: Update _config.yml
+2e4df2a6d3fe182b4c7efdc14a8564d40161e98a 8d98461123de0db5b44eddf38e3c8021ed56fde6 Jean-Mathieu Nocquet <nocquet@geoazur.unice.fr> 1614954445 +0100	commit: 0.65.3 release and associated documentation
+8d98461123de0db5b44eddf38e3c8021ed56fde6 e516caf219ba4e84bc3749757d95c810af5a4386 JMNocquet <42320094+JMNocquet@users.noreply.github.com> 1643890155 +0100	commit: update lecture notes
+e516caf219ba4e84bc3749757d95c810af5a4386 bd0c2032a34ebc8c979d4c41800c4902330139fe JMNocquet <42320094+JMNocquet@users.noreply.github.com> 1644426530 +0100	commit: release 0.65.66
+bd0c2032a34ebc8c979d4c41800c4902330139fe 907119fe2e22ad10ea798eff2ced61ed4768908b JMNocquet <42320094+JMNocquet@users.noreply.github.com> 1665419524 +0200	commit: added pyeq

@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.lib.format.get_unr &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.gts.lib.format.get_unr &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -162,7 +164,7 @@
             
   <h1>Source code for pyacs.gts.lib.format.get_unr</h1><div class="highlight"><pre>
 <span></span>
-<div class="viewcode-block" id="get_unr"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.format.html#pyacs.gts.Gts.get_unr">[docs]</a><span class="k">def</span> <span class="nf">get_unr</span><span class="p">(</span> <span class="bp">self</span> <span class="p">,</span> <span class="n">site</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span> <span class="p">):</span>
+<div class="viewcode-block" id="get_unr"><a class="viewcode-back" href="../../../../../pyacs.gts.lib.format.html#pyacs.gts.lib.format.get_unr.get_unr">[docs]</a><span class="k">def</span> <span class="nf">get_unr</span><span class="p">(</span> <span class="bp">self</span> <span class="p">,</span> <span class="n">site</span> <span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span> <span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Get a time series from http://geodesy.unr.edu/gps_timeseries/txyz/IGS14/ in PYACS</span>
@@ -180,6 +182,10 @@
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
     <span class="kn">import</span> <span class="nn">os</span>
     <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span> <span class="k">as</span> <span class="nn">at</span>
+    <span class="kn">import</span> <span class="nn">datetime</span>
+    <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+    <span class="n">delta_12h</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
     <span class="c1"># url</span>
     <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;http://geodesy.unr.edu/gps_timeseries/txyz/IGS14/</span><span class="si">%s</span><span class="s2">.txyz2&quot;</span> <span class="o">%</span> <span class="n">site</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
@@ -206,13 +212,15 @@
     <span class="n">gts</span><span class="o">.</span><span class="n">data_xyz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;test.dat&#39;</span> <span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="p">)</span>
 
     <span class="c1"># decimal year dates in UNR files only have 4 digits, making the day time very approximate</span>
-    <span class="c1"># we round the dates at 12:00</span>
-    <span class="n">unr_dates_decyear</span> <span class="o">=</span> <span class="n">gts</span><span class="o">.</span><span class="n">data_xyz</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">np_year</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">unr_dates_decyear</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">np_doy</span><span class="p">,</span><span class="n">_np_ut</span><span class="p">)</span> <span class="o">=</span> <span class="n">at</span><span class="o">.</span><span class="n">decyear2dayno</span><span class="p">(</span> <span class="n">unr_dates_decyear</span> <span class="p">)</span>
+    <span class="c1"># we round the dates at 12:00 and prefer the date string</span>
+    <span class="n">str_date</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;test.dat&#39;</span> <span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span> <span class="p">)</span>
+    <span class="n">np_datetime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;%y%b</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">str_date</span><span class="p">])</span> <span class="o">+</span> <span class="n">delta_12h</span>
 
-    <span class="n">gts</span><span class="o">.</span><span class="n">data_xyz</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">at</span><span class="o">.</span><span class="n">dayno2decyear</span><span class="p">(</span> <span class="n">np_doy</span> <span class="p">,</span> <span class="n">np_year</span> <span class="p">)</span>
-
+    <span class="c1">#unr_dates_decyear = gts.data_xyz[:,0]</span>
+    <span class="c1">#np_year = np.array(unr_dates_decyear, dtype=int)</span>
+    <span class="c1">#(np_doy,_np_ut) = at.decyear2dayno( unr_dates_decyear )</span>
+    <span class="c1">#gts.data_xyz[:,0] = at.dayno2decyear( np_doy , np_year )</span>
+    <span class="n">gts</span><span class="o">.</span><span class="n">data_xyz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">at</span><span class="o">.</span><span class="n">datetime2decyear</span><span class="p">(</span> <span class="n">np_datetime</span> <span class="p">)</span>
     <span class="c1"># convert data</span>
     <span class="n">gts</span><span class="o">.</span><span class="n">xyz2neu</span><span class="p">(</span><span class="n">corr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ref_xyz</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
     

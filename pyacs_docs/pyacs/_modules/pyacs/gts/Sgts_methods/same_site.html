@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.Sgts_methods.same_site &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.gts.Sgts_methods.same_site &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -162,7 +164,7 @@
             
   <h1>Source code for pyacs.gts.Sgts_methods.same_site</h1><div class="highlight"><pre>
 <span></span><span class="c1">###################################################################</span>
-<div class="viewcode-block" id="same_site"><a class="viewcode-back" href="../../../../pyacs.gts.Sgts_methods.html#pyacs.gts.Sgts.same_site">[docs]</a><span class="k">def</span> <span class="nf">same_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="same_site"><a class="viewcode-back" href="../../../../pyacs.gts.Sgts_methods.html#pyacs.gts.Sgts_methods.same_site.same_site">[docs]</a><span class="k">def</span> <span class="nf">same_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">     </span>
@@ -224,9 +226,9 @@
 
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;!!! ERROR: try to create a new gts with code </span><span class="si">%s</span><span class="s2"> and it already exists.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">new_code</span><span class="p">))</span>
                 <span class="n">new_code</span> <span class="o">=</span> <span class="n">my_ts</span><span class="o">.</span><span class="n">code</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;__&#39;</span>
-                 
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- time series for site </span><span class="si">%s</span><span class="s2"> appears to include different sites because there are coordinates at </span><span class="si">%d</span><span class="s2"> dates </span><span class="si">%.1lf</span><span class="s2"> km from the median position&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">site</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lindex</span><span class="p">)</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span> <span class="n">ddata</span> <span class="p">)</span><span class="o">*</span><span class="mf">1.E-3</span> <span class="p">)</span> <span class="p">)</span> 
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- </span><span class="si">%s</span><span class="s2"> time series will be split into code </span><span class="si">%s</span><span class="s2"> and code </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">site</span><span class="p">,</span><span class="n">site</span><span class="p">,</span><span class="n">new_code</span><span class="p">)</span> <span class="p">)</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- time series for site </span><span class="si">%s</span><span class="s2"> appears to include different sites because there are coordinates at </span><span class="si">%d</span><span class="s2"> dates </span><span class="si">%.1lf</span><span class="s2"> km from the median position&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">site</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lindex</span><span class="p">)</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span> <span class="n">ddata</span> <span class="p">)</span><span class="o">*</span><span class="mf">1.E-3</span> <span class="p">)</span> <span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- </span><span class="si">%s</span><span class="s2"> time series will be split into code </span><span class="si">%s</span><span class="s2"> and code </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">site</span><span class="p">,</span><span class="n">site</span><span class="p">,</span><span class="n">new_code</span><span class="p">)</span> <span class="p">)</span>
              
             <span class="c1"># create a new gts</span>
             <span class="n">new_gts</span> <span class="o">=</span> <span class="n">Gts</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">new_code</span><span class="p">,</span><span class="n">data_xyz</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">my_ts</span><span class="o">.</span><span class="n">data_xyz</span><span class="p">[</span><span class="n">lindex</span><span class="p">]))</span>

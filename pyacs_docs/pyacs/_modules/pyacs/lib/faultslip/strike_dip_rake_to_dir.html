@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.lib.faultslip.strike_dip_rake_to_dir &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.lib.faultslip.strike_dip_rake_to_dir &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -145,8 +147,6 @@
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
-          <li><a href="../faultslip.html">pyacs.lib.faultslip</a> &raquo;</li>
-        
       <li>pyacs.lib.faultslip.strike_dip_rake_to_dir</li>
     
     
@@ -173,14 +173,39 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-    <span class="n">r_rake</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">rake</span><span class="p">)</span>
-    <span class="n">r_dip</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">dip</span><span class="p">)</span>
-    <span class="n">dir_slip</span><span class="o">=</span><span class="n">strike</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">r_rake</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">r_dip</span><span class="p">)))</span>
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># IMPORT</span>
+    <span class="c1">###############################################################################</span>
 
-    <span class="k">if</span> <span class="n">dir_slip</span> <span class="o">&gt;</span> <span class="mf">180.</span><span class="p">:</span><span class="n">dir_slip</span><span class="o">=</span><span class="n">dir_slip</span><span class="o">-</span><span class="mf">180.0</span>
-    <span class="k">if</span> <span class="n">dir_slip</span> <span class="o">&gt;</span> <span class="mf">180.</span><span class="p">:</span><span class="n">dir_slip</span><span class="o">=</span><span class="n">dir_slip</span><span class="o">-</span><span class="mf">180.0</span>
-    <span class="k">if</span> <span class="n">dir_slip</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span><span class="n">dir_slip</span><span class="o">=</span><span class="n">dir_slip</span><span class="o">+</span><span class="mf">180.0</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">pyacs.lib.faultslip.unit_slip</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># INPUT AS 1D NUMPY ARRAY</span>
+    <span class="c1">###############################################################################</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">strike</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="n">strike</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">dir_slip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">strike</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">strike</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">dir_slip</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">strike_dip_rake_to_dir</span><span class="p">(</span><span class="n">strike</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">dip</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">rake</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># INPUT AS FLOAT</span>
+    <span class="c1">###############################################################################</span>
+
+        <span class="c1"># OLD &amp; INCORRECT STUFF - CHANGE ON 03/04/2021</span>
+        <span class="c1"># r_rake=np.radians(rake)</span>
+        <span class="c1"># r_dip=np.radians(dip)</span>
+        <span class="c1"># dir_slip=strike-np.degrees(np.arctan(np.tan(r_rake)*np.cos(r_dip)))</span>
+        <span class="c1">#</span>
+        <span class="c1"># if dir_slip &gt; 180.:dir_slip=dir_slip-180.0</span>
+        <span class="c1"># if dir_slip &gt; 180.:dir_slip=dir_slip-180.0</span>
+        <span class="c1"># if dir_slip&lt;0:dir_slip=dir_slip+180.0</span>
+
+        <span class="p">(</span><span class="n">ue</span><span class="p">,</span><span class="n">un</span><span class="p">,</span><span class="n">uu</span><span class="p">)</span> <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">faultslip</span><span class="o">.</span><span class="n">unit_slip</span><span class="p">(</span> <span class="n">strike</span> <span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">rake</span> <span class="p">)</span>
+        <span class="n">dir_slip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span> <span class="n">ue</span><span class="p">,</span> <span class="n">un</span> <span class="p">))</span>
 
     <span class="k">return</span><span class="p">(</span><span class="n">dir_slip</span><span class="p">)</span></div>
 </pre></div>

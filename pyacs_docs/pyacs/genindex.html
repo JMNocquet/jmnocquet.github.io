@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; pyacs 0.65.3 documentation</title>
+  <title>Index &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
         <script src="static/jquery.js"></script>
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
-        <script src="static/language_data.js"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -264,6 +266,8 @@
 </li>
       </ul></li>
       <li><a href="pyacs.sol.html#pyacs.sol.soln.Soln.append_period">append_period() (pyacs.sol.soln.Soln method)</a>
+</li>
+      <li><a href="pyacs.gts.html#pyacs.gts.Sgts.Sgts.apply_coseismic">apply_coseismic() (pyacs.gts.Sgts.Sgts method)</a>, <a href="sgts_class.html#pyacs.gts.Sgts.Sgts.apply_coseismic">[1]</a>
 </li>
       <li><a href="pyacs.sol.html#pyacs.sol.gpoint.Gpoint.apply_helmert">apply_helmert() (pyacs.sol.gpoint.Gpoint method)</a>
 
@@ -636,11 +640,7 @@
       <li><a href="pyacs.gts.lib.filters.html#pyacs.gts.lib.filters.total_variation.edge_l2">edge_l2() (in module pyacs.gts.lib.filters.total_variation)</a>
 </li>
       <li><a href="pyacs.gts.lib.filters.html#pyacs.gts.lib.filters.el1_trend.el1_trend">el1_trend() (in module pyacs.gts.lib.filters.el1_trend)</a>
-
-      <ul>
-        <li><a href="gts_methods.html#pyacs.gts.Gts.Gts.el1_trend">(pyacs.gts.Gts.Gts method)</a>, <a href="pyacs.gts.html#pyacs.gts.Gts.Gts.el1_trend">[1]</a>
 </li>
-      </ul></li>
       <li><a href="pyacs.lib.html#pyacs.lib.timeperiod.TimePeriod.end">end() (pyacs.lib.timeperiod.TimePeriod method)</a>
 </li>
       <li><a href="pyacs.sinex.html#pyacs.sinex.mathutils.enh2uvh">enh2uvh() (in module pyacs.sinex.mathutils)</a>
@@ -940,6 +940,8 @@
       <ul>
         <li><a href="gts_methods.html#pyacs.gts.Gts.Gts.get_unr">(pyacs.gts.Gts.Gts method)</a>, <a href="pyacs.gts.html#pyacs.gts.Gts.Gts.get_unr">[1]</a>
 </li>
+        <li><a href="pyacs.gts.html#pyacs.gts.Sgts.Sgts.get_unr">(pyacs.gts.Sgts.Sgts method)</a>, <a href="sgts_class.html#pyacs.gts.Sgts.Sgts.get_unr">[1]</a>
+</li>
       </ul></li>
       <li><a href="pyacs.gts.lib.html#pyacs.gts.lib.noise.get_vel_and_sigma">get_vel_and_sigma() (in module pyacs.gts.lib.noise)</a>
 </li>
@@ -1072,6 +1074,8 @@
       <ul>
         <li><a href="pyacs.gts.html#pyacs.gts.Gts.Gts.info">(pyacs.gts.Gts.Gts method)</a>
 </li>
+        <li><a href="pyacs.gts.html#pyacs.gts.Sgts.Sgts.info">(pyacs.gts.Sgts.Sgts method)</a>, <a href="sgts_class.html#pyacs.gts.Sgts.Sgts.info">[1]</a>
+</li>
         <li><a href="pyacs.lib.html#pyacs.lib.vel_field.Velocity_Field.info">(pyacs.lib.vel_field.Velocity_Field method)</a>
 </li>
       </ul></li>
@@ -1087,14 +1091,14 @@
       </ul></li>
       <li><a href="gts_methods.html#pyacs.gts.Gts.Gts.insert_ts">insert_ts() (pyacs.gts.Gts.Gts method)</a>, <a href="pyacs.gts.html#pyacs.gts.Gts.Gts.insert_ts">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pyacs.gts.lib.primitive.html#pyacs.gts.lib.primitive.interpolate.interpolate">interpolate() (in module pyacs.gts.lib.primitive.interpolate)</a>
 
       <ul>
         <li><a href="gts_methods.html#pyacs.gts.Gts.Gts.interpolate">(pyacs.gts.Gts.Gts method)</a>, <a href="pyacs.gts.html#pyacs.gts.Gts.Gts.interpolate">[1]</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pyacs.lib.html#pyacs.lib.euclid.Circle.intersect">intersect() (pyacs.lib.euclid.Circle method)</a>
 
       <ul>
@@ -1201,7 +1205,7 @@
 </li>
       <li><a href="pyacs.gts.lib.html#pyacs.gts.lib.gts_estimators.least_square">least_square() (in module pyacs.gts.lib.gts_estimators)</a>
 </li>
-      <li><a href="pyacs.lib.html#pyacs.lib.euclid.LineSegment2.length">length() (pyacs.lib.euclid.LineSegment2 property)</a>
+      <li><a href="pyacs.lib.html#pyacs.lib.euclid.LineSegment2.length">length (pyacs.lib.euclid.LineSegment2 property)</a>
 
       <ul>
         <li><a href="pyacs.lib.html#pyacs.lib.euclid.LineSegment3.length">(pyacs.lib.euclid.LineSegment3 property)</a>
@@ -1910,13 +1914,13 @@
         <li><a href="pyacs.lib.html#pyacs.lib.euclid.Ray3.p">(pyacs.lib.euclid.Ray3 attribute)</a>
 </li>
       </ul></li>
-      <li><a href="pyacs.lib.html#pyacs.lib.euclid.Line2.p1">p1() (pyacs.lib.euclid.Line2 property)</a>
+      <li><a href="pyacs.lib.html#pyacs.lib.euclid.Line2.p1">p1 (pyacs.lib.euclid.Line2 property)</a>
 
       <ul>
         <li><a href="pyacs.lib.html#pyacs.lib.euclid.Line3.p1">(pyacs.lib.euclid.Line3 property)</a>
 </li>
       </ul></li>
-      <li><a href="pyacs.lib.html#pyacs.lib.euclid.Line2.p2">p2() (pyacs.lib.euclid.Line2 property)</a>
+      <li><a href="pyacs.lib.html#pyacs.lib.euclid.Line2.p2">p2 (pyacs.lib.euclid.Line2 property)</a>
 
       <ul>
         <li><a href="pyacs.lib.html#pyacs.lib.euclid.Line3.p2">(pyacs.lib.euclid.Line3 property)</a>
@@ -3572,6 +3576,8 @@
         <li><a href="pyacs.gts.html#pyacs.gts.Sgts.Sgts.sel_period">(pyacs.gts.Sgts.Sgts method)</a>, <a href="sgts_class.html#pyacs.gts.Sgts.Sgts.sel_period">[1]</a>
 </li>
       </ul></li>
+      <li><a href="pyacs.gts.html#pyacs.gts.Sgts.Sgts.sel_radius">sel_radius() (pyacs.gts.Sgts.Sgts method)</a>, <a href="sgts_class.html#pyacs.gts.Sgts.Sgts.sel_radius">[1]</a>
+</li>
       <li><a href="pyacs.gts.Sgts_methods.html#pyacs.gts.Sgts_methods.sel_rectangle.sel_rectangle">sel_rectangle() (in module pyacs.gts.Sgts_methods.sel_rectangle)</a>
 
       <ul>
@@ -3776,14 +3782,16 @@
 </li>
       <li><a href="pyacs.lib.html#pyacs.lib.timeperiod.TimePeriodUndefinedError">TimePeriodUndefinedError</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pyacs.gts.Sgts_methods.html#pyacs.gts.Sgts_methods.to_displacement.to_displacement">to_displacement() (in module pyacs.gts.Sgts_methods.to_displacement)</a>
 
       <ul>
         <li><a href="pyacs.gts.html#pyacs.gts.Sgts.Sgts.to_displacement">(pyacs.gts.Sgts.Sgts method)</a>, <a href="sgts_class.html#pyacs.gts.Sgts.Sgts.to_displacement">[1]</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pyacs.gts.html#pyacs.gts.Sgts.Sgts.to_obs_tensor">to_obs_tensor() (pyacs.gts.Sgts.Sgts method)</a>, <a href="sgts_class.html#pyacs.gts.Sgts.Sgts.to_obs_tensor">[1]</a>
+</li>
       <li><a href="pyacs.gts.lib.format.html#pyacs.gts.lib.format.to_pandas_df.to_pandas_df">to_pandas_df() (in module pyacs.gts.lib.format.to_pandas_df)</a>
 
       <ul>

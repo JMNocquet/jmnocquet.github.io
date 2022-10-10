@@ -19,3 +19,10 @@ PYACS is a set of tools that allow:
 - Do basic horizontal velocity fields analysis (Euler poles, strain rate maps)
 
 See [pyacs documentation](https://jmnocquet.github.io/pyacs_docs/pyacs)
+
+* PYEQ
+
+PYEQ allows time dependent inversion of slip from GNSS time series:
+
+The sofware is available [here](https://jmnocquet.github.io/files/pyeq-0.54.7.tar.gz)
+

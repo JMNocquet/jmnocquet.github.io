@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.lib.units &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.lib.units &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -262,9 +264,9 @@
 <span class="sd">    :return magnitude: 2./3.*(math.log10(M0)-9.05)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="kn">import</span> <span class="nn">math</span>
-    <span class="n">magnitude</span><span class="o">=</span><span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span><span class="o">*</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">moment</span><span class="p">)</span><span class="o">-</span><span class="mf">9.05</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">magnitude</span><span class="p">)</span></div>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="n">magnitude</span><span class="o">=</span><span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">moment</span><span class="p">)</span><span class="o">-</span><span class="mf">9.05</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span> <span class="n">magnitude</span> <span class="p">)</span></div>
 
 <span class="c1">###################################################################</span>
 <div class="viewcode-block" id="magnitude_to_moment"><a class="viewcode-back" href="../../../pyacs.lib.html#pyacs.lib.units.magnitude_to_moment">[docs]</a><span class="k">def</span> <span class="nf">magnitude_to_moment</span><span class="p">(</span><span class="n">magnitude</span><span class="p">):</span>
@@ -276,9 +278,9 @@
 <span class="sd">    :return moment: in N.m, 10^(1.5*magnitude+9.5)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="kn">import</span> <span class="nn">math</span>
-    <span class="n">moment</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">magnitude</span><span class="o">+</span><span class="mf">9.05</span><span class="p">))</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">moment</span><span class="p">)</span></div>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="n">moment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">10</span><span class="p">,(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">magnitude</span><span class="o">+</span><span class="mf">9.05</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span> <span class="n">moment</span> <span class="p">)</span></div>
 
 </pre></div>
 

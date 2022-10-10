@@ -2,7 +2,6 @@ Gts class
 =============
 
 
-
 ``Gts`` class description
 *****************************
 .. autoclass:: pyacs.gts.Gts.Gts

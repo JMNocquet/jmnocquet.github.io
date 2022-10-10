@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.lib.icosahedron &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.lib.icosahedron &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -301,9 +303,12 @@
     <span class="c1">###########################################################################</span>
     <span class="c1"># import</span>
     <span class="c1">###########################################################################</span>
-    <span class="kn">import</span> <span class="nn">Polygon</span>
+ <span class="c1">#   import Polygon</span>
     <span class="kn">from</span> <span class="nn">pyacs.lib</span> <span class="kn">import</span> <span class="n">coordinates</span>
-    <span class="n">rectangle</span><span class="o">=</span><span class="n">Polygon</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(((</span><span class="n">rlon_min</span><span class="p">,</span><span class="n">rlat_min</span><span class="p">),</span> <span class="p">(</span><span class="n">rlon_max</span><span class="p">,</span><span class="n">rlat_min</span><span class="p">),(</span><span class="n">rlon_max</span><span class="p">,</span><span class="n">rlat_max</span><span class="p">),(</span><span class="n">rlon_min</span><span class="p">,</span><span class="n">rlat_max</span><span class="p">)))</span>
+    <span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span> <span class="k">as</span> <span class="n">shp_polygon</span>
+
+ <span class="c1">#   rectangle=Polygon.Polygon(((rlon_min,rlat_min), (rlon_max,rlat_min),(rlon_max,rlat_max),(rlon_min,rlat_max)))</span>
+    <span class="n">shp_rectangle</span> <span class="o">=</span>  <span class="n">shp_polygon</span><span class="p">(</span> <span class="p">[(</span><span class="n">rlon_min</span><span class="p">,</span><span class="n">rlat_min</span><span class="p">),</span> <span class="p">(</span><span class="n">rlon_max</span><span class="p">,</span><span class="n">rlat_min</span><span class="p">),(</span><span class="n">rlon_max</span><span class="p">,</span><span class="n">rlat_max</span><span class="p">),(</span><span class="n">rlon_min</span><span class="p">,</span><span class="n">rlat_max</span><span class="p">)]</span> <span class="p">)</span>
 
     <span class="n">Rt</span><span class="o">=</span><span class="mf">6371.0E3</span>
     <span class="p">(</span><span class="n">verts</span><span class="p">,</span><span class="n">faces</span><span class="p">)</span><span class="o">=</span><span class="n">icosahedron</span><span class="p">()</span>
@@ -330,10 +335,15 @@
             <span class="p">(</span><span class="n">rlon</span><span class="p">,</span><span class="n">rlat</span><span class="p">,</span><span class="n">rh</span><span class="p">)</span><span class="o">=</span><span class="n">coordinates</span><span class="o">.</span><span class="n">xyz2geospheric</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
             <span class="n">lgeo</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">rlon</span><span class="p">,</span><span class="n">rlat</span><span class="p">))</span>
         
-        <span class="n">triangle</span><span class="o">=</span><span class="n">Polygon</span><span class="o">.</span><span class="n">Polygon</span><span class="p">((</span><span class="n">lgeo</span><span class="p">))</span>
-        <span class="n">intersection</span> <span class="o">=</span> <span class="n">rectangle</span> <span class="o">&amp;</span> <span class="n">triangle</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">intersection</span><span class="p">:</span><span class="k">continue</span><span class="c1">#print &quot;No intersection&quot;</span>
-        <span class="k">else</span><span class="p">:</span> 
+<span class="c1">#        triangle=Polygon.Polygon((lgeo))</span>
+        <span class="n">shp_triangle</span> <span class="o">=</span> <span class="n">shp_polygon</span><span class="p">(</span> <span class="n">lgeo</span> <span class="p">)</span>
+<span class="c1">#        intersection = rectangle &amp; triangle</span>
+        <span class="n">shp_intersection</span> <span class="o">=</span> <span class="n">shp_rectangle</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span> <span class="n">shp_triangle</span> <span class="p">)</span>
+<span class="c1">#        print(&#39;intersection &#39; , intersection)</span>
+<span class="c1">#        print(&#39;shp_intersection &#39; , shp_intersection)</span>
+<span class="c1">#        if not intersection:continue#print &quot;No intersection&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">shp_intersection</span><span class="p">:</span><span class="k">continue</span><span class="c1">#print &quot;No intersection&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
             <span class="c1">#print &quot;Intersection&quot;    </span>
             <span class="n">lfaces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
     
@@ -359,10 +369,15 @@
                 <span class="p">(</span><span class="n">rlon</span><span class="p">,</span><span class="n">rlat</span><span class="p">,</span><span class="n">rh</span><span class="p">)</span><span class="o">=</span><span class="n">coordinates</span><span class="o">.</span><span class="n">xyz2geospheric</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
                 <span class="n">lgeo</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">rlon</span><span class="p">,</span><span class="n">rlat</span><span class="p">))</span>
             
-            <span class="n">triangle</span><span class="o">=</span><span class="n">Polygon</span><span class="o">.</span><span class="n">Polygon</span><span class="p">((</span><span class="n">lgeo</span><span class="p">))</span>
-            <span class="n">intersection</span> <span class="o">=</span> <span class="n">rectangle</span> <span class="o">&amp;</span> <span class="n">triangle</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">intersection</span><span class="p">:</span><span class="k">continue</span><span class="c1">#print &quot;No intersection&quot;</span>
-            <span class="c1">#else: print &quot;Intersection&quot;    </span>
+ <span class="c1">#           triangle=Polygon.Polygon((lgeo))</span>
+ <span class="c1">#           intersection = rectangle &amp; triangle</span>
+
+            <span class="n">shp_triangle</span> <span class="o">=</span> <span class="n">shp_polygon</span><span class="p">(</span><span class="n">lgeo</span><span class="p">)</span>
+            <span class="n">shp_intersection</span> <span class="o">=</span> <span class="n">shp_rectangle</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">shp_triangle</span><span class="p">)</span>
+
+<span class="c1">#            if not intersection:continue#print &quot;No intersection&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">shp_intersection</span><span class="p">:</span> <span class="k">continue</span>  <span class="c1"># print &quot;No intersection&quot;</span>
+            <span class="c1">#else: print &quot;Intersection&quot;</span>
             <span class="n">lfaces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
         
     <span class="n">faces</span><span class="o">=</span><span class="n">lfaces</span>

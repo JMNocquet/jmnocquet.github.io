@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.Gts &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.gts.Gts &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -610,7 +612,7 @@
 <span class="kn">import</span> <span class="nn">pyacs.gts.lib.filters.piecewise_linear</span>
 <span class="kn">import</span> <span class="nn">pyacs.gts.lib.step_detect_edge_filter</span>
 <span class="kn">import</span> <span class="nn">pyacs.gts.lib.filters.l1_trend</span>
-<span class="kn">import</span> <span class="nn">pyacs.gts.lib.filters.el1_trend</span>
+<span class="c1">#import pyacs.gts.lib.filters.el1_trend</span>
 <span class="kn">import</span> <span class="nn">pyacs.gts.lib.filters.spline</span>
 <span class="kn">import</span> <span class="nn">pyacs.gts.lib.filters.smooth</span>
 
@@ -625,7 +627,7 @@
 <span class="n">Gts</span><span class="o">.</span><span class="n">wiener</span>            <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">gts</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">wiener</span><span class="o">.</span><span class="n">wiener</span>
 <span class="n">Gts</span><span class="o">.</span><span class="n">pwlf</span>              <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">gts</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">piecewise_linear</span><span class="o">.</span><span class="n">pwlf</span>
 <span class="n">Gts</span><span class="o">.</span><span class="n">l1_trend</span>          <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">gts</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">l1_trend</span><span class="o">.</span><span class="n">l1_trend</span>
-<span class="n">Gts</span><span class="o">.</span><span class="n">el1_trend</span>          <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">gts</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">el1_trend</span><span class="o">.</span><span class="n">el1_trend</span>
+<span class="c1">#Gts.el1_trend          = pyacs.gts.lib.filters.el1_trend.el1_trend</span>
 <span class="n">Gts</span><span class="o">.</span><span class="n">find_offsets_edge_filter</span> <span class="o">=</span> <span class="n">pyacs</span><span class="o">.</span><span class="n">gts</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">step_detect_edge_filter</span><span class="o">.</span><span class="n">find_offsets_edge_filter</span>
 
 </pre></div>

@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pyacs.gts.Sgts_methods.has_ts &mdash; pyacs 0.65.3 documentation</title>
+  <title>pyacs.gts.Sgts_methods.has_ts &mdash; pyacs 0.65.66 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.65.3
+                0.65.66
               </div>
             
           
@@ -162,21 +164,26 @@
             
   <h1>Source code for pyacs.gts.Sgts_methods.has_ts</h1><div class="highlight"><pre>
 <span></span><span class="c1">###################################################################</span>
-<div class="viewcode-block" id="has_ts"><a class="viewcode-back" href="../../../../pyacs.gts.Sgts_methods.html#pyacs.gts.Sgts.has_ts">[docs]</a><span class="k">def</span> <span class="nf">has_ts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+<div class="viewcode-block" id="has_ts"><a class="viewcode-back" href="../../../../pyacs.gts.Sgts_methods.html#pyacs.gts.Sgts_methods.has_ts.has_ts">[docs]</a><span class="k">def</span> <span class="nf">has_ts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tests whether a time series exists in the current Sgts instance</span>
 <span class="sd">     </span>
 <span class="sd">    :param code: 4-character code</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-     
-    <span class="k">def</span> <span class="nf">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">else</span> <span class="kc">False</span>
-    
-    <span class="k">if</span> <span class="n">has_key</span><span class="p">(</span><span class="n">code</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">code</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lcode</span><span class="p">():</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span></div>
+
+    <span class="c1"># def has_key(key, data):</span>
+    <span class="c1">#     return True if key in data else False</span>
+    <span class="c1">#</span>
+    <span class="c1"># if has_key(code , self.__dict__):</span>
+    <span class="c1">#     return True</span>
+    <span class="c1"># else:</span>
+    <span class="c1">#     return False</span>
 </pre></div>
 
            </div>
