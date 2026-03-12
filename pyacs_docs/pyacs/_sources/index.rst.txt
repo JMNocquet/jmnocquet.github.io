@@ -1,28 +1,27 @@
 .. PYACS documentation master file, created by
-   sphinx-quickstart on Thu Jan 28 16:39:32 2016.
+   sphinx-quickstart on Thu Feb 26 15:51:30 2026.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to PYACS documentation!
-=====================================
-
-
+PYACS documentation
+===================
+Pyacs release: |release| (|today|)
 
 Contents:
 
 .. toctree::
    :maxdepth: 1
-
+   :caption: Contents
 
    foreword
    installation
-   libraries
+   core libraries <libraries>
    gts
+   velocity field <vel_field>
    make_time_series
-   time_series
+   api
    
-   modules
-   
+
 Indices and tables
 ==================
 
@@ -35,4 +34,3 @@ Indices and tables
 	
 .. autoclass:: pyacs.gts.Gts::Gts
 	.. automethod::
-

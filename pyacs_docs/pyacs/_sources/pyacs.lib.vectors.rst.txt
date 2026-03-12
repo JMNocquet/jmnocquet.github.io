@@ -1,7 +1,0 @@
-pyacs.lib.vectors module
-========================
-
-.. automodule:: pyacs.lib.vectors
-   :members:
-   :undoc-members:
-   :show-inheritance:

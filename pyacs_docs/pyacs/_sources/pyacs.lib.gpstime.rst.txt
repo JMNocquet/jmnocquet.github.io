@@ -1,7 +1,0 @@
-pyacs.lib.gpstime module
-========================
-
-.. automodule:: pyacs.lib.gpstime
-   :members:
-   :undoc-members:
-   :show-inheritance:

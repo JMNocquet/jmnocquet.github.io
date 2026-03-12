@@ -1,7 +1,0 @@
-pyacs.lib.syscmd module
-=======================
-
-.. automodule:: pyacs.lib.syscmd
-   :members:
-   :undoc-members:
-   :show-inheritance:

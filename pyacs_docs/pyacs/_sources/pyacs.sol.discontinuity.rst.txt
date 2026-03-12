@@ -1,7 +1,0 @@
-pyacs.sol.discontinuity module
-==============================
-
-.. automodule:: pyacs.sol.discontinuity
-   :members:
-   :undoc-members:
-   :show-inheritance:

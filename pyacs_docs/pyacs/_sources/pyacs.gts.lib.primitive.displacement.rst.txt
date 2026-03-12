@@ -1,7 +1,0 @@
-pyacs.gts.lib.primitive.displacement module
-===========================================
-
-.. automodule:: pyacs.gts.lib.primitive.displacement
-   :members:
-   :undoc-members:
-   :show-inheritance:

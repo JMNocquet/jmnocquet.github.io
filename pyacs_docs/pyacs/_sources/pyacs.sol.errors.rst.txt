@@ -1,7 +1,0 @@
-pyacs.sol.errors module
-=======================
-
-.. automodule:: pyacs.sol.errors
-   :members:
-   :undoc-members:
-   :show-inheritance:

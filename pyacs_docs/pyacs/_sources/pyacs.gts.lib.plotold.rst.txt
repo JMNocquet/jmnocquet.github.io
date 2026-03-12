@@ -1,7 +1,0 @@
-pyacs.gts.lib.plotold module
-============================
-
-.. automodule:: pyacs.gts.lib.plotold
-   :members:
-   :undoc-members:
-   :show-inheritance:

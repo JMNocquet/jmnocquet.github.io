@@ -1,7 +1,0 @@
-pyacs.lib.shapefile module
-==========================
-
-.. automodule:: pyacs.lib.shapefile
-   :members:
-   :undoc-members:
-   :show-inheritance:

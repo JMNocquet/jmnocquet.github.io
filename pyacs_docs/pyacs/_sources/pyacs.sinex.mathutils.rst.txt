@@ -1,7 +1,0 @@
-pyacs.sinex.mathutils module
-============================
-
-.. automodule:: pyacs.sinex.mathutils
-   :members:
-   :undoc-members:
-   :show-inheritance:

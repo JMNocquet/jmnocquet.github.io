@@ -1,7 +1,0 @@
-pyacs.gts.lib.format.mb\_file module
-====================================
-
-.. automodule:: pyacs.gts.lib.format.mb_file
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-pyacs.sol.helmert module
-========================
-
-.. automodule:: pyacs.sol.helmert
-   :members:
-   :undoc-members:
-   :show-inheritance:

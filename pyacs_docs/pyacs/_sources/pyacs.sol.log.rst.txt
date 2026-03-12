@@ -1,7 +1,0 @@
-pyacs.sol.log module
-====================
-
-.. automodule:: pyacs.sol.log
-   :members:
-   :undoc-members:
-   :show-inheritance:

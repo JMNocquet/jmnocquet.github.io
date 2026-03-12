@@ -1,7 +1,0 @@
-pyacs.gts.lib.filters.wiener module
-===================================
-
-.. automodule:: pyacs.gts.lib.filters.wiener
-   :members:
-   :undoc-members:
-   :show-inheritance:

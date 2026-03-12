@@ -1,179 +1,105 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../../">
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>pyacs.gts.lib.metadata &mdash; pyacs 0.65.3 documentation</title>
-  
+  <title>pyacs.gts.lib.metadata &mdash; PYACS 0.66.20 0.66.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
 
   
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=aca1a097"></script>
+      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../../index.html" class="icon icon-home"> pyacs
           
-
-          
+          <a href="../../../../index.html" class="icon icon-home">
+            PYACS 0.66.20
           </a>
-
-          
-            
-            
-              <div class="version">
-                0.65.3
-              </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html">What is pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">pyacs core libraries</a></li>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html">What is PYACS?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html#the-philosophy-of-pyacs">The philosophy of PYACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html#main-components-of-pyacs">Main components of PYACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html#related-software">Related software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../foreword.html#typical-workflow">Typical workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libraries.html">core libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../gts.html">Time series library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../vel_field.html">velocity field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../make_time_series.html">pyacs_make_time_series.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Full code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">PYACS API Reference</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../index.html">pyacs</a>
-        
+          <a href="../../../../index.html">PYACS 0.66.20</a>
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../../index.html">Module code</a> &raquo;</li>
-        
-      <li>pyacs.gts.lib.metadata</li>
-    
-    
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pyacs.gts.lib.metadata</li>
       <li class="wy-breadcrumbs-aside">
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <h1>Source code for pyacs.gts.lib.metadata</h1><div class="highlight"><pre>
 <span></span><span class="c1">###################################################################</span>
-<div class="viewcode-block" id="read_lon_lat"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.read_lon_lat">[docs]</a><span class="k">def</span> <span class="nf">read_lon_lat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gmt_file</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="read_lon_lat">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.read_lon_lat">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_lon_lat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gmt_file</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reads a gmt psvelo file and populates Gts.lon &amp; Gts.lat</span>
-<span class="sd">    </span>
-<span class="sd">    :param gmt_file: gmt psvelo file</span>
-<span class="sd">    :param verbose: verbose mode (boolean)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read a GMT psvelo file and set Gts.lon and Gts.lat.</span>
 
-<span class="sd">    :return: the current Gts instance</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    gmt_file : str</span>
+<span class="sd">        Path to GMT psvelo file.</span>
+<span class="sd">    verbose : bool, optional</span>
+<span class="sd">        If True, print progress. Default is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Gts</span>
+<span class="sd">        self (lon, lat populated).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="kn">from</span> <span class="nn">pyacs.lib.vel_field</span> <span class="kn">import</span> <span class="n">Velocity_Field</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pyacs.vel_field</span><span class="w"> </span><span class="kn">import</span> <span class="n">Velocity_Field</span>
 
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Reading &quot;</span><span class="p">,</span><span class="n">gmt_file</span><span class="p">)</span>
@@ -186,19 +112,30 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">lat</span><span class="o">=</span><span class="n">M</span><span class="o">.</span><span class="n">lat</span>
 
     <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
     
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="save_velocity"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.save_velocity">[docs]</a><span class="k">def</span> <span class="nf">save_velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gmt_file</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="save_velocity">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.save_velocity">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gmt_file</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Appends velocity estimates (with uncertainties) to a gmt psvelo file</span>
-<span class="sd">    </span>
-<span class="sd">    :param gmt_file: output gmt psvelo file (will append if gmt_file already exists)</span>
-<span class="sd">    :param verbose: verbose mode (boolean)</span>
-<span class="sd">    :param comment: comment as a string. &#39;# &#39; is pre-prended to comment if not provided </span>
-<span class="sd">    :param up: boolean. If True, then Ve, SVe and SVen are set to 0 and Vu and Vu are written as 4-th and 6-th fields</span>
-<span class="sd">    </span>
-<span class="sd">    :return: the current Gts instance</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Append velocity estimates (with uncertainties) to a GMT psvelo file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    gmt_file : str</span>
+<span class="sd">        Output GMT psvelo file (appended if it exists).</span>
+<span class="sd">    verbose : bool, optional</span>
+<span class="sd">        If True, print progress. Default is True.</span>
+<span class="sd">    comment : str, optional</span>
+<span class="sd">        Comment line; &#39;#&#39; is prepended if not present.</span>
+<span class="sd">    up : bool, optional</span>
+<span class="sd">        If True, Ve/SVe/SVen set to 0 and Vu written as 4th/6th fields. Default is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Gts</span>
+<span class="sd">        self.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># comment</span>
@@ -210,9 +147,9 @@
         <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
 
     <span class="c1"># import</span>
-    <span class="kn">from</span> <span class="nn">pyacs.lib.vel_field</span> <span class="kn">import</span> <span class="n">Velocity_Field</span>
-    <span class="kn">from</span> <span class="nn">pyacs.lib.gmtpoint</span> <span class="kn">import</span> <span class="n">GMT_Point</span>
-    <span class="kn">import</span> <span class="nn">os.path</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pyacs.vel_field</span><span class="w"> </span><span class="kn">import</span> <span class="n">Velocity_Field</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pyacs.lib.gmtpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">GMT_Point</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span>
 
     <span class="c1"># init Velocity_Field() instance</span>
     <span class="n">vel_field</span><span class="o">=</span><span class="n">Velocity_Field</span><span class="p">()</span>
@@ -230,20 +167,31 @@
     
     <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<span class="c1">###################################################################</span>
-<div class="viewcode-block" id="save_offsets"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.save_offsets">[docs]</a><span class="k">def</span> <span class="nf">save_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ofile</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">up</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Appends offsets values to a given text file (gmt psvelo format)</span>
-<span class="sd">    </span>
-<span class="sd">    :param ofile: output offset file</span>
-<span class="sd">    :param verbose: verbose mode (boolean)</span>
-<span class="sd">    :param comment: comment as a string. &#39;# &#39; is pre-prended to comment if not provided </span>
-<span class="sd">    :param up: boolean. If True, then Ve, SVe and SVen are set to 0 and Vu and Vu are written as 4-th and 6-th fields</span>
 
-<span class="sd">    :return: the current Gts instance</span>
+<span class="c1">###################################################################</span>
+<div class="viewcode-block" id="save_offsets">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.save_offsets">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ofile</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">up</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="c1">###################################################################</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Append offset values to a text file (GMT psvelo format).</span>
 
-<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ofile : str</span>
+<span class="sd">        Output offset file path.</span>
+<span class="sd">    verbose : bool, optional</span>
+<span class="sd">        If True, print progress. Default is True.</span>
+<span class="sd">    comment : str, optional</span>
+<span class="sd">        Comment; &#39;#&#39; is prepended if not present. Default is &#39;&#39;.</span>
+<span class="sd">    up : bool, optional</span>
+<span class="sd">        If True, Ve/SVe/SVen set to 0 and Vu as 4th/6th fields. Default is False.</span>
+<span class="sd">    info : bool, optional</span>
+<span class="sd">        If True, write extra info. Default is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Gts</span>
+<span class="sd">        self.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
@@ -254,8 +202,8 @@
             <span class="n">comment</span> <span class="o">=</span> <span class="s1">&#39;# &#39;</span><span class="o">+</span><span class="n">comment</span>
 
     
-    <span class="kn">import</span> <span class="nn">os.path</span>
-    <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyacs.lib.astrotime</span>
 
     
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">ofile</span><span class="p">):</span>
@@ -284,24 +232,34 @@
     <span class="n">f_offsets</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<span class="c1">###################################################################</span>
-<div class="viewcode-block" id="read_eq_rename"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.read_eq_rename">[docs]</a><span class="k">def</span> <span class="nf">read_eq_rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">eq_rename</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reads the information for the current site (code) from an eq_rename globk file.</span>
-<span class="sd">    </span>
-<span class="sd">    Populates loutliers and offsets_dates</span>
-<span class="sd">    Found excluded periods in the eq_rename file are added to loutliers</span>
-<span class="sd">    </span>
-<span class="sd">    :param eq_rename: eq_rename (globk format) file to be read</span>
-<span class="sd">    :param in_place: boolean. If True then the Gts instance is modified, if False the Gts instance is preserved and a new Gts instance is return</span>
-<span class="sd">    :param verbose: verbose mode (boolean)</span>
 
-<span class="sd">    :return: Gts instance</span>
+<span class="c1">###################################################################</span>
+<div class="viewcode-block" id="read_eq_rename">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.read_eq_rename">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_eq_rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">eq_rename</span><span class="p">,</span><span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="c1">###################################################################</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read current site info from a globk eq_rename file.</span>
+
+<span class="sd">    Populates outliers and offsets_dates; excluded periods from the file</span>
+<span class="sd">    are added to outliers.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    eq_rename : str</span>
+<span class="sd">        Path to eq_rename file (globk format).</span>
+<span class="sd">    in_place : bool, optional</span>
+<span class="sd">        If True, modify self; if False, return a new Gts. Default is False.</span>
+<span class="sd">    verbose : bool, optional</span>
+<span class="sd">        If True, print progress. Default is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Gts</span>
+<span class="sd">        self (if in_place) or new Gts instance.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyacs.lib.astrotime</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
     <span class="n">new_Gts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     
@@ -367,30 +325,38 @@
         <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span><span class="p">(</span><span class="n">new_Gts</span><span class="p">)</span></div>
+
     
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="save_eq_rename"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.save_eq_rename">[docs]</a><span class="k">def</span> <span class="nf">save_eq_rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">eq_rename</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">excluded_periods</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="save_eq_rename">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.save_eq_rename">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_eq_rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">eq_rename</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">excluded_periods</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    save results of a Gts analysis in globk format eq_rename</span>
-<span class="sd">    </span>
-<span class="sd">    :param eq_rename: output eq_rename file (Golbk format)</span>
-<span class="sd">    :param verbose: verbose mode (boolean)</span>
-<span class="sd">    :param exluded_periods: periods to be excluded</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save Gts analysis results to a globk-format eq_rename file.</span>
 
-<span class="sd">    :return: Gts instance</span>
-<span class="sd">    </span>
-<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    eq_rename : str</span>
+<span class="sd">        Output eq_rename file path (globk format).</span>
+<span class="sd">    verbose : bool, optional</span>
+<span class="sd">        If True, print progress. Default is False.</span>
+<span class="sd">    excluded_periods : list, optional</span>
+<span class="sd">        Periods to exclude. Default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Gts</span>
+<span class="sd">        self.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyacs.lib.astrotime</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-    <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
     
     <span class="c1">###################################################################</span>
-    <span class="k">def</span> <span class="nf">__check_and_add_info__</span><span class="p">(</span><span class="n">new_info</span><span class="p">,</span><span class="n">eq_rename</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__check_and_add_info__</span><span class="p">(</span><span class="n">new_info</span><span class="p">,</span><span class="n">eq_rename</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        check whether the information is already in the eq_rename</span>
 <span class="sd">        Info can be:</span>
 <span class="sd">        (&#39;XCL&#39;,date)</span>
@@ -475,12 +441,12 @@
                     
                     <span class="c1"># check overlap</span>
                     
-                    <span class="k">def</span> <span class="nf">__intersect__</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-                        <span class="sd">&quot;&quot;&quot; return the intersection of two lists &quot;&quot;&quot;</span>
+                    <span class="k">def</span><span class="w"> </span><span class="nf">__intersect__</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">                        </span><span class="sd">&quot;&quot;&quot; return the intersection of two lists &quot;&quot;&quot;</span>
                         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
                 
-                    <span class="k">def</span> <span class="nf">__union__</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-                        <span class="sd">&quot;&quot;&quot; return the union of two lists &quot;&quot;&quot;</span>
+                    <span class="k">def</span><span class="w"> </span><span class="nf">__union__</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">                        </span><span class="sd">&quot;&quot;&quot; return the union of two lists &quot;&quot;&quot;</span>
                         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 
                     <span class="k">if</span> <span class="n">__intersect__</span><span class="p">(</span><span class="n">lindex_new</span><span class="p">,</span><span class="n">lindex_existing</span><span class="p">)</span> <span class="o">!=</span> <span class="p">[]:</span>
@@ -549,30 +515,40 @@
                 
     <span class="k">return</span><span class="p">()</span></div>
 
-<span class="c1">###################################################################</span>
-<div class="viewcode-block" id="make_dynamic_apr"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.make_dynamic_apr">[docs]</a><span class="k">def</span> <span class="nf">make_dynamic_apr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">apr</span><span class="p">,</span> <span class="n">time_step</span><span class="o">=</span><span class="mf">30.</span><span class="p">,</span> <span class="n">pos_tol</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">dates</span><span class="o">=</span><span class="p">[],</span> <span class="n">gap</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Creates an apr file for GAMIT</span>
-<span class="sd">    The created apr file has no velocity, but a series of coordinates at different time</span>
-<span class="sd">    </span>
-<span class="sd">    </span>
-<span class="sd">    :param apr: apr file (Globk format)</span>
-<span class="sd">    :param time_step: time step for writing dates (default 30 days)</span>
-<span class="sd">    :param pos_tol: position tolerance. If exceeded, a new date will be written. (default 0.03 m)</span>
-<span class="sd">    :param dates: a list of dates in decimal years where writing will be forced</span>
-<span class="sd">    :param gap: gap in days. If there is no data during a duration greater than gap, then observation is forced to be included and tested against pos_tol</span>
-<span class="sd">    :param verbose: verbose mode (boolean)</span>
 
-<span class="sd">    :return: Gts instance</span>
-<span class="sd">    </span>
+<span class="c1">###################################################################</span>
+<div class="viewcode-block" id="make_dynamic_apr">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.make_dynamic_apr">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_dynamic_apr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">apr</span><span class="p">,</span> <span class="n">time_step</span><span class="o">=</span><span class="mf">30.</span><span class="p">,</span> <span class="n">pos_tol</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">dates</span><span class="o">=</span><span class="p">[],</span> <span class="n">gap</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="c1">###################################################################</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a dynamic apr file for GAMIT (coordinates at different times, no velocity).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    apr : str</span>
+<span class="sd">        Output apr file path (globk format).</span>
+<span class="sd">    time_step : float, optional</span>
+<span class="sd">        Time step for writing dates in days. Default is 30.</span>
+<span class="sd">    pos_tol : float, optional</span>
+<span class="sd">        Position tolerance (m); exceedance triggers a new date. Default is 0.03.</span>
+<span class="sd">    dates : list, optional</span>
+<span class="sd">        Decimal-year dates where writing is forced. Default is [].</span>
+<span class="sd">    gap : float, optional</span>
+<span class="sd">        Gap in days; if no data for longer than gap, observation is forced and tested against pos_tol. Default is 20.</span>
+<span class="sd">    verbose : bool, optional</span>
+<span class="sd">        If True, print progress. Default is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Gts</span>
+<span class="sd">        self.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># import</span>
     
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-    <span class="kn">import</span> <span class="nn">os</span>
-    <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyacs.lib.astrotime</span>
 
     <span class="n">str_comment_gen</span><span class="o">=</span><span class="s1">&#39;from pyacs.gts &#39;</span>
 
@@ -688,29 +664,41 @@
         
     
     <span class="n">apr_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
      
 
 
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="save_apr"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.save_apr">[docs]</a><span class="k">def</span> <span class="nf">save_apr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">apr</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">excluded_periods</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="save_apr">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.save_apr">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_apr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">apr</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">excluded_periods</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    save results of a Gts analysis in globk format apr file</span>
-<span class="sd">    </span>
-<span class="sd">    :param apr: apr file (Globk format)</span>
-<span class="sd">    :param epoch: epoch in decimal year for coordinates in apr</span>
-<span class="sd">    :param verbose: verbose mode (boolean)</span>
-<span class="sd">    :param exluded_periods: periods to be excluded</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save Gts analysis results to a globk-format apr file.</span>
 
-<span class="sd">    :return: Gts instance</span>
-<span class="sd">    </span>
-<span class="sd">    :note: following Globk&#39;s convention, site will be named XXXX_1PS, XXXX_2PS etc between offset dates</span>
-<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    apr : str</span>
+<span class="sd">        Output apr file path (globk format).</span>
+<span class="sd">    epoch : float, optional</span>
+<span class="sd">        Epoch in decimal year for coordinates. Default is None (use period mid).</span>
+<span class="sd">    verbose : bool, optional</span>
+<span class="sd">        If True, print progress. Default is False.</span>
+<span class="sd">    excluded_periods : list, optional</span>
+<span class="sd">        Periods to exclude. Default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Gts</span>
+<span class="sd">        self.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Following globk convention, site names are XXXX_1PS, XXXX_2PS, etc. between offset dates.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">pyacs.lib.coordinates</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyacs.lib.coordinates</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
     <span class="c1"># populates lperiod</span>
 
@@ -792,20 +780,28 @@
 
     <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<span class="c1">###################################################################</span>
-<div class="viewcode-block" id="read_offset_dates"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.read_offset_dates">[docs]</a><span class="k">def</span> <span class="nf">read_offset_dates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">offset_file</span><span class="p">):</span>
-<span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reads an offset file and populates offsets_dates (pyacs format) attribute of the current Gts instance.</span>
-<span class="sd">    format is simply a code dates. dates can be any format read by pyacs.guess_date </span>
-<span class="sd">    </span>
-<span class="sd">    :param offset_file: offset_file to be read</span>
 
-<span class="sd">    :return: the current Gts instance</span>
-<span class="sd">    </span>
+<span class="c1">###################################################################</span>
+<div class="viewcode-block" id="read_offset_dates">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.read_offset_dates">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_offset_dates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">offset_file</span><span class="p">):</span>
+<span class="c1">###################################################################</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read an offset file and set offsets_dates (pyacs format).</span>
+
+<span class="sd">    File format: code and dates; dates parsed by pyacs.guess_date.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    offset_file : str</span>
+<span class="sd">        Path to offset file.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Gts</span>
+<span class="sd">        self (offsets_dates populated).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyacs.lib.astrotime</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="n">fs</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">offset_file</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
@@ -824,25 +820,28 @@
     <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 
+
 <span class="c1">###################################################################</span>
-<div class="viewcode-block" id="info"><a class="viewcode-back" href="../../../../pyacs.gts.lib.html#pyacs.gts.Gts.info">[docs]</a><span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">info</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="info">
+<a class="viewcode-back" href="../../../../api/pyacs.gts.lib.metadata.html#pyacs.gts.lib.metadata.info">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">info</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
 <span class="c1">###################################################################</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Print various informations about the time series</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-    <span class="kn">import</span> <span class="nn">pyacs.lib.astrotime</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyacs.lib.astrotime</span>
     
     <span class="c1"># conversion from p,q to amplitud &amp; phase of seasonal terms</span>
 
     <span class="c1">###################################################################</span>
-    <span class="k">def</span> <span class="nf">__pq2aphi__</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__pq2aphi__</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
         <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">q</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
     
 
     <span class="c1">###################################################################</span>
-    <span class="k">def</span> <span class="nf">__print_header__</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__print_header__</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;########################################################################&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# &quot;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;########################################################################&quot;</span><span class="p">)</span>
@@ -858,12 +857,12 @@
     <span class="n">smjd</span><span class="o">=</span><span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2mjd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">emjd</span><span class="o">=</span><span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2mjd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 
-    <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;# Time series period: </span><span class="si">%4d</span><span class="s2">  </span><span class="si">%03d</span><span class="s2"> - </span><span class="si">%4d</span><span class="s2">  </span><span class="si">%03d</span><span class="s2">  (</span><span class="si">%d</span><span class="s2"> days)&quot;</span> <span class="o">%</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">sdoy</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">edoy</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">emjd</span><span class="o">-</span><span class="n">smjd</span><span class="p">))))</span>
+    <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;# Time series period: </span><span class="si">%4d</span><span class="s2">  </span><span class="si">%03d</span><span class="s2"> - </span><span class="si">%4d</span><span class="s2">  </span><span class="si">%03d</span><span class="s2">  (</span><span class="si">%d</span><span class="s2"> days)&quot;</span> <span class="o">%</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">sdoy</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">edoy</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">emjd</span><span class="o">-</span><span class="n">smjd</span><span class="p">))))</span>
     
     <span class="c1"># obs</span>
     <span class="n">n_obs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="n">n_expected_obs</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">emjd</span><span class="o">-</span><span class="n">smjd</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">n_expected_obs</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">emjd</span><span class="o">-</span><span class="n">smjd</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
     <span class="n">loss</span><span class="o">=</span><span class="mf">100.0</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">n_obs</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">n_expected_obs</span><span class="p">)</span><span class="o">*</span><span class="mf">100.0</span>
     <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;# Obs </span><span class="si">%5d</span><span class="s2"> # Expected </span><span class="si">%5d</span><span class="s2"> # Loss </span><span class="si">%5.1lf</span><span class="s2"> </span><span class="si">%%</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">n_obs</span><span class="p">,</span><span class="n">n_expected_obs</span><span class="p">,</span><span class="n">loss</span><span class="p">)))</span>
     
@@ -888,13 +887,13 @@
     <span class="n">__print_header__</span><span class="p">(</span><span class="s2">&quot;seasonal terms&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annual</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;# Annual terms     : not available&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Annual and semi-annual terms - phase in years&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Annual and semi-annual terms - phase in decimal years - amplitude in mm&quot;</span><span class="p">)</span>
         <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;N_amplitude    N_phase  E_amplitude    E_phase   U_amplitude     U_phase&quot;</span><span class="p">)</span>
         <span class="n">a_n</span><span class="p">,</span><span class="n">phi_n</span><span class="o">=</span><span class="n">__pq2aphi__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annual</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="bp">self</span><span class="o">.</span><span class="n">annual</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
         <span class="n">a_e</span><span class="p">,</span><span class="n">phi_e</span><span class="o">=</span><span class="n">__pq2aphi__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annual</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="bp">self</span><span class="o">.</span><span class="n">annual</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
         <span class="n">a_u</span><span class="p">,</span><span class="n">phi_u</span><span class="o">=</span><span class="n">__pq2aphi__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annual</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="bp">self</span><span class="o">.</span><span class="n">annual</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
         
-        <span class="nb">print</span><span class="p">((</span><span class="s2">&quot; </span><span class="si">%10.4lf</span><span class="s2"> </span><span class="si">%10.4lf</span><span class="s2">   </span><span class="si">%10.4lf</span><span class="s2"> </span><span class="si">%10.4lf</span><span class="s2">    </span><span class="si">%10.4lf</span><span class="s2">  </span><span class="si">%10.4lf</span><span class="s2">  (annual)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a_n</span><span class="p">,</span><span class="n">phi_n</span><span class="p">,</span><span class="n">a_e</span><span class="p">,</span><span class="n">phi_e</span><span class="p">,</span><span class="n">a_u</span><span class="p">,</span><span class="n">phi_u</span><span class="p">)))</span>
+        <span class="nb">print</span><span class="p">((</span><span class="s2">&quot; </span><span class="si">%10.4lf</span><span class="s2"> </span><span class="si">%10.4lf</span><span class="s2">   </span><span class="si">%10.1lf</span><span class="s2"> </span><span class="si">%10.4lf</span><span class="s2">    </span><span class="si">%10.4lf</span><span class="s2">  </span><span class="si">%10.4lf</span><span class="s2">  (annual)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a_n</span><span class="o">*</span><span class="mf">1000.0</span><span class="p">,</span><span class="n">phi_n</span><span class="p">,</span><span class="n">a_e</span><span class="o">*</span><span class="mf">1000.0</span><span class="p">,</span><span class="n">phi_e</span><span class="p">,</span><span class="n">a_u</span><span class="o">*</span><span class="mf">1000.0</span><span class="p">,</span><span class="n">phi_u</span><span class="p">)))</span>
 
     <span class="c1"># semi-annual terms</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">semi_annual</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;# Semi annual terms: not available&quot;</span><span class="p">)</span>
@@ -903,7 +902,7 @@
         <span class="n">a_e</span><span class="p">,</span><span class="n">phi_e</span><span class="o">=</span><span class="n">__pq2aphi__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">semi_annual</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="bp">self</span><span class="o">.</span><span class="n">semi_annual</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
         <span class="n">a_u</span><span class="p">,</span><span class="n">phi_u</span><span class="o">=</span><span class="n">__pq2aphi__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">semi_annual</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="bp">self</span><span class="o">.</span><span class="n">semi_annual</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
         
-        <span class="nb">print</span><span class="p">((</span><span class="s2">&quot; </span><span class="si">%10.4lf</span><span class="s2"> </span><span class="si">%10.4lf</span><span class="s2">   </span><span class="si">%10.4lf</span><span class="s2"> </span><span class="si">%10.4lf</span><span class="s2">    </span><span class="si">%10.4lf</span><span class="s2">  </span><span class="si">%10.4lf</span><span class="s2">  (semi-annual)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a_n</span><span class="p">,</span><span class="n">phi_n</span><span class="p">,</span><span class="n">a_e</span><span class="p">,</span><span class="n">phi_e</span><span class="p">,</span><span class="n">a_u</span><span class="p">,</span><span class="n">phi_u</span><span class="p">)))</span>
+        <span class="nb">print</span><span class="p">((</span><span class="s2">&quot; </span><span class="si">%10.4lf</span><span class="s2"> </span><span class="si">%10.4lf</span><span class="s2">   </span><span class="si">%10.4lf</span><span class="s2"> </span><span class="si">%10.4lf</span><span class="s2">    </span><span class="si">%10.4lf</span><span class="s2">  </span><span class="si">%10.4lf</span><span class="s2">  (semi-annual)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a_n</span><span class="o">*</span><span class="mf">1000.0</span><span class="p">,</span><span class="n">phi_n</span><span class="p">,</span><span class="n">a_e</span><span class="o">*</span><span class="mf">1000.0</span><span class="p">,</span><span class="n">phi_e</span><span class="p">,</span><span class="n">a_u</span><span class="o">*</span><span class="mf">1000.0</span><span class="p">,</span><span class="n">phi_u</span><span class="p">)))</span>
 
 
     <span class="c1"># offsets dates</span>
@@ -945,49 +944,34 @@
                 <span class="n">mday</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">_ut</span><span class="o">=</span><span class="n">pyacs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astrotime</span><span class="o">.</span><span class="n">decyear2cal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
                 <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;   </span><span class="si">%9.4lf</span><span class="s2"> # </span><span class="si">%03d</span><span class="s2"> </span><span class="si">%4d</span><span class="s2"> # </span><span class="si">%02d</span><span class="s2">/</span><span class="si">%02d</span><span class="s2">/</span><span class="si">%4d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">doy</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="p">),</span><span class="n">mday</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="p">))))</span>
     <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
-
-    </p>
+    <p>&#169; Copyright 2026, Jean-Mathieu NOCQUET.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

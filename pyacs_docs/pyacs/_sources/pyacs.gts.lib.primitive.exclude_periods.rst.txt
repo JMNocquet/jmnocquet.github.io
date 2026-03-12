@@ -1,7 +1,0 @@
-pyacs.gts.lib.primitive.exclude\_periods module
-===============================================
-
-.. automodule:: pyacs.gts.lib.primitive.exclude_periods
-   :members:
-   :undoc-members:
-   :show-inheritance:

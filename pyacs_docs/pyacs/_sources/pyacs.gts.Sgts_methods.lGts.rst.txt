@@ -1,7 +1,0 @@
-pyacs.gts.Sgts\_methods.lGts module
-===================================
-
-.. automodule:: pyacs.gts.Sgts_methods.lGts
-   :members:
-   :undoc-members:
-   :show-inheritance:

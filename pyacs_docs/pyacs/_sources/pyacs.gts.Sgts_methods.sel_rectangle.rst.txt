@@ -1,7 +1,0 @@
-pyacs.gts.Sgts\_methods.sel\_rectangle module
-=============================================
-
-.. automodule:: pyacs.gts.Sgts_methods.sel_rectangle
-   :members:
-   :undoc-members:
-   :show-inheritance:

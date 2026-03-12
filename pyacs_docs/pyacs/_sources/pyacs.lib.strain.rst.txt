@@ -1,7 +1,0 @@
-pyacs.lib.strain module
-=======================
-
-.. automodule:: pyacs.lib.strain
-   :members:
-   :undoc-members:
-   :show-inheritance:

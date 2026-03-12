@@ -1,165 +1,83 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>pyacs.sinex.snxutils &mdash; pyacs 0.65.3 documentation</title>
-  
+  <title>pyacs.sinex.snxutils &mdash; PYACS 0.66.20 0.66.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
 
   
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=aca1a097"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../index.html" class="icon icon-home"> pyacs
           
-
-          
+          <a href="../../../index.html" class="icon icon-home">
+            PYACS 0.66.20
           </a>
-
-          
-            
-            
-              <div class="version">
-                0.65.3
-              </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../foreword.html">What is pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">How to install pyacs?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">pyacs core libraries</a></li>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../foreword.html">What is PYACS?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../foreword.html#the-philosophy-of-pyacs">The philosophy of PYACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../foreword.html#main-components-of-pyacs">Main components of PYACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../foreword.html#related-software">Related software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../foreword.html#typical-workflow">Typical workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libraries.html">core libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../gts.html">Time series library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vel_field.html">velocity field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../make_time_series.html">pyacs_make_time_series.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../time_series.html">Time series analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Full code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">PYACS API Reference</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">pyacs</a>
-        
+          <a href="../../../index.html">PYACS 0.66.20</a>
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-        
-      <li>pyacs.sinex.snxutils</li>
-    
-    
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pyacs.sinex.snxutils</li>
       <li class="wy-breadcrumbs-aside">
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <h1>Source code for pyacs.sinex.snxutils</h1><div class="highlight"><pre>
 <span></span><span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Module   : snxutils</span>
@@ -188,14 +106,14 @@
 
 <span class="c1"># LIBRARIES</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pp</span>
-<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ticker</span>
 <span class="c1">#from mpl_toolkits.basemap import Basemap</span>
 
-<span class="kn">from</span> <span class="nn">.constants</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.mathutils</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.date</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.constants</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.mathutils</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.date</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
 
 
 
@@ -211,7 +129,9 @@
 <span class="c1">#           - t2 : Date in sinex format</span>
 <span class="c1"># Output  : - b  : True if t1 &lt;= t2. False otherwise.</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="earlier"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.earlier">[docs]</a><span class="k">def</span> <span class="nf">earlier</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+<div class="viewcode-block" id="earlier">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.earlier">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">earlier</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">):</span>
     <span class="n">t1</span> <span class="o">=</span> <span class="s1">&#39;19&#39;</span> <span class="o">+</span> <span class="n">t1</span>
@@ -225,6 +145,7 @@
 
   <span class="k">return</span> <span class="p">(</span><span class="n">t1</span> <span class="o">&lt;=</span> <span class="n">t2</span><span class="p">)</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : read_domes</span>
 <span class="c1"># Purpose : Read DOMES number catalogue (codomes.snx)</span>
@@ -237,7 +158,9 @@
 <span class="c1">#           - coord : True if station coordinates should be read. Default is True.</span>
 <span class="c1"># Output  : - domes : List of records</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="read_domes"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.read_domes">[docs]</a><span class="k">def</span> <span class="nf">read_domes</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="read_domes">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.read_domes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_domes</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 
   <span class="c1"># Initialization</span>
   <span class="n">domes</span> <span class="o">=</span> <span class="p">[]</span>
@@ -284,6 +207,7 @@
 
   <span class="k">return</span> <span class="n">domes</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : read_solns</span>
 <span class="c1"># Purpose : Read discontinuity list (soln.snx)</span>
@@ -295,7 +219,9 @@
 <span class="c1"># Input   : - file  : Discontinuity list</span>
 <span class="c1"># Output  : - solns : List of records</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="read_solns"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.read_solns">[docs]</a><span class="k">def</span> <span class="nf">read_solns</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+<div class="viewcode-block" id="read_solns">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.read_solns">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_solns</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
 
   <span class="c1"># Initialization</span>
   <span class="n">solns</span> <span class="o">=</span> <span class="p">[]</span>
@@ -355,6 +281,7 @@
 
   <span class="k">return</span> <span class="n">solns</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : extract_solns</span>
 <span class="c1"># Purpose : Extract a set of stations from a discontinuity list</span>
@@ -369,7 +296,9 @@
 <span class="c1">#           - comment : File containing FILE/COMMENT block for the output file. Default if None.</span>
 <span class="c1"># Output  : </span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="extract_solns"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.extract_solns">[docs]</a><span class="k">def</span> <span class="nf">extract_solns</span><span class="p">(</span><span class="n">solns</span><span class="p">,</span> <span class="n">snx</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="extract_solns">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.extract_solns">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_solns</span><span class="p">(</span><span class="n">solns</span><span class="p">,</span> <span class="n">snx</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
   <span class="c1"># List of stations to be extracted</span>
   <span class="n">codept</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">code</span><span class="o">+</span><span class="n">s</span><span class="o">.</span><span class="n">pt</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">snx</span><span class="o">.</span><span class="n">sta</span><span class="p">]</span>
@@ -404,6 +333,7 @@
   <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%E</span><span class="s1">NDSNX</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
   <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : helmert_outliers</span>
 <span class="c1"># Purpose : Find outliers in the residuals of a 7-parameter Helmert comparison</span>
@@ -427,7 +357,9 @@
 <span class="c1">#           - ptdel     : PT codes of outliers</span>
 <span class="c1">#           - solndel   : Solns of outliers</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="helmert_outliers"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.helmert_outliers">[docs]</a><span class="k">def</span> <span class="nf">helmert_outliers</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">thr_raw</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thr_norm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thr_auto</span><span class="o">=</span><span class="mf">4.</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="helmert_outliers">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.helmert_outliers">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">helmert_outliers</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">thr_raw</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thr_norm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thr_auto</span><span class="o">=</span><span class="mf">4.</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
   <span class="c1"># Define thresholds in case of an automatic detection</span>
   <span class="k">if</span> <span class="p">((</span><span class="n">thr_raw</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">thr_norm</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)):</span>
@@ -499,6 +431,7 @@
 
   <span class="k">return</span> <span class="p">(</span><span class="n">codedel</span><span class="p">,</span> <span class="n">ptdel</span><span class="p">,</span> <span class="n">solndel</span><span class="p">)</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : helmert14_outliers</span>
 <span class="c1"># Purpose : Find outliers in the residuals of a 14-parameter Helmert comparison</span>
@@ -523,7 +456,9 @@
 <span class="c1">#           - ptdel     : PT codes of outliers</span>
 <span class="c1">#           - solndel   : Solns of outliers</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="helmert14_outliers"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.helmert14_outliers">[docs]</a><span class="k">def</span> <span class="nf">helmert14_outliers</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">thr_raw</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thr_norm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thr_auto</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="helmert14_outliers">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.helmert14_outliers">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">helmert14_outliers</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">thr_raw</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thr_norm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thr_auto</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
   <span class="c1"># Define thresholds in case of an automatic detection</span>
   <span class="k">if</span> <span class="p">((</span><span class="ow">not</span><span class="p">(</span><span class="n">thr_raw</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span><span class="p">(</span><span class="n">thr_norm</span><span class="p">))):</span>
@@ -595,6 +530,7 @@
 
   <span class="k">return</span><span class="p">(</span><span class="n">codedel</span><span class="p">,</span> <span class="n">ptdel</span><span class="p">,</span> <span class="n">solndel</span><span class="p">)</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : helmert_hist</span>
 <span class="c1"># Purpose : Draw histograms of Helmert residuals</span>
@@ -610,7 +546,9 @@
 <span class="c1">#           - no_up  : True if only horizontal residuals. Default is False.</span>
 <span class="c1"># Output  : </span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="helmert_hist"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.helmert_hist">[docs]</a><span class="k">def</span> <span class="nf">helmert_hist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_up</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="helmert_hist">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.helmert_hist">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">helmert_hist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_up</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
   <span class="c1"># Set X-axis limit</span>
   <span class="n">xmax</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">v</span><span class="p">)))</span>
@@ -749,6 +687,7 @@
   <span class="k">else</span><span class="p">:</span>
     <span class="n">pp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : helmert_map</span>
 <span class="c1"># Purpose : Draw residuals of a 7-parameter Helmert comparison on a map</span>
@@ -769,7 +708,9 @@
 <span class="c1">#           - no_up   : True if only horizontal residuals. Default is False.</span>
 <span class="c1"># Output  : </span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="helmert_map"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.helmert_map">[docs]</a><span class="k">def</span> <span class="nf">helmert_map</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span> <span class="n">h_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">v_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="helmert_map">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.helmert_map">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">helmert_map</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span> <span class="n">h_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">v_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                 <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_up</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
   <span class="c1"># Append legend points to lon, lat and v lists</span>
@@ -839,6 +780,7 @@
   <span class="c1"># ...or show it</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="n">pp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
     
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : station_map</span>
@@ -856,7 +798,9 @@
 <span class="c1">#           - output      : Output file. Default is None.</span>
 <span class="c1"># Output  : </span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="station_map"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.station_map">[docs]</a><span class="k">def</span> <span class="nf">station_map</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">write_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="station_map">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.station_map">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">station_map</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">write_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
   <span class="c1"># Draw basemap</span>
   <span class="n">pp</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
@@ -885,6 +829,7 @@
   <span class="c1"># ...or show it</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="n">pp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
     
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : meanpole</span>
@@ -900,7 +845,9 @@
 <span class="c1"># Output  : - xm     : Mean XPO (mas)</span>
 <span class="c1">#           - ym     : Mean YPO (mas)</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="meanpole"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.meanpole">[docs]</a><span class="k">def</span> <span class="nf">meanpole</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">meanpm</span><span class="o">=</span><span class="s1">&#39;IERS2010&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="meanpole">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.meanpole">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">meanpole</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">meanpm</span><span class="o">=</span><span class="s1">&#39;IERS2010&#39;</span><span class="p">):</span>
   
   <span class="c1"># Years / Years since 2000.0</span>
   <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="mf">51544.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">365.25</span>
@@ -930,6 +877,7 @@
   
   <span class="k">return</span> <span class="p">(</span><span class="n">xm</span><span class="p">,</span> <span class="n">ym</span><span class="p">)</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : read_opoleload</span>
 <span class="c1"># Purpose : Read grid of ocean pole tide loading coefficients</span>
@@ -941,7 +889,9 @@
 <span class="c1"># Input   : - inp   : Grid file</span>
 <span class="c1"># Output  : - opole : Object containing interpolating splines for the 6 coefficients</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="read_opoleload"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.read_opoleload">[docs]</a><span class="k">def</span> <span class="nf">read_opoleload</span><span class="p">(</span><span class="n">inp</span><span class="p">):</span>
+<div class="viewcode-block" id="read_opoleload">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.read_opoleload">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_opoleload</span><span class="p">(</span><span class="n">inp</span><span class="p">):</span>
   
   <span class="n">lon</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
   <span class="n">lat</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">89.75</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
@@ -957,6 +907,7 @@
   <span class="n">opole</span><span class="o">.</span><span class="n">uei</span> <span class="o">=</span> <span class="n">interp</span><span class="o">.</span><span class="n">RectBivariateSpline</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">uei</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">360</span><span class="p">,</span> <span class="mi">720</span><span class="p">))</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
   
   <span class="k">return</span> <span class="n">opole</span></div>
+
 
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : compute_opoleload</span>
@@ -976,7 +927,9 @@
 <span class="c1">#                      (&#39;IERS2003&#39; or &#39;IERS2010&#39;). Default is &#39;IERS2010&#39;.</span>
 <span class="c1"># Output  : - denh   : Station displacements (size [n] x [t] x 3)</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="compute_opoleload"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.compute_opoleload">[docs]</a><span class="k">def</span> <span class="nf">compute_opoleload</span><span class="p">(</span><span class="n">opole</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">mjd</span><span class="p">,</span> <span class="n">xpo</span><span class="p">,</span> <span class="n">ypo</span><span class="p">,</span> <span class="n">meanpm</span><span class="o">=</span><span class="s1">&#39;IERS2010&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="compute_opoleload">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.compute_opoleload">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_opoleload</span><span class="p">(</span><span class="n">opole</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">mjd</span><span class="p">,</span> <span class="n">xpo</span><span class="p">,</span> <span class="n">ypo</span><span class="p">,</span> <span class="n">meanpm</span><span class="o">=</span><span class="s1">&#39;IERS2010&#39;</span><span class="p">):</span>
   
   <span class="c1"># If only one station,</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;float&#39;</span><span class="p">):</span>
@@ -1027,6 +980,7 @@
       
   <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">denh</span><span class="p">)</span></div>
 
+
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="c1"># Routine : compute_psd</span>
 <span class="c1"># Purpose : Compute post-seismic deformations and associated uncertainties</span>
@@ -1041,7 +995,9 @@
 <span class="c1"># Output  : - dx  : E,N,H post-seismic deformations at time t [m]</span>
 <span class="c1">#           - sx  : associated formal errors [m]</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="compute_psd"><a class="viewcode-back" href="../../../pyacs.sinex.html#pyacs.sinex.snxutils.compute_psd">[docs]</a><span class="k">def</span> <span class="nf">compute_psd</span><span class="p">(</span><span class="n">snx</span><span class="p">,</span> <span class="n">sta</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<div class="viewcode-block" id="compute_psd">
+<a class="viewcode-back" href="../../../api/pyacs.sinex.snxutils.html#pyacs.sinex.snxutils.compute_psd">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_psd</span><span class="p">(</span><span class="n">snx</span><span class="p">,</span> <span class="n">sta</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
   
   <span class="c1"># Initializations</span>
   <span class="n">dx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1181,49 +1137,34 @@
     <span class="n">sx</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)))</span>
 
   <span class="k">return</span> <span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">sx</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Jean-Mathieu Nocquet IRD.
-
-    </p>
+    <p>&#169; Copyright 2026, Jean-Mathieu NOCQUET.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

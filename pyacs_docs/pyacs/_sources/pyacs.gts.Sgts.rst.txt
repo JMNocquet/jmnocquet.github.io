@@ -1,7 +1,0 @@
-pyacs.gts.Sgts module
-=====================
-
-.. automodule:: pyacs.gts.Sgts
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-pyacs.gts.lib.filter module
-===========================
-
-.. automodule:: pyacs.gts.lib.filter
-    :members:
-    :undoc-members:
-    :show-inheritance:
